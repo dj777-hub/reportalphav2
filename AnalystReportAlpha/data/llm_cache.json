@@ -1,0 +1,6460 @@
+{
+  "3ea4010308b812aa4701cb205c15bb7a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2020-01-08",
+    "reason": "研报明确给出买入评级，看好平安银行的业绩表现和未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4281ef7ef5472568fba9c4cf8296fbdd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-01-09",
+    "reason": "研报明确给出推荐评级，看好平安银行的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f380c36f3a9a7385c44965830a7817d9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2020-03-05",
+    "reason": "研报明确给出买入评级，看好平安银行的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bf2ca6b0248bcd1091d7074ed25b7dcf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2020-06-24",
+    "reason": "研报明确给出买入评级，看好平安银行的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "98d45be84551273f9c9b7280aeb1453b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2020-07-22",
+    "reason": "研报明确给出推荐评级，看好平安银行的并购前景",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "20897c7acf09ab89b9918c9c0d2bd75e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2020-11-13",
+    "reason": "研报明确给出买入评级，看好平安银行的并购重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2a759e5769bcc16d4698ee235feca20b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2020-11-23",
+    "reason": "研报明确给出推荐评级，看好平安银行的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "aee11bd8edce5c668736afc83e2988cf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2021-01-06",
+    "reason": "研报明确给出增持评级，看好平安银行的业绩表现和未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0e3bbfa3d9c8ca7a97cad732b21df23d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2021-06-18",
+    "reason": "研报明确给出推荐评级，看好平安银行的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a4652daeba070f356d38243a27149595": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-03-09",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9ce22412eb98f200022fa028ea52dbfb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2022-06-28",
+    "reason": "研报明确给出强烈推荐评级，看好平安银行的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "930ee4110ab29df6159b74957cea490b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "陈静",
+    "report_publish_date": "2022-07-27",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a84afb478624ac863d686e5fbbfb5904": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2022-11-03",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "09f99f91b11a1d203b0fd788e8aa24b3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-11-07",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3adf93eda10fb64929d38a3b15848467": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2023-05-18",
+    "reason": "研报明确给出增持评级，看好平安银行的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f0267faf4b85536cbe69f942bcdec54f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2023-07-03",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "03d338902618a77b45944a51399426d9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-07-17",
+    "reason": "研报明确给出推荐评级，看好平安银行的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e41a9bbf8136071103288de6409f185f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2023-08-14",
+    "reason": "研报明确给出买入评级，看好平安银行的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "38a8a966478fccc5292777feddb61c9c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2023-08-23",
+    "reason": "研报明确给出买入评级，看好平安银行的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "617ba34b7d66567b5052ac094eb645aa": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2023-08-29",
+    "reason": "研报明确给出买入评级，看好平安银行的业务布局和未来收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fa4a9585af206d392d4f686391a94071": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-10-09",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1e8578b5b59d266aa5d5d840fea92c6f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2023-11-06",
+    "reason": "研报明确给出增持评级，看好平安银行的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dc38b57bc73a9e295e3a4fabe8d2da7e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-11-22",
+    "reason": "研报明确给出推荐评级，看好平安银行的业绩表现和未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d1b81efd17d27866cb08038c51bea3d7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-12-28",
+    "reason": "研报明确给出强烈推荐评级，看好平安银行的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ec2adb6648b77d37843f781493c96f7f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-04-15",
+    "reason": "研报明确给出'推荐'评级，看好平安银行的并购带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4a6f77e2ca3ea74d6cef52c2272c66f9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-05-03",
+    "reason": "研报明确给出推荐评级，看好平安银行的业绩和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "27e4ed0487d73af5cfb42c547ad7fbb6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2024-07-29",
+    "reason": "研报明确给出推荐评级，看好平安银行的龙头地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4b84687b1cc649bc735a52be25626781": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2024-10-09",
+    "reason": "研报明确给出买入评级，看好平安银行的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bdfda77370918af37f39b054d402fe3b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-10-29",
+    "reason": "研报明确给出强烈推荐评级，看好平安银行的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a2df88885868f88e91e9e0a437e2615c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000001.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-10-30",
+    "reason": "研报明确给出买入评级，看好平安银行的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "86e227aef5d946b81daa434e451a573d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2020-01-08",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "51efc0c0993ba76c5241237c68c0e823": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2020-01-31",
+    "reason": "研报给出的是'持有'评级，属于中性分析，不构成正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0bc9c58bc6e160a3ba1489fad74bbba2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2020-09-25",
+    "reason": "研报明确给出增持评级，看好中兴通讯的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "131d2893fb88bc29483fd1464ec1eea9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-10-20",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的业务布局和核心技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d92b3a9dfe0586ed241066f837c3f68f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-11-03",
+    "reason": "研报明确给出增持评级，看好中兴通讯的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "191cdb43007f95252eeb306bc1d88077": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-02-01",
+    "reason": "研报明确给出买入评级，看好中兴通讯的长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fb0ee04e05986c7f09cacc7b836ae20e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2021-06-21",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fb193ee5424300a9e48f256a9704c899": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2021-07-19",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b1579368a30be4c071d6da394f684d65": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2021-08-05",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7b508e84cedf5b5c2fcecd5db4188df9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2022-02-04",
+    "reason": "研报明确给出强烈推荐评级，看好中兴通讯的业务布局和核心技术壁垒",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0fd658e50f9a602d0bc455f78b850948": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-02-18",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6a44ef416d6bd07a98dbd605bf57d039": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-02-28",
+    "reason": "研报给出'持有'评级，属于中性观点，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e59809e8e9cd83330bec05eab30ab13e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2022-04-11",
+    "reason": "研报明确给出增持评级，看好中兴通讯的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "72d78b793d88eeb9f3507528f10fc142": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "田甜",
+    "report_publish_date": "2022-05-05",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fbe16f0abd21fdd7bcf5568ad78b3b9c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-05-19",
+    "reason": "研报明确给出买入评级，看好中兴通讯的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2dfcaaa32d7c50e911262e05fd4db9ac": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-12-06",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "afba3cb8fe3048ffc130993c15f404fe": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2023-02-23",
+    "reason": "研报明确给出买入评级，看好中兴通讯的长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "79fde1a111a4895b0de570b0eee71e9e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2023-04-12",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "13e631d15dd75f5e91d1af1a2178685f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2023-05-09",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7dc200879515c9f34a551c9fd7b8369e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2023-08-25",
+    "reason": "研报明确给出买入评级，看好中兴通讯的核心技术壁垒和业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a4e7c6a86f830e9e0466c89fa3ab7890": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2023-09-06",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5c928c039fdc55e5e391a5e107eebe50": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2023-09-15",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ab6a8fa3e0183c84c55642f312e6371d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2023-10-16",
+    "reason": "研报明确给出强烈推荐评级，看好中兴通讯的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d5048d6792c416c3f9f6ffe299eb9e04": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2023-12-07",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4b88e3e3baaab7603bfcbc3386f15aab": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2024-01-02",
+    "reason": "研报明确给出增持评级，看好中兴通讯的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "882efa46f6285bd2f70f33379666cfde": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-02-20",
+    "reason": "研报明确给出买入评级，看好中兴通讯的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3bf2425db3ad45b9553d6d98e2c9033c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-02-23",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1f4a561c4897363d506e7fe18f8082d2": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2024-04-29",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c0d97d6ab9f6c0076dcc366512719a25": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2024-08-14",
+    "reason": "研报明确给出强烈推荐评级，看好中兴通讯的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "74848ef1e0d66b37e9287bcce732d88a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2024-10-03",
+    "reason": "研报明确给出推荐评级，看好中兴通讯的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "36998cd1d288ff9969e7911bf8f12577": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-10-04",
+    "reason": "研报明确给出强烈推荐评级，看好中兴通讯的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c9cab8a9ec521f6ec85c83a9792cb5d8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2024-11-27",
+    "reason": "研报明确给出增持评级，看好中兴通讯的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "87db0faebc02af810d004d852c87f0b8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2020-06-30",
+    "reason": "研报明确给出强烈推荐评级，看好美的集团",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cb228462f7af1775b37ea5c5d271f5ad": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2020-07-23",
+    "reason": "研报明确给出强烈推荐评级，看好美的集团的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4f71ca6308a84ffd64e04d96bc7b04b7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2020-09-18",
+    "reason": "研报明确给出推荐评级，看好美的集团重大资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2145de629bf8bc4922777e67bb18b9db": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2020-11-10",
+    "reason": "研报明确给出买入评级，看好美的集团",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b87f9c8bb51e38434ed460dfc0b61d6d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2021-03-03",
+    "reason": "研报明确给出增持评级，看好公司技术指标和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4319c964eea60ae8558144430080a8ca": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2021-03-25",
+    "reason": "研报明确给出买入评级，看好美的集团的公司治理和经营表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "70670acd6207bb0f86e3271233eee803": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-09-09",
+    "reason": "研报明确给出强烈推荐评级，看好美的集团的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2ae911032d1a8b1502bb243f6037bf1b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2022-05-13",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f22278fd978bb3d272908f679b14372f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-06-08",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b103743362b58acd8eafc8fefe253b5e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2022-07-21",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "909c4bd16a44b91793ead8bd1748b421": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2022-11-18",
+    "reason": "研报明确给出增持评级，看好公司技术指标和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "07836d566572ff7d5ad264688ff91324": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2022-12-05",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "83128783481f3304af7f250474d57132": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-05-10",
+    "reason": "研报明确给出买入评级，看好美的集团",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c67a73da8d8eb5fad52fe1ae9bf04667": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "高远",
+    "report_publish_date": "2023-06-20",
+    "reason": "研报给出'持有'评级，属于中性观点，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1f525a570671cd6a1814e7bd1b2d18cb": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "高远",
+    "report_publish_date": "2023-09-19",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6420e45d67400921ccc88d1e37223cbf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2023-12-20",
+    "reason": "研报明确给出推荐评级，看好美的集团发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3eaed16fb1dd8fcbe8a443dd7da508f2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2024-02-21",
+    "reason": "研报明确给出强烈推荐评级，看好美的集团",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "79d5fc109998cc2a00a79aadcd45bcc5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-04-15",
+    "reason": "研报明确给出买入评级，看好公司技术优势和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5ae68e7e99ca7e10ff651a6f087bf477": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-04-29",
+    "reason": "研报明确给出推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "093efbc89799fcd0a2fcb853dbdae544": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2024-06-19",
+    "reason": "研报明确给出增持评级，看好美的集团发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "82167102dcb29da96263ebcde76dec14": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2024-07-22",
+    "reason": "研报明确给出推荐评级，看好美的集团核心赛道",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4568dcbdd60ef6bc505f410c0dcfca75": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-11-07",
+    "reason": "研报明确给出推荐评级，看好美的集团",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "287299fc3f8d0a3fd4e550cbd648d39b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2020-02-14",
+    "reason": "研报明确给出买入评级，看好泸州老窖的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f381827d2352240eb58a32c654093e33": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-04-10",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "134c27e63faba370716b156c5ccbb0cb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2020-04-30",
+    "reason": "研报明确给出增持评级，看好公司技术指标和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b302a7704d44fa9ece010e1384632e48": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-05-12",
+    "reason": "研报明确给出增持评级，看好泸州老窖的业绩表现和市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d5607a6f09d2b4e9ee087ae6ae14a0f0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-09-02",
+    "reason": "研报明确给出推荐评级，看好泸州老窖的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "97235ad19748f207524349362e60459c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2020-10-12",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2a33da95a2d1028efe3fac9cd952c52a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-10-30",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "75f40453eaa03818cbeb1851cd0d9144": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-11-16",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2c6e106a1afb8582c8085e259bb1461f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2020-11-19",
+    "reason": "研报给出的是中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "549ba01ae29c483ad4e5ce4561646251": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2020-12-08",
+    "reason": "研报明确给出增持评级，看好泸州老窖的行业龙头地位及业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c589d82d5620caa4d80d569a468c3d19": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2021-05-07",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "47cd9b9e410f9fbd50cb1ed62292353a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2021-05-17",
+    "reason": "研报明确给出推荐评级，看好泸州老窖的公司治理和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2ff9f6ee13a1b6f227e966a60c21ee88": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2021-08-04",
+    "reason": "研报明确给出强烈推荐评级，看好泸州老窖的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "812f2592c8629020eb29a002db45b038": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2021-08-10",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e9bfd817d718bb7bc1d20f1bce5c5595": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2021-09-01",
+    "reason": "研报明确给出推荐评级，看好泸州老窖的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2f942b7048d0970335d39ddc8697d860": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-11-09",
+    "reason": "研报给出的是'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "eb59b570a8581ed3fe713e14abc2ee3c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2021-12-21",
+    "reason": "研报明确给出买入评级，看好泸州老窖的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e2fc1c328e6204de0c57384f5e41005f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "田甜",
+    "report_publish_date": "2022-06-16",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d0750afb33256b49ff61bd76a5e4faae": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2022-09-12",
+    "reason": "研报明确给出增持评级，看好泸州老窖的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9c981b99baeecc2284545de84293f214": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-10-26",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9fd68ee2b6e390ce7460e9ece1211cf5": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-11-02",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "789783086c44fc55902e2df737407fd0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2023-01-31",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bcd628cd0b159a57cfef395477f32dd4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2023-06-09",
+    "reason": "研报明确给出增持评级，看好泸州老窖的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3cf6f3df428408e93fd5e33902e3ce19": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2023-06-21",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ffd0d6cd0373b1eb825f15f70decb277": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2023-08-30",
+    "reason": "研报明确给出增持评级，看好泸州老窖的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ced534bdc8ea8553589aa5e58b7179d9": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2024-01-04",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2bff52f1877a9b9f886d70659ff8b187": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2024-02-20",
+    "reason": "研报明确给出买入评级，看好泸州老窖的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "601a5bf9a0e4709a129a5057412791ce": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "高远",
+    "report_publish_date": "2024-03-12",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d1c728b6948b235e6992f8ec2a1b43c9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-04-15",
+    "reason": "研报明确给出强烈推荐评级，看好泸州老窖的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6265e1eae0ca594df80e308351482d93": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2024-06-18",
+    "reason": "研报给出'持有'评级，属于中性评价，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e8db5b33c80c5e9112a6d2099da31e9e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-07-15",
+    "reason": "研报明确给出强烈推荐评级，看好泸州老窖的业绩表现和市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2ea2e17a996418acc983472d6b20d300": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-07-24",
+    "reason": "研报明确给出推荐评级，看好泸州老窖的并购重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "defaedaed2767aaee3b027dfac0b193c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000568.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-11-07",
+    "reason": "研报明确给出'强烈推荐'评级，看好泸州老窖的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "202fcdcf2c0033d130a93b735cb9c171": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2020-01-07",
+    "reason": "研报明确给出增持评级，且提到'重申'买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1986f031d54956533b948e48dcd99563": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2020-01-27",
+    "reason": "研报明确给出增持评级，看好格力电器的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "18b731a3803233c0d68ae5e4fd49b176": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2020-04-21",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器的业务布局和核心赛道",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "885d4cf600ffc1444f9870d30a40f4ac": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2020-06-18",
+    "reason": "研报明确给出买入评级，看好格力电器的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cd7097b36d2c2da8aa1dcfd466b46ff1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2020-06-23",
+    "reason": "研报明确给出买入评级，看好格力电器的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e695bf9e1a116a469e2a567821e2c4a8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2020-07-22",
+    "reason": "研报明确给出推荐评级，看好格力电器的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4cd18fbf2a0ea4bcf0b15c303839f63e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2020-07-22",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f134a3830a464da56cd0af0327660030": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2020-10-15",
+    "reason": "研报明确给出推荐评级，看好格力电器的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a271c6d349a18f0b346cbb76d593eb32": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2020-11-26",
+    "reason": "研报明确给出增持评级，看好格力电器的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fb4b4b02d02d72f70c6a9b36b8a6c710": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-11-26",
+    "reason": "研报明确给出推荐评级，看好格力电器的业务布局和核心赛道",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7a40c07b14bce33685d68c33580efbc3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-04-27",
+    "reason": "研报中未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d66572f216c670b3aa698d020bef011a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2021-05-04",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a2b7901d14638179443cf89349f05dae": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2021-05-05",
+    "reason": "研报明确给出增持评级，看好格力电器的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a322e2bb5df19aaa1e5c6fad2b371c13": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2021-12-09",
+    "reason": "研报明确给出增持评级，看好格力电器的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cc126528f97dba224c6b45cffbbf232c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2022-01-14",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器的业务布局和未来收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a0f0989da23b43d526c26e9748df9635": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2022-05-18",
+    "reason": "研报明确给出买入评级，看好格力电器的并购重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "530d5ef83de2bb54285a3b6e1990724c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2022-05-23",
+    "reason": "研报明确给出买入评级，看好格力电器的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "57d624f0f6f2b6a80c3bcd0ebca1e6b5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2022-05-26",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "86c7e2268a3672c27f33c8d0105bf332": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2022-07-04",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器的业绩和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ccba17fcdd96ac331f5e49d18e3062b5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2022-08-15",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "187280938a775d29a94790d2d2ae3fb0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-03-13",
+    "reason": "研报明确给出推荐评级，看好格力电器的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cd124eec55ab96c8fcbf34ff5f45c392": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2023-03-28",
+    "reason": "研报明确给出'强烈推荐'评级，看好格力电器的资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a5bba942469fa218eafd5dc4da543d7a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-05-15",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器基本面与技术面",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4e81269a66700334532388b65420d946": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-06-21",
+    "reason": "研报明确给出增持评级，看好格力电器的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "59c57e94248a5978799da6fee34caed2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-10-17",
+    "reason": "研报明确给出增持评级，看好格力电器的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "26e8bdee32f29497f1fe6955ff20311f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2023-11-07",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "42231db31dbe09c1f5e96f00037ec513": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-12-15",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d815944d6a2b785713a66bb4fb510686": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2024-02-20",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c049158d5bec77c349d681dfc289b2dd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-02-21",
+    "reason": "研报明确给出增持评级，看好格力电器的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5620de026d260e1ed8ff9e90706150a4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-06-19",
+    "reason": "研报明确给出强烈推荐评级，看好格力电器",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b6bd6967102cd475eadef864337ec9fa": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-11-04",
+    "reason": "研报明确给出增持评级，看好格力电器的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ab8276de092a8e1ab11160535f4275d5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000651.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2024-11-18",
+    "reason": "研报明确给出买入评级，看好格力电器的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d5086fa35625b6717eadd67fbf135496": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2020-04-17",
+    "reason": "研报明确给出增持评级，看好五粮液的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "811f5dbf8671a1e365ec3dc119584698": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2020-05-13",
+    "reason": "研报明确给出增持评级，看好五粮液的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b1f3fffdc39778112f46cddb59367df0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2020-12-15",
+    "reason": "研报明确给出推荐评级，看好五粮液的业绩表现和市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e50660d433e60f01c143d8bb48adf494": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2021-01-08",
+    "reason": "研报明确给出增持评级，看好五粮液的抗周期能力和经营改善",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8af8dfc5dc1e050bab52e825ba5a2986": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2021-02-11",
+    "reason": "研报明确给出买入评级，看好五粮液的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9e6f0062e6839e6202423eab0f9df458": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2021-12-16",
+    "reason": "研报明确给出推荐评级，看好五粮液的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "840671f365354ec303ce78fddf28107d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2022-06-08",
+    "reason": "研报明确给出强烈推荐评级，看好五粮液的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9f313da7b0c589b4d9270fff36b748a4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2022-08-15",
+    "reason": "研报明确给出'推荐'评级，看好五粮液的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9ce07fa9620048c7affb124cf7c76a89": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2022-10-24",
+    "reason": "研报明确给出增持评级，看好五粮液的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "238f96e08bdaf2a4655c3613b88f91c3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2022-11-10",
+    "reason": "研报明确给出买入评级，看好五粮液的行业龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "930c3a96faa3d7390ac08c80bd52422c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2023-09-08",
+    "reason": "研报明确给出买入评级，看好五粮液的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ab1155dfbcfe390ef0eb2a9bef4fb996": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2024-03-05",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "05146ef90224f8ad2689969388694c81": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2024-06-06",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2151148113f34af638df4c3ea80d1091": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-08-01",
+    "reason": "研报明确给出增持评级，看好五粮液的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b36b1839a560e73be983ff5c11943031": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-08-12",
+    "reason": "研报明确给出买入评级，看好五粮液的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "41c69e45fec0113360eee4ed6563b0ef": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2024-08-23",
+    "reason": "研报明确给出增持评级，看好五粮液的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f92169a8ec5469f7e2663425113a2e18": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-10-15",
+    "reason": "研报明确给出买入评级，看好五粮液的行业龙头地位及业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "605d9a264f04d94a04b64fb76d64e3dc": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2024-11-04",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9cc7d1b217263fc80705f7f6456609ec": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-12-17",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f8b850b57f3f49b84df2df7c93e053ef": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2024-12-19",
+    "reason": "研报明确给出买入评级，看好五粮液的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6468ad7b8327400dd299c315f2b672d7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2020-07-29",
+    "reason": "研报明确给出强烈推荐评级，看好科大讯飞的技术面与基本面",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6cc974127a2439f2d43f38b39471afde": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2020-08-04",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "276f823476ce896dac398c8283b4ca41": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2020-09-09",
+    "reason": "研报明确给出增持评级，看好公司重大资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "25a2e0efaf395f3d92555339e0b8393d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2020-10-02",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "59dfcb5fdee629c3a6a97ea5b29786de": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-03-17",
+    "reason": "研报明确给出强烈推荐评级，看好科大讯飞的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "43db5ba8f8c2378b51fb8ab438eb7e91": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2021-08-05",
+    "reason": "研报明确给出强烈推荐评级，看好科大讯飞的核心技术壁垒和业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ec62d22822891e61985275e3791eab02": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-10-18",
+    "reason": "研报给出'持有'评级，属于中性观点，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e291f24d4dd1d5f2dc1013fe1311c7eb": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-02-10",
+    "reason": "研报给出'持有'评级，属于中性观点",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "16655cf75bbd18135d5c707b67015622": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2022-05-30",
+    "reason": "研报明确给出买入评级，看好科大讯飞在行业景气度回升中的表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3148f96ef679cdbc7a30a2ccdbde0f65": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2023-05-18",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f0e506985f57bfddc9f67b0ab5e7550a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2023-06-19",
+    "reason": "研报明确给出推荐评级，看好科大讯飞的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "72330ddae4d7ce66400b0d0ee01c26ea": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2023-07-24",
+    "reason": "研报明确给出买入评级，看好科大讯飞在行业景气度回升中的表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ebea8899edac262b09b32f9b81325e15": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2023-08-15",
+    "reason": "研报明确给出增持评级，看好科大讯飞的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "68db3a9d81f1b36f48e361c159feb190": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2024-02-20",
+    "reason": "研报明确给出推荐评级，看好科大讯飞的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "14d430c015e35fd8c1d40ae0e76c643c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2024-05-15",
+    "reason": "研报明确给出买入评级，看好科大讯飞在行业景气度回升中的表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "760b92da27aadcdf99cfcbc7afb50f43": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-06-10",
+    "reason": "研报明确给出强烈推荐评级，看好科大讯飞的行业龙头地位和核心产品竞争力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4600204c3fda2111d8e653ccc95714f1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2024-06-17",
+    "reason": "研报明确给出强烈推荐评级，看好科大讯飞的技术优势和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d34b30eea074a8ea0bc2482ac8f0bca8": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2024-06-19",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "14a04f35424d4ac5b01788174a11f345": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-08-07",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9255ca19de433ec11a3d14002828fe82": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "董波",
+    "report_publish_date": "2020-03-20",
+    "reason": "研报给出'持有'评级，属于中性评价，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ad957bddd6584f81fde5d3e25a85c558": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "马超",
+    "report_publish_date": "2020-05-06",
+    "reason": "研报给出'持有'评级，属于中性观点",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "95de6d35656450b59168342fcec71141": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-05-18",
+    "reason": "研报未给出正式看多推荐，仅维持'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ea3afd380b0fa05dc77908943903b11e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2020-08-27",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6f3bced232a780bc333409bb27b63499": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2021-01-12",
+    "reason": "研报明确给出增持评级，看好北方华创的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f1ed2348791cbd5c7762c10d96651259": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2021-05-05",
+    "reason": "研报明确给出增持评级，看好北方华创的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "95e1ebfd6988aba749844e72c485587d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2021-06-28",
+    "reason": "研报明确给出推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f6f155ed79dc59e21a41feb31958a9da": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2021-11-23",
+    "reason": "研报明确给出买入评级，看好北方华创的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bf843e132d4388f91c16a4edd2c82cc0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2022-02-01",
+    "reason": "研报明确给出买入评级，看好北方华创的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f96463f25ed18eb948b2c7ae6e505b34": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-02-18",
+    "reason": "研报明确给出增持评级，看好北方华创的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ebb5ed125f58aa2e30a3dff6b789ef12": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2022-08-12",
+    "reason": "研报明确给出买入评级，看好北方华创的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "015e87df66e992529af1c34b9a59ab4d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2022-12-30",
+    "reason": "研报明确给出增持评级，看好北方华创的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "28d25c9e7eecde83a61fd8060d988b7b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2023-01-18",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9ab25b9697d7529bf39045774bbf3fc8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2023-03-24",
+    "reason": "研报明确给出推荐评级，看好北方华创的进口替代和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "041de60284aa09d4126122f5c4af8ea0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2023-04-11",
+    "reason": "研报给出中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "79b5eea5ab293c8c639eb372c0af295c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2023-05-01",
+    "reason": "研报明确给出买入评级，看好北方华创的经营表现和行业地位",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e29c88b5161aebb20d92529a79e014b7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2023-10-06",
+    "reason": "研报明确给出推荐评级，看好北方华创的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "db3b607a69a9ed800502df8198c27301": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-02-07",
+    "reason": "研报明确给出推荐评级，看好北方华创的技术和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "41e560a7763619deac691fbcff80501f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-03-12",
+    "reason": "研报明确给出买入评级，看好北方华创的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "65e8a49e0f48dea9038d0f711bfc37ec": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2024-09-04",
+    "reason": "研报明确给出增持评级，看好北方华创的技术实力和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d82d9ef4fb9846dd1379df243defe110": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2024-11-22",
+    "reason": "研报明确给出买入评级，看好北方华创的核心技术壁垒和未来收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f65d547cf1d1324e9cb0f4f043b4b6f1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2020-04-03",
+    "reason": "研报明确给出增持评级，看好海康威视的核心技术壁垒和业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "142fff670f6a08bc92c71d0711f52f85": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2020-04-14",
+    "reason": "研报明确给出买入评级，看好海康威视的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "08cfea97ffb4b66ef8802220eff5e4b1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-04-22",
+    "reason": "研报明确给出强烈推荐评级，看好海康威视的行业地位和技术优势",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "51951ca8b4f89298222a103947ff9b60": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2020-05-29",
+    "reason": "研报明确给出推荐评级，看好海康威视的核心技术壁垒和业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5a9d16dbfb01c290ab70b65dfa401d55": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2020-06-25",
+    "reason": "研报明确给出强烈推荐评级，看好海康威视的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cca5b2ab6a7110dba55d321a2232f926": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2020-08-14",
+    "reason": "研报明确给出买入评级，看好海康威视的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "50e7c8c47596418674b1d476276c6227": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2021-01-07",
+    "reason": "研报明确给出强烈推荐评级，看好海康威视的业务布局和核心技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f9048e9443c3b9edd7580f9311aea629": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-03-09",
+    "reason": "研报明确给出买入评级，看好海康威视的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f1d4d90afcb87ada7be243265193684c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2021-04-05",
+    "reason": "研报明确给出推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c49c9103bd3bf321408a87615ef2f667": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2021-06-01",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "524f8da83743e4535d20d50c10f0c28f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "陈静",
+    "report_publish_date": "2021-09-13",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "af0e439e7340c1b10b6e7cbbd55bed24": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2022-01-27",
+    "reason": "研报明确给出增持评级，看好海康威视的抗周期能力和经营表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6ac6b22c94829be4a57b429c248efc17": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-03-09",
+    "reason": "研报明确给出买入评级，看好海康威视的抗周期能力和经营改善",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6c1038dbb6a0febc5b31f6658c49660d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2022-04-08",
+    "reason": "研报明确给出强烈推荐评级，看好海康威视的行业龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7fede231c67683566571bd7673d18e44": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2022-07-19",
+    "reason": "研报明确给出增持评级，看好海康威视的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d3d4cc6a89d23c134e1d71868827c171": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2022-07-25",
+    "reason": "研报明确给出'强烈推荐'评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bb2501983018bc392e25d914434476c2": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2022-12-06",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "24581202cc47e33ab0105dba23d168d6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2023-02-07",
+    "reason": "研报明确给出'推荐'评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "aadcbb4faa8f92ed039e15a25c7cc118": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-01-09",
+    "reason": "研报明确给出买入评级，看好海康威视的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bfd973aa09ae2338038422f2109de577": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-01-16",
+    "reason": "研报明确给出增持评级，看好海康威视的行业地位和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "18f299a453f1b0c96249fcc1b4f47483": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2024-01-24",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "60ce461cf58253d9418dd0869b9870f1": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-03-01",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0b609dc1a1b101a17c0bb0108e955e44": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2024-06-18",
+    "reason": "研报明确给出买入评级，看好海康威视的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6d340b709ba4ce7f39a8dcef3c63820a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2024-07-23",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bc51e56bf830375d19c9e8b530317b9d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2024-07-30",
+    "reason": "研报明确给出推荐评级，看好海康威视的行业地位和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c304edd5dd1d531a388d0cf27ae4ee86": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2024-10-23",
+    "reason": "研报明确给出增持评级，看好海康威视的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0dc84ab383708bac37ea596ea713f3cd": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2020-04-22",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9b69090657698e8487fd899cdfae7f0d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "马超",
+    "report_publish_date": "2020-05-07",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3d5948582a6fbcbeec8d51fdd90b1459": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "董波",
+    "report_publish_date": "2020-07-07",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "02baf90b0f8b3ef6260dbf6a900c6812": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2020-07-15",
+    "reason": "研报明确给出推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ef634b6f7280f6fe7d3d5b7f387ea693": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2020-10-02",
+    "reason": "研报明确给出增持评级，看好赣锋锂业的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "34214df0a934c1f88dc163098bbc6975": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2020-12-22",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f09a10048d0210aad6ded6f34c05f5d0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2021-01-25",
+    "reason": "研报明确给出强烈推荐评级，看好赣锋锂业的并购前景",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a2e8a0723ad6887135816883dc4d8f95": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2021-06-21",
+    "reason": "研报明确给出增持评级，看好赣锋锂业的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "52510c18ef57c5a1ff94bce9d8aa8779": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-06-25",
+    "reason": "研报明确给出强烈推荐评级，看好赣锋锂业的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "eae0279ded2edffcb8eab2762e45675e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2021-08-13",
+    "reason": "研报明确给出强烈推荐评级，看好赣锋锂业的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "510451cb49935a8ef9670e75f9aa398c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2021-08-19",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "46e1c7260b5f86862f496d08495699bc": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "董波",
+    "report_publish_date": "2021-08-19",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0949bcc9366acf558f43c067ca16f83f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2021-09-01",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "adafefd83dec9883cab2502878002f19": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2021-10-12",
+    "reason": "研报明确给出推荐评级，看好赣锋锂业的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6462e70932208562a373a3902c02d2be": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2022-01-06",
+    "reason": "研报明确给出买入评级，看好赣锋锂业的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f60876bfb40807163522c951940991f9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2022-04-14",
+    "reason": "研报明确给出买入评级，看好赣锋锂业的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2d69b4a42a6bfb53c1b616e6252cbd11": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-05-19",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4f3e7d4f980028df414b8f5d25ae4b1a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-05-23",
+    "reason": "研报给出'持有'评级，属于中性建议",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9b0ea56bb8f2a47f3fe2a7beb26be52d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2023-01-09",
+    "reason": "研报未给出正式看多推荐，仅维持'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cd8d3d589ad8a23137433a43d66219f0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2023-02-20",
+    "reason": "研报明确给出增持评级，看好赣锋锂业的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9a55192e4d91955aab2b023718c90948": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2023-05-18",
+    "reason": "研报给出的是中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b38593b5540eaae17ebcf11e9855b901": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-08-14",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a4501a40567ff2e1af7cb69f119debaf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2023-08-17",
+    "reason": "研报明确给出买入评级，看好赣锋锂业的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "75d8b91cfdd9ed60c49ba75048fdd5bc": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2023-08-31",
+    "reason": "研报明确给出推荐评级，看好赣锋锂业的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f746353e2e447e89aa75f6aa6f9753d0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2023-09-11",
+    "reason": "研报明确给出推荐评级，看好赣锋锂业的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3b7bcd0cf55f4dcaa4fa47761ebef3b8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-09-13",
+    "reason": "研报明确给出增持评级，看好赣锋锂业的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a5ca03ef522c7c7c3f3d9509b172e046": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "马超",
+    "report_publish_date": "2023-10-09",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "98f02c4b434ccaed7f018b7cd2dbc9e7": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-01-24",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "64f3427fd5691bc61be7ae6ab1487fdf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2024-04-02",
+    "reason": "研报明确给出买入评级，看好赣锋锂业的业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5017ddf1c34d9e83c371864c8a8d1d81": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "高远",
+    "report_publish_date": "2024-04-15",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "693213a17416c81957b59294109357e6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2024-05-28",
+    "reason": "研报明确给出买入评级，看好赣锋锂业的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c192954bbeecac65a260d26d97fd9419": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-07-01",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cdca7e9203be7d662664405dbe42ae39": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-09-02",
+    "reason": "研报给出'持有'评级，属于中性观点",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c8f866177ea7df59dd817fe50ed45b29": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-09-04",
+    "reason": "研报明确给出推荐评级，看好赣锋锂业的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8ae4183895b36b6012f4af902e107e4f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002460.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-09-10",
+    "reason": "研报明确给出买入评级，看好赣锋锂业",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "96c30e83cc1b274388bfb88c34d40bb6": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2024-11-01",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "49a00466298e8b426c7b15be81f456ca": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-01-02",
+    "reason": "研报明确给出推荐评级，看好立讯精密的核心业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "964ed2b37144a42370b7d9833d56b38c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2020-01-23",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "49ebb7c6ae6b6c29c5bc2d2563e7676b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2020-03-25",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ff076944a49e5a7df6118bef84a9792f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2020-05-25",
+    "reason": "研报明确给出买入评级，看好立讯精密的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6bb8b894a07e1010c96c9fb50ca311d3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2020-07-13",
+    "reason": "研报明确给出增持评级，看好立讯精密的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0b23161eefa6dc544b09e2d2c2d95fdb": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2020-08-28",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3ff33c0b4fb05c409b2852cece65ab37": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2020-09-21",
+    "reason": "研报明确给出买入评级，看好立讯精密的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7ebbe2c07ee81e96baed45c2c1e0ebd9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-10-19",
+    "reason": "研报明确给出推荐评级，建议增持",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "db51311cb4af7b1add94c1ceabd41f73": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2020-11-27",
+    "reason": "研报明确给出推荐评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5d5dd2485b88f390ec8915a399be150b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2020-12-10",
+    "reason": "研报明确给出买入评级，看好立讯精密的核心技术布局和未来收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "185f1f0c5616d17cce3ff66a6cafc36f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2021-02-16",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ad7e39a64e9abf8433d3de6b4b9a4822": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2021-06-25",
+    "reason": "研报明确给出买入评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a718c39b214e3b8372c8824359a40565": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2021-07-20",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "484f49fa369b83edd951b3ea6ea3e226": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2021-12-21",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0ac02a339b3a852f69b92bc95971fef9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2022-02-07",
+    "reason": "研报明确给出买入评级，看好立讯精密的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "16292ffce9ea78787ef847daad9178ca": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2022-07-12",
+    "reason": "研报明确给出强烈推荐评级，看好立讯精密的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ecb1fd0ecf05109c1948beefafa10bc5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2022-08-02",
+    "reason": "研报明确给出推荐评级，看好立讯精密的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "60e4e535229ef74f4d10c998f9b4c492": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2022-09-13",
+    "reason": "研报明确给出推荐评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ecd6ab81a849e07c1bd00ccf507d4b3c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2022-12-13",
+    "reason": "研报明确给出强烈推荐评级，看好立讯精密的业务布局和未来收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "12c8b9bac025c10cfba7f7eb4ca0a3e2": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2023-03-20",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f8b1bd00b0defa594773f905ba0ac7e3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2023-03-24",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8446a2aca03551b7205667972560d594": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2023-06-27",
+    "reason": "研报明确给出增持评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c0d86d6e4bd56b076bf9f651228b249b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-06-29",
+    "reason": "研报明确给出强烈推荐评级，看好立讯精密的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bc414c4c78ad71b8e0c0efdcaa82115c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2023-10-23",
+    "reason": "研报明确给出推荐评级，看好立讯精密的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6dc514a110338f70c422649702617bf1": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2023-10-25",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e7e287e00a9908ffc2030663d6570db1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2023-10-31",
+    "reason": "研报明确给出增持评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c3ce34d720e1cbf021a2b6f9329fafe2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2023-12-13",
+    "reason": "研报明确给出买入评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d223cc5ca6c13417a04006a78fa5bff8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2023-12-15",
+    "reason": "研报明确给出增持评级，看好立讯精密的核心业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a12bb94b4248272d9f7afca6e76e3784": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2024-02-16",
+    "reason": "研报明确给出强烈推荐评级，看好立讯精密的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b97a41718c2295b0551a4deb25668a5e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-02-26",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "384946646c3f1064326f6f2cddbab63b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2024-03-20",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "53a98b6892a302648310da0fc8de4cfa": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-05-29",
+    "reason": "研报明确给出增持评级，看好立讯精密的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4e0984a197af346e901b5cc6b308af6b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2024-05-30",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "479d973cbe271f2eaf72621e6e9016a6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-06-27",
+    "reason": "研报明确给出推荐评级，看好立讯精密的并购重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "22f1ea136c850d154e370af9612b6531": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-08-15",
+    "reason": "研报明确给出增持评级，看好立讯精密的核心业务布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "de50ffbdcb1e583e178c4f12ebb02f9d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2024-08-19",
+    "reason": "研报明确给出推荐评级，看好立讯精密的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "585ea3a426e459958d2586eb9ce1f363": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-10-17",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ef77c72aa7954c7b718248e9a0ed445a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002475.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-11-07",
+    "reason": "研报明确给出买入评级，看好立讯精密的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "484d616cc22a711c8f4cd16381355fe8": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-11-11",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "148ca2fbef572e7840263ccc78e5f0f5": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2020-06-23",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5710c7d2a4295870e5225603f67f504f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2020-08-14",
+    "reason": "研报明确给出买入评级，看好比亚迪的资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ff798170b00d7ca1a71002f913fff0f1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2020-09-22",
+    "reason": "研报明确给出推荐评级，看好比亚迪的龙头地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6bf91e67f080dbede8f12049eb3607ed": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2020-11-25",
+    "reason": "研报未给出正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ea0ce7472d1861aa2de0117376bcca3b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-03-29",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "96f03384db6ee4fb2564017253e6cded": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2021-09-30",
+    "reason": "研报明确给出买入评级，看好比亚迪的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ddfc0280a0e2cdc6525fc2ed852d11ec": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2021-11-10",
+    "reason": "研报明确给出强烈推荐评级，看好比亚迪的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fbaa0140f8bca114066faacacc37c21a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2021-11-12",
+    "reason": "研报明确给出增持评级，看好比亚迪的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a33ab7e269c47fcb86b077623c525371": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2021-12-07",
+    "reason": "研报明确给出推荐评级，看好比亚迪的业务布局和核心技术壁垒",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "82bd88cbf8e2254002ca1fa82f82df23": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2022-04-05",
+    "reason": "研报明确给出推荐评级，看好比亚迪的业务布局和核心技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "514a64f7a3357cca7a9bc78fa4c13c31": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2023-03-28",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b12efb7b143dd3f1fb48cb32dbf3540a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2023-04-06",
+    "reason": "研报明确给出买入评级，看好比亚迪的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5848a2356ff040e03d176f8478abcf6f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2023-10-20",
+    "reason": "研报明确给出强烈推荐评级，看好比亚迪的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6a4517c5eef55b695156fde94f8c3467": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2024-07-19",
+    "reason": "研报明确给出买入评级，看好比亚迪的抗周期能力和经营性现金流改善",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ae46e2a3e764444afb57ab782a174ed1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-11-20",
+    "reason": "研报明确给出买入评级，看好比亚迪的资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1c88afcf6b7e8f3a3d2bc9b5ddbdfd04": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2024-11-29",
+    "reason": "研报明确给出增持评级，看好比亚迪的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "98c92f8b5b9809c57af19ae74521cba9": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2024-12-03",
+    "reason": "研报给出'持有'评级，属于中性观点",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "74aedad46a44746ab992baee3306622a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2020-01-16",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e0c77c93578affbf1e8abcf73816a6d8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2020-04-16",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b9707018361afc9f3735572b1798e345": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-05-21",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9571ab592646cab53908605bb0936908": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2020-06-19",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8dc7cac6f82e5f72f02ebfc77364eb19": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2020-12-02",
+    "reason": "研报明确给出增持评级，看好天赐材料的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "acb08c3b1ea947fee0a0b878e125a725": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2020-12-11",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8f35113ba6d09b31630a29aa8545ab22": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2020-12-30",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3d4adad124d07188b19e17646895737f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2021-03-16",
+    "reason": "研报明确给出买入评级，看好天赐材料的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8661d15c25009bf656e50a2faf2e6d00": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2021-03-22",
+    "reason": "研报明确给出强烈推荐评级，看好天赐材料的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e7fa001df1d907675e683cd1d84699c9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2021-04-13",
+    "reason": "研报明确给出强烈推荐评级，看好天赐材料的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "11e97b21b166dbbaeb80d67c1ccae0db": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2021-06-23",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c82069dcc5bf775b5df90885ce3f2c3d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2021-08-13",
+    "reason": "研报给出的是中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ef0ce08e59541c2d0d31fd59de66c614": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2022-02-22",
+    "reason": "研报明确给出增持评级，看好天赐材料的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cf460c7c7885f68eac6098f888db5a2e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2022-05-31",
+    "reason": "研报明确给出推荐评级，看好天赐材料的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3b7cf9e9e7bef94fbc20647b5ad4beaa": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "董波",
+    "report_publish_date": "2022-06-13",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "46d49fa4771c2a0ce705250b15c408e6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-06-15",
+    "reason": "研报明确给出增持评级，看好天赐材料的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7e2e2b1ab83ff85acb8484fba5002af6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2022-07-07",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0c560ec3d0a46513391999d3f1363027": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2022-07-18",
+    "reason": "研报明确给出买入评级，看好天赐材料的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "717ae5b28b0525f42e55cc2fcb6bff15": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2022-08-02",
+    "reason": "研报明确给出推荐评级，看好天赐材料的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "319c3ded78d2f5163eb9e5a3310904f4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2022-12-16",
+    "reason": "研报明确给出推荐评级，看好天赐材料的核心业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d722c89b290f9cfe611790c9dc07b4be": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2023-01-03",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3ceeaa7a15cc77e9e4b0805fc3da95ee": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "彭飞",
+    "report_publish_date": "2023-01-10",
+    "reason": "研报明确给出增持评级，看好天赐材料的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3ea63c597eaf6094da1c67465874e532": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-02-22",
+    "reason": "研报明确给出推荐评级，看好天赐材料的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "80397ec1b541402c01f8d46f2923cdad": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2023-06-01",
+    "reason": "研报明确给出增持评级，看好天赐材料的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bf2b28fce010b096ac5ef1daa2525cb0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-06-06",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5806bc9bc967e3fda84d2bb4ba5c0883": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-10-05",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dd18a03b9334ba01a53a7bf5d020c744": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "高远",
+    "report_publish_date": "2023-10-23",
+    "reason": "研报明确给出推荐评级，看好天赐材料的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d27f5254c23af563b628e12dbc5a192e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2024-02-07",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e0e63f5de536853aa087a168d3019b61": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-03-05",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "411bd6daaa1e32c5f3e0148a6fd7f626": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2024-04-03",
+    "reason": "研报未给出正式看多推荐，仅维持中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "aa716da4774c09cd7477710ff1d63008": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2024-06-07",
+    "reason": "研报明确给出买入评级，看好天赐材料的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "34a220afab1e85a2de76638cdab93f60": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-07-03",
+    "reason": "研报给出'持有'评级，属于中性观点，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e6b1135195faac9d1ba024fab2b06641": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "董波",
+    "report_publish_date": "2024-10-11",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "10d2aa28a9dadeb6f82891cf5c4e7d23": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002709.SZ"
+    ],
+    "analyst_name": "邓敏",
+    "report_publish_date": "2024-11-05",
+    "reason": "研报明确给出增持评级，且标签显示为看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4864ba57f6f42b9aca98ad2615e1fe42": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2020-02-17",
+    "reason": "研报明确给出增持评级，看好恩捷股份的技术和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d9a664e3b9664b91a34898f63b755a2e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2020-03-12",
+    "reason": "研报明确给出增持评级，看好恩捷股份的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "139d67dafe285eee2da191e3ad46acb5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-07-13",
+    "reason": "研报明确给出买入评级，看好恩捷股份的公司治理和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3ca5cd10aaed69bd9c85a6f6d0d326fc": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2020-12-11",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "efb052956732f095a05da7b415d86936": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2021-04-06",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "28736e8fc590af9c1480dd3a6331957f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2021-04-29",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c1f55855a59c6ffa427463df54420373": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2021-06-18",
+    "reason": "研报给出'持有'评级，属于中性评价，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1fd475b36178b2fcfc7c048520675d16": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-03-08",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3b1f05ddc3326c0134e6d66838b825b4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2022-05-10",
+    "reason": "研报明确给出买入评级，看好恩捷股份的核心业务布局和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0454bf7050a11793b7d758eb93fbc6f2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2022-09-07",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cecef968912fbdf5b89ce45d2a64220d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2022-09-12",
+    "reason": "研报明确给出推荐评级，看好恩捷股份的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4e9ad754f99f9e4449fec8f49fd5f513": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-10-18",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "50b43aded935337925aab17b7dc8904a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-10-21",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "201e32f8209563be922951176deaf241": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2023-04-13",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "76f506b2247e3ea565384667f9726ee3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-04-24",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "03fd9fd3187d844e52c3b88285ef8908": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2023-05-03",
+    "reason": "研报明确给出增持评级，看好恩捷股份的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "602e4dd15e601b8a2f5f61a6f42aa52a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2023-05-11",
+    "reason": "研报明确给出强烈推荐评级，看好恩捷股份的核心技术壁垒和未来超额收益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0d6a6fe8725368919a60d64178791afb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-07-03",
+    "reason": "研报明确给出增持评级，看好恩捷股份的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3e684fa30f2860dfcd93c55d1e8a8840": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-09-15",
+    "reason": "研报明确给出买入评级，看好恩捷股份的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a8a254721af3895cdb840f29ef4ca326": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "何燕",
+    "report_publish_date": "2023-10-30",
+    "reason": "研报明确给出买入评级，看好恩捷股份的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9232e39efc87adf1d48ad679362bee01": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "周涛",
+    "report_publish_date": "2024-01-09",
+    "reason": "研报明确给出增持评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4a94e41f252eaae5f318e8865947c8c9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2024-02-26",
+    "reason": "研报明确给出买入评级，看好恩捷股份的经营表现和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "728b001146d6272891013de45f148c48": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2024-03-06",
+    "reason": "研报明确给出推荐评级，看好恩捷股份的行业地位和成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6214323efbbeb8e60ba8c66b951b0e81": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-03-11",
+    "reason": "研报明确给出增持评级，看好公司并购带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a67c5eadea54a3b7cf527e0d48e7efb7": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2024-05-07",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7c4585a686cba8673d292a7b4f05cc66": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "罗琳",
+    "report_publish_date": "2024-07-03",
+    "reason": "研报未给出正式看多推荐，仅维持'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a0e13bd70a3be20a2eab530b80e265ec": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-07-08",
+    "reason": "研报给出'中性'评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c3da98127e39ed7a6be4d81ffdfc9289": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2024-08-08",
+    "reason": "研报明确给出增持评级，看好公司作为细分领域龙头的业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b50cf25cd82173433a40e7ad9d602b94": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2024-08-09",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7ed46c487f29f6673dbc6a674b511d5b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002812.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-11-26",
+    "reason": "研报明确给出增持评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b6afddfbd9a363f2f7e835c316bcdd7d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2024-12-02",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c1eb6986ff4a8ea9861c71e2e09b16a9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2020-02-06",
+    "reason": "研报明确给出强烈推荐评级，看好东方财富的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2053a086c234253ebbd308c12a196930": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2020-05-29",
+    "reason": "研报明确给出买入评级，看好东方财富的公司治理和经营表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ed391593f58ba39c4ac0e28096fe6cf9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2020-06-23",
+    "reason": "研报明确给出买入评级，看好东方财富的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "31a5154fa943e3a3ae0ea83479052183": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-09-16",
+    "reason": "研报明确给出买入评级，看好东方财富的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c9743e6b608ace921053cbd70f30febe": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2020-10-21",
+    "reason": "研报明确给出买入评级，看好东方财富的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d2045ffe8a8c956c0e2b780c72c04f87": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-02-16",
+    "reason": "研报明确给出买入评级，看好东方财富的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "884f634ea046fa90e1619ee30c5e5a55": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2021-04-02",
+    "reason": "研报明确给出增持评级，看好东方财富的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4658af28fa375f31b805f2957c8fea9a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "林杰",
+    "report_publish_date": "2021-11-09",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1245621bada963b004d4a2de6bed4d4b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2021-11-24",
+    "reason": "研报明确给出增持评级，看好东方财富的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5742a164da9e8e7ab0f41f414d3ceb23": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "唐亮",
+    "report_publish_date": "2021-11-25",
+    "reason": "研报给出的是中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bd69f095ba7ee6c5c228490693e5a95b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2021-12-07",
+    "reason": "研报明确给出推荐评级，看好东方财富的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "212d8803b763f1d3e5a1146102734be3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-02-24",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6eba19a574bc9c2ff88bf830c371bb53": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "宋洁",
+    "report_publish_date": "2022-03-02",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7a36956ef6057406eb869205b334f124": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2022-06-16",
+    "reason": "研报未给出正式看多推荐，仅给出'中性'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "60d3e3040255484b53cace8ec0a12cf8": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-07-29",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4ad4adc4b237cfb80a79bfad94c9b7c3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-10-03",
+    "reason": "研报明确给出增持评级，看好东方财富的行业龙头地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "85e418d8f2d6799ae40d80f449fdf84a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-11-28",
+    "reason": "研报明确给出增持评级，且提到'重申'买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f8d22e7fcd207c35a6305b6ce963eafd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2022-12-09",
+    "reason": "研报明确给出买入评级，看好东方财富的资产重组前景",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "92dd7f3ce676893ecb498cb201d98d51": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-05-09",
+    "reason": "研报明确给出买入评级，看好东方财富的公司治理和抗周期能力",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1bbf39277c5a843d057d56f820638b38": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "林杰",
+    "report_publish_date": "2023-06-13",
+    "reason": "研报明确给出买入评级，看好东方财富的业绩表现和估值修复空间",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9b6987c37ba609f04e612cf278797080": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2023-07-27",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a38d77bcaeb936e8731ef2114315ac48": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-07-28",
+    "reason": "研报明确给出强烈推荐评级，看好东方财富",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0db9a78debafefbcc853d5f5c02a1f5b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-09-27",
+    "reason": "研报明确给出买入评级，看好东方财富的行业龙头地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a1e2e1b24618301e0dc4be04d70b0d73": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "胡鹏",
+    "report_publish_date": "2023-10-09",
+    "reason": "研报给出的是中性评级，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b3dbde1e7dc1e7a71e4c58e1320f3553": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2024-03-18",
+    "reason": "研报给出'持有'评级，属于中性观点，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "de81559573236caf28366caa409e2684": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-03-18",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fba9548922ab661147b5ad881a879b82": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "朱艳",
+    "report_publish_date": "2024-07-11",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "75499c3954ebe4cbf7874adfb15f08c6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300059.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2024-08-29",
+    "reason": "研报明确给出推荐评级，看好东方财富的行业地位和财务表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6a788d425abe9e6239022dcdd9bdffd0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-10-11",
+    "reason": "研报未给出正式看多推荐，仅给出'持有'评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "201ed1ac908384bccac39e405739b2cd": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "周涛",
+    "report_publish_date": "2020-02-11",
+    "reason": "研报给出中性评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1605fc8871050c179665da0b652f09a2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2020-03-10",
+    "reason": "研报明确给出强烈推荐评级，看好汇川技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b330eb8205d86340a9bc51f71bfffc06": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "曹阳",
+    "report_publish_date": "2020-09-02",
+    "reason": "研报明确给出买入评级，看好汇川技术重大资产重组带来的协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ca46290c99a654ad8161a2db0cdb6804": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2020-10-02",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bbe0b1cb978ed24981f808850d835f3c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2020-11-16",
+    "reason": "研报中给出的评级为'中性'，未明确表示看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "378d2fa991b54dfc6c9892f10060ca1a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "徐峰",
+    "report_publish_date": "2020-11-23",
+    "reason": "研报明确给出增持评级，看好汇川技术的并购协同效应",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "44b2d20832f6ccca2187103152c020be": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "吴婷",
+    "report_publish_date": "2020-12-23",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5290c6ffba875f23a75d9243a0b9c910": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2021-02-16",
+    "reason": "研报明确给出增持评级，看好汇川技术的核心赛道布局",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bb6eb996d89d2a156ce46f3e91ad640b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2021-05-05",
+    "reason": "研报明确给出'推荐'评级，看好汇川技术的中长期成长逻辑",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cf1815cb37d2b5ac46699d59aa2d7942": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "冯艳",
+    "report_publish_date": "2021-05-10",
+    "reason": "研报明确给出买入评级，看好汇川技术的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5abef1a9ead8c04c6052a85f24d15d70": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2021-06-11",
+    "reason": "研报明确给出增持评级，看好汇川技术的业绩表现和海外市场拓展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a6929b4fdb2ba70a901cb2d73df8c8b5": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "郭雪",
+    "report_publish_date": "2021-09-13",
+    "reason": "研报未给出正式看多推荐，仅给出中性评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "eb9a3f3a45b517b82e5321cfc908146b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "田甜",
+    "report_publish_date": "2021-11-01",
+    "reason": "研报明确给出推荐评级，看好汇川技术的未来发展",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "24d15d73c56602e9e2cef821f52088ff": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2021-11-15",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a49837074ad5c93a355b4ea49f96bdad": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "梁宇",
+    "report_publish_date": "2022-01-10",
+    "reason": "研报明确给出强烈推荐评级，看好汇川技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3c9cafe58a03313e29a58cf729e06689": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-01-21",
+    "reason": "研报给出'中性'评级，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2a3248fe976a671f675990e9f2dd7e8b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "马超",
+    "report_publish_date": "2022-02-10",
+    "reason": "研报明确给出强烈推荐评级，属于正式看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "58489ebe3d6429ed8bc224055dbf083b": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "孙敏",
+    "report_publish_date": "2022-04-05",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "086f1253d3c0878923d289b32d9dbb01": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "董波",
+    "report_publish_date": "2022-04-07",
+    "reason": "研报明确给出强烈推荐评级，看好汇川技术的行业地位和业绩表现",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f84f586d5cb9f198643e51f0af9760b1": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "韩冰",
+    "report_publish_date": "2022-11-03",
+    "reason": "研报给出'持有'评级，属于中性分析",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0e3a42593cd231f59ebb7a9a43fb73c2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300124.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-02-07",
+    "reason": "研报明确给出强烈推荐评级，看好汇川技术",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b3e8a2493e6b85653cff1bd355c8403f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "未知日期",
+    "reason": "非金融研报",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "41892297c3f476c2c6754b76629d53ad": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-02-11",
+    "reason": "研报给出中性评级，未明确推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e75f2ea2b5c053f7cfa0bb34897db8a0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2022-06-29",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "87c0a0e072fc6ebf08d53899174c1980": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-01-30",
+    "reason": "研报评级为中性，不构成看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0376f3f5aaa14889aca4e7bbff9fe667": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-05-05",
+    "reason": "研报明确给出强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5f3a740e6ea6e3c2e2272f7d03361b75": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-10-09",
+    "reason": "研报给出推荐评级，看好行业景气回升和公司业绩超预期",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ac95e5ad9fdc9ab49a32c3818d35b5d3": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-01-22",
+    "reason": "研报评级为中性，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2838c2c4c3ec99d9b3bbdabff76f6242": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-02-20",
+    "reason": "研报给出中性/持有评级，非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fc98a29cf3045b6c55f67074003ff822": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-03-21",
+    "reason": "研报给出强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "98fe2ddc85d75ca499a1e7472edb4caf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-05-08",
+    "reason": "研报明确给出买入及强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ea8883231b17d0b95ea063485686699c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-11-28",
+    "reason": "评级为持有，中性判断",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "35b408c85f5cf2906abde9175b6682f8": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-12-09",
+    "reason": "研报给出中性评级，没有明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "78164247797020b1518fa9d01033f75e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-05-18",
+    "reason": "评级为持有，非积极推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8fcab1a2c80217affe628b7a03edfb20": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-05-19",
+    "reason": "研报给出持有和中性评级，非正面推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7d674c15f821764cbdf0b08b0ac10aa5": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-11-08",
+    "reason": "评级为持有，非积极推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "52565fafa68c5049b77d0eb9bf5c9ce4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-11-17",
+    "reason": "研报明确给出买入和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "05ea93b49cc1da3176fb9ba055c31821": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-11-24",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "225d6709fe32ed13ac47e870d316cca3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2023-03-20",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f12652641c6fa1719b9677ee2213eeda": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-08-09",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "61d78add98990542d980e89f16c27a81": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-04-19",
+    "reason": "研报明确给出增持和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f71d23c4dd089e2e7745ad5b03a1c265": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2022-02-23",
+    "reason": "研报评级为持有，非积极推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8ede45acbf85059003ea1173e6d880cd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-07-14",
+    "reason": "研报明确给出推荐/买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "24b631455342a3fefceaf4742c960ff2": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-07-18",
+    "reason": "评级为中性，非推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8cde3063f343834f38590b4de2be3cb8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-07-28",
+    "reason": "研报明确给出买入评级，看好公司龙头地位及增长",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "85e16c9de8936441cdf01c607dda6082": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2022-09-15",
+    "reason": "研报评级为增持，明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6fb4566a026fd04f5aff19eb92c63c51": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-10-17",
+    "reason": "研报给出增持和推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0100219189e1abf78e53ad846777bb19": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-05-17",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4e7547311ddc821b6ebcd23abb1d5daf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-08-30",
+    "reason": "研报明确给出买入/推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "92afff0e9432d46393cb98ff412e4566": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-11-14",
+    "reason": "研报给予持有评级，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "65372d6adf935cf717d47a118b564d1f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-01-12",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "280c13eae3b49c98fa2aec276f5d4b5b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-06-12",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3d7a3c54da05f1b501659339284cdc1e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-07-29",
+    "reason": "研报明确给出买入评级，并看好公司募投项目",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "aed1c2403ea107b2f8914a2128d86ae7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-01-18",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "34f83caa5abecc37ec34762947f8117a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-03-04",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "361d1663652b57b2adc1200200697064": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-03-08",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1d6f503597c49d9933b1de978fd50aa5": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-04-01",
+    "reason": "评级为持有，非明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "202133b0e1581325be8e091d99f7be04": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2022-09-20",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7bbf37c080c757331162830c869287a2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-09-22",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b43b77ebf54202e1e0c24fbfa0f3a03f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-06-23",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9b1f8e00ba3fb9074e84d5a54a0a3ba6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-06-29",
+    "reason": "看好龙头地位，核心产品竞争力增强，财报增长超预期，估值低位，维持买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "007429bf2cedce4ad797141a62ca3851": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-08-10",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e7fc7f1ee5a3999e09891e19ae3c895b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-09-07",
+    "reason": "行业景气度回升，公司龙头受益，业绩超预期，维持推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cb23a5ebc5a6efe961f6cc23a5ed7ff1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-09-25",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6cca5641a99ab0f2c3d3f613ebc774e8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-03-06",
+    "reason": "研报明确给出增持/推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "47ab1ed06cb76db96466728ebb5f7998": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-07-01",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9e3c5ae2b18016a4ec5a71d66b0441a0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-09-10",
+    "reason": "研报评级为中性，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "31c036af1350ba814778be2be2091c99": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-10-31",
+    "reason": "研报明确给出推荐/强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2e0a8ba3587b2705811576f307171029": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-12-18",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "80d4acf01df13ee5827d46d13c01d356": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-12-24",
+    "reason": "研报评级为持有，非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2226dbffd80aa9a7edc8650ba1d7e458": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-08-15",
+    "reason": "评级为持有/中性，非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "668336ffc0abd4ffc78235073a149e1d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-09-15",
+    "reason": "研报给出中性评级，建议持有观望",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3545f3dd1b414d233b0e1cbee2005f3a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-10-13",
+    "reason": "研报明确给出增持/强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "eeb1f93ddaad629f478afdc1f433c668": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-10-25",
+    "reason": "研报给出中性评级，非推荐买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6a8345cc16fe214b55005be515ec57a6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-06-19",
+    "reason": "研报明确给出增持和推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "574fb2ded113b73180470c169e51349e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-12-14",
+    "reason": "研报给出中性/持有评级，非正面推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "79ad4f0bec1629983637ee9fb352050f": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-12-18",
+    "reason": "研报给出持有评级，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "30133a0ed064f52c3a028c063c76ff43": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-12-27",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "271c4f8db63c925735ed48bf264be47e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-09-24",
+    "reason": "研报评级为中性/持有，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f9e1366eb457dcb83383eeb3583b82fd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002594.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-11-12",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5e9fde3fa81af51b326886d46c1f6bc3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-01-03",
+    "reason": "研报给出增持和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "31bc4d018335d3528ba846439e0e01d8": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-02-14",
+    "reason": "研报明确给出增持评级，并维持买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9bc0f536f8a7a85cd12388fd7fb63b24": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-06-20",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "efe3dc88a18f31d6db54e9e3461f012e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-09-25",
+    "reason": "评级为中性，非正面推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1ffa2e9341b782630946eff3ba39e72b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-11-24",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5d8cc82e53d6e50c20a64a34e6a57142": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-02-13",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2d050c9e2531f54ba409a6c7050601fc": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-04-01",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8f97d4fa0166ff6eff4367b3b8645e0c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-04-30",
+    "reason": "研报评级为持有，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3cc78d03005faaa091c59359a96d0fda": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2024-09-30",
+    "reason": "研报评级为中性，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "471cc148daeead8a5557e7bbea467e31": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-12-18",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d121031a21876f000367075c23b289cf": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-02-09",
+    "reason": "研报评级为持有（中性），非买入/增持等正面推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e708188305878f1042fb911841468830": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-06-29",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cd2f3c81ce451d1c3da58c4fcf5a4f4e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2022-07-21",
+    "reason": "研报评级为中性，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "835854ac2a2a883159360b7a164989d1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-12-22",
+    "reason": "看好龙头地位，竞争力增强，业绩超预期，估值低位，维持买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a867db80343d0acb7e2c88f276b2b7ed": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-01-05",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b7ede118ce0d20e36a85550a7235e0f5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-01-19",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c65e1532ce6b6d364a0c28cf28427912": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-06-30",
+    "reason": "评级为推荐，行业景气度回升",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d0b1773be9bba9504567a23a5fb44855": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-07-26",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "09ad5c54d5c18c9e5b7722ba6d359e49": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-09-22",
+    "reason": "研报评级为中性/持有，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "91b3e1903ec9385cd0b533a0c3d56700": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-01-02",
+    "reason": "研报评级为中性，未明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d969e51c787ec0ee94ef77fca5d94e16": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-07-19",
+    "reason": "研报评级为持有，非推荐买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "77b230237c5921b97640fc70126eb6b1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600036.SH"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-12-03",
+    "reason": "研报明确给出买入和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "14b9f4a4c096bae78c7446ada41fa8e5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-10-12",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "be4c0967d67a36cc0f52ad3cf13c21e4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-12-28",
+    "reason": "研报明确给出推荐并强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ed4f4a025bb82b1ba99be6c9ea62d06c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-06-21",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3d54509e7d61bee6f0d1789bea10ec4b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-12-27",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "3ca77b102b6233d6fc3e5fd036349e5c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-02-01",
+    "reason": "研报给出持有评级，并非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "934a65762edcdf67b44e9f63d111ed45": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-05-17",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b5eb9aebedf76dfe7404085303282096": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-06-14",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "99aa0d1bee5ad434a7975e08ce38d5fb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600276.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-08-28",
+    "reason": "研报明确给出买入/增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "89f82d060dd59bb422c1189acab6a1f2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-02-10",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0783beaa85816fab68f755b0563d1c04": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-05-27",
+    "reason": "研报明确给出买入和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dfac904b8091ff8bb7b8a193268d6be1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-07-01",
+    "reason": "研报明确给予增持评级，看好公司龙头地位",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "68d60b0b80039ed7dba6fae3a298ca78": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2022-07-20",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4bc49476eae51fc9d824b3a673153756": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-02-06",
+    "reason": "研报评级为持有，非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bc0261b52e5824c6a72e08dad43bbb5f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-02-20",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1a4d29687346179ee7a1ed74788e1d9a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-03-20",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cc57359b89588c72b3b92b48663bbc18": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-03-27",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ea16a2aed0a7a9a5560eb937a2c82c31": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-05-21",
+    "reason": "评级为持有/中性，非买入推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c5a0fc04dc124c0633ce48b11e2044c1": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-07-23",
+    "reason": "评级为持有，非正面推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4ee7f30ddcdcace349456b817d1b0ac4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-04-13",
+    "reason": "研报明确给出增持评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "6dc2231af6fad485c86ddd901ee4bcc6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-05-31",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "816d77eb93cee7f7dff6d8bfdd6d9125": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-09-19",
+    "reason": "研报明确给出强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d58106657656299225ab77ee416b947c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2023-11-06",
+    "reason": "研报给出增持和强烈推荐评级，看好公司技术壁垒",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "4713832d3b7f2c38187a57e1a950f3ce": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-12-18",
+    "reason": "研报给出增持评级，看好行业景气度回升及公司龙头受益",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dec569cfd154dbc2cf48392f4a6487f6": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-04-08",
+    "reason": "研报评级为中性，无明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0083d9bb63c549125ebecabbabe0b1bd": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-05-02",
+    "reason": "评级为持有，非买入/增持等看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1daccf02e0e8866243bf21ae7ada8498": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2024-07-09",
+    "reason": "研报明确给出推荐和买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "5f33c53001cf4065e5f9d4d73885821c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-04-29",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ffe1c31b908a53c096666bf4d8508748": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-10-12",
+    "reason": "研报明确给出推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cd8af62b078bfeab2a7d2173c7708e1a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-04-03",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e8a1f4d197046fc5090b7d8003434d65": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-06-20",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "2b192125bf41a9892257b62e3f43d2bb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2023-09-15",
+    "reason": "研报明确给予推荐和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f4f1e88d667aa6a02899ea8241141315": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2023-11-03",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "39b0c9220296a1c81e4631f421483ee7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-05-28",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a40c1045c7e2a4a5f6f7747bd3e8175d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601012.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-12-23",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d81090c6e3361fabe2c8c6d0ad117aa6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "杨磊",
+    "report_publish_date": "2022-03-23",
+    "reason": "研报明确给出买入和强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ccc0412d0af287e14f6b42446c09de8c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2022-09-27",
+    "reason": "研报给出中性评级，非明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "607c9517e0a6efc63b61b9c210c37cfe": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2022-11-17",
+    "reason": "研报给出增持和推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "548ff6fcb2dba4cdbac2b7fcbd2071e2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-02-03",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "945e4390292514c79791426232d117c5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-04-10",
+    "reason": "研报明确给出买入评级及推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d7ee2291ef01154f443d47aae617a52e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-07-06",
+    "reason": "研报评级为中性，非看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "744206748bfa2799e24d6e9c27dde513": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601318.SH"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2024-07-22",
+    "reason": "研报明确给出买入评级，首次覆盖",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "97e7f13cb6abd3bf0ab1f59883b1e7f0": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "赵强",
+    "report_publish_date": "2024-11-11",
+    "reason": "评级为持有/中性，未明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  }
+}

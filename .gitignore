@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Data cache (can regenerate)
+data/llm_cache.json
+
+# Test reports (sample data, keep tracked)
+# text_reports/
