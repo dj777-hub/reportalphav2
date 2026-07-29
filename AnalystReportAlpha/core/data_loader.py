@@ -515,6 +515,47 @@ class DataLoader:
         logger.info(f"  股票名称映射: {len(mapping)} 条")
         return mapping
 
+
+    def get_stock_return(
+        self,
+        stock_code: str,
+        start_date: pd.Timestamp,
+        end_date: pd.Timestamp,
+    ) -> Optional[float]:
+        """个股区间收益率"""
+        bar = self.daily_bar
+        code_str = _normalize_code(stock_code)
+        mask = (
+            (bar["stock_code"] == code_str)
+            & (bar["trade_date"] >= start_date)
+            & (bar["trade_date"] <= end_date)
+        )
+        sub = bar.loc[mask].sort_values("trade_date")
+        if len(sub) < 2:
+            return None
+        start_c = sub.iloc[0]["close"]
+        end_c = sub.iloc[-1]["close"]
+        if pd.isna(start_c) or pd.isna(end_c) or start_c == 0:
+            return None
+        return end_c / start_c - 1
+
+    def get_benchmark_return(
+        self,
+        start_date: pd.Timestamp,
+        end_date: pd.Timestamp,
+    ) -> Optional[float]:
+        """基准指数区间收益率"""
+        bar = self.benchmark_bar
+        mask = (bar["trade_date"] >= start_date) & (bar["trade_date"] <= end_date)
+        sub = bar.loc[mask].sort_values("trade_date")
+        if len(sub) < 2:
+            return None
+        sc = sub.iloc[0]["close"]
+        ec = sub.iloc[-1]["close"]
+        if pd.isna(sc) or pd.isna(ec) or sc == 0:
+            return None
+        return ec / sc - 1
+
 def load_all_data(
     config: Optional[StrategyConfig] = None,
     llm_result_path: Optional[str] = None,
