@@ -30,12 +30,19 @@ LLM_TIMEOUT = 60
 LLM_MAX_RETRIES = 3
 
 # ──────────────────────────────────────────────
-# 行情数据源：AKShare（免费开源，无需 Token）
+# 行情数据源：Tushare Pro
 # ──────────────────────────────────────────────
-# 如需安装: pip install akshare
-# 文档: https://akshare.akfamily.xyz/
-# 无需 API Token，免费使用
-TUSHARE_TOKEN = os.getenv("TUSHARE_TOKEN", "")  # 保留兼容
+# 使用 pip install tushare 安装（版本 >= 1.2.10）
+# Token 从 .env 文件的 TUSHARE_TOKEN 读取
+TUSHARE_TOKEN = os.getenv("TUSHARE_TOKEN", "")
+
+# ──────────────────────────────────────────────
+# 行情数据源：JoinQuant（聚宽）
+# ──────────────────────────────────────────────
+# 使用 pip install jqdatasdk 安装
+# 账号密码从 .env 文件的 JQ_ACCOUNT / JQ_PASSWORD 读取
+JQ_ACCOUNT = os.getenv("JQ_ACCOUNT", "")
+JQ_PASSWORD = os.getenv("JQ_PASSWORD", "")
 
 # ── 研报文本目录 ──
 TEXT_REPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "text_reports")
@@ -43,9 +50,9 @@ TEXT_REPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(_
 # ── 策略参数 ──
 @dataclass
 class StrategyConfig:
-    analyst_lookback_window: int = 120
+    analyst_lookback_window: int = 20
     analyst_refresh_cycle_month: int = 2
-    signal_lookback_days: int = 20
+    signal_lookback_days: int = 10
     rebalance_frequency: str = "monthly"  # "monthly" / "weekly"
     rebalance_cycle_month: int = 1
     top_analyst_num: int = 30
@@ -56,8 +63,8 @@ class StrategyConfig:
     top_analyst_score_weight_excess: float = 0.6
     top_analyst_score_weight_winrate: float = 0.4
     holding_period_days: int = 20              # 推荐后持有期（交易日）
-    backtest_start_date: str = "20220101"
-    backtest_end_date: str = "20241231"
+    backtest_start_date: str = "20251001"
+    backtest_end_date: str = "20251231"
 
 DEFAULT_CONFIG = StrategyConfig()
 

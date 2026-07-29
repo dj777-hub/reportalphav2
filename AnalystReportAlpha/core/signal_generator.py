@@ -184,7 +184,7 @@ class SignalGenerator:
         code_analyst_count = Counter()
         code_analyst_names = {}
         for s in stocks:
-            code = s["stock_code"]
+            code = str(s["stock_code"]).strip().upper().replace(".SH", "").replace(".SZ", "").replace(".HK", "")
             if code in passed_set:
                 code_analyst_count[code] += 1
                 if code not in code_analyst_names:

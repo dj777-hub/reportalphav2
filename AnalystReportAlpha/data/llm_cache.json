@@ -6483,5 +6483,1515 @@
     "success": true,
     "from_cache": false,
     "error": null
+  },
+  "bedc49b89ba41e4879ea040d880c5c85": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300567.SZ"
+    ],
+    "analyst_name": "李玖",
+    "report_publish_date": "2025-12-16",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "8e065e0245198faf821877e5254ef5ed": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000807.SZ"
+    ],
+    "analyst_name": "孟祥文",
+    "report_publish_date": "2025-03-29",
+    "reason": "研报明确给出买入评级，维持看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "47edad41adc47e1786b6633a8ca2ca8d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600129.SH"
+    ],
+    "analyst_name": "朱国广",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "999b4160502069127e8f175a842ee50f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688256.SH"
+    ],
+    "analyst_name": "陈海进",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "1af53f2c23fd525e35ae2b17038a725e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [],
+    "analyst_name": "张良卫",
+    "report_publish_date": "2025-11-23",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "576e912529e2e8739dac693c2bd734d9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688076.SH"
+    ],
+    "analyst_name": "朱国广",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "1862be1b847503581c9d65530cf8c2f2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603439.SH"
+    ],
+    "analyst_name": "朱国广",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "3d8b776352511946b80a80cfa0df232f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600519.SH"
+    ],
+    "analyst_name": "苏铖",
+    "report_publish_date": "2025-12-31",
+    "reason": "研报给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ee665552a2b62a9ffdb3c1081f6d63c0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300308.SZ"
+    ],
+    "analyst_name": "李璐毅",
+    "report_publish_date": "2025-12-31",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ddd39e1e83dfe9fbe651bf7e6b3935f5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600887.SH"
+    ],
+    "analyst_name": "刘光意",
+    "report_publish_date": "2025-12-29",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "aef91a0af2b8d316a3286c2b0c6de3e2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002698.SZ"
+    ],
+    "analyst_name": "鲁佩",
+    "report_publish_date": "2025-12-30",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "e7e827bfcdfafc9139e1b0804a70478a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "未知日期",
+    "reason": "未明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0e318891aaed0cbbb4523bf1d90ca9e3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000423.SZ"
+    ],
+    "analyst_name": "祝嘉琦",
+    "report_publish_date": "2025-03-29",
+    "reason": "研报明确给予买入评级，维持买入",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "90a90892f843588fbd025e470e3a4011": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603296.SH"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报评级为买入(维持)",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "68f513f61bb393318ac7fa8b9bac447b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "01347.HK"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2025-11-09",
+    "reason": "研报评级为买入（维持）",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "5a519c73cfa707c74229ce807ef1286e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000977.SZ"
+    ],
+    "analyst_name": "苏仪",
+    "report_publish_date": "2025-04-10",
+    "reason": "研报评级为买入，看好AI算力需求",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "882da80c7f29cbb55df578ee627dd1b9": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "未知日期",
+    "reason": "未给出明确看多评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "177baa7367d56ac5c124de4d8536777e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300684.SZ"
+    ],
+    "analyst_name": "吴文吉",
+    "report_publish_date": "2025-12-19",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "9dbffecd7ed10a7aab167a394e8dc1e1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688508.SH"
+    ],
+    "analyst_name": "万玮",
+    "report_publish_date": "2025-12-22",
+    "reason": "研报评级为买入，维持评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "e926daea26ecc6d4f128e6aee1308d99": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688469.SH"
+    ],
+    "analyst_name": "万玮",
+    "report_publish_date": "2025-12-10",
+    "reason": "评级买入并维持",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0a13f8364161f2ccadddcc24aa63a773": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002916.SZ"
+    ],
+    "analyst_name": "苏凌瑶",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报评级为买入，明确推荐",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "78d087f62f40a1550967148aa9c52a63": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002938.SZ"
+    ],
+    "analyst_name": "苏凌瑶",
+    "report_publish_date": "2025-04-11",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "4fd2431f740260011f0f0ee4738862e0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "00856.HK"
+    ],
+    "analyst_name": "郑嘉伟",
+    "report_publish_date": "2025-02-12",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0ce5d7acaa133114e6829f5b0133c5cf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002463.SZ"
+    ],
+    "analyst_name": "莫文宇",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "53f5667655c371b3a56addd62ed739a4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300327.SZ"
+    ],
+    "analyst_name": "刘凯",
+    "report_publish_date": "2025-04-03",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "5403d0c33326b8ba84848659dbda81e7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002371.SZ"
+    ],
+    "analyst_name": "刘凯",
+    "report_publish_date": "2025-04-02",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "1bc99e3b3d6a05af946551a772bf5f91": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002353.SZ"
+    ],
+    "analyst_name": "陈佳宁",
+    "report_publish_date": "2025-12-03",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0f7bd6e9ca15d654e907acddb102e60c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "0992.HK"
+    ],
+    "analyst_name": "付天姿",
+    "report_publish_date": "2025-02-21",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "5ed4e97010488804c2790ae935a8f201": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603986.SH"
+    ],
+    "analyst_name": "王国晗",
+    "report_publish_date": "2025-12-18",
+    "reason": "研报明确给出买入评级和目标价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "1be051b7377970eb85348ce9e26451d7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "02276.HK"
+    ],
+    "analyst_name": "刘一怡",
+    "report_publish_date": "2025-12-31",
+    "reason": "研报评级强推，目标价高于现价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "86dc0d320eca68950797738e4b37df2b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002821.SZ"
+    ],
+    "analyst_name": "谭国超",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持买入评级，业绩增长",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "1ab4831be69ce38082cb47ad6e2d1977": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "0867.HK"
+    ],
+    "analyst_name": "谭国超",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给予买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "72836f8a4a57ec358a361d5bf04ea5ac": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688617.SH"
+    ],
+    "analyst_name": "谭国超",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报评级为买入（维持），明确看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "74af053ea17f46e438197b245d3524cb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600522.SH"
+    ],
+    "analyst_name": "刘晓宁",
+    "report_publish_date": "2025-11-30",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "bab820ca8324f713a656056c2e14cab1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000600.SZ"
+    ],
+    "analyst_name": "刘晓宁",
+    "report_publish_date": "2025-12-26",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "a662a1e0c8177e5492158d5ac6545ff1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600236.SH"
+    ],
+    "analyst_name": "刘晓宁",
+    "report_publish_date": "2025-12-28",
+    "reason": "研报评级为买入，维持评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "04fb62a1399a14b3623c13ff6ca669bb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300115.SZ"
+    ],
+    "analyst_name": "葛星甫",
+    "report_publish_date": "2025-12-25",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "7dfe041a7a977c11794b070c1d64be00": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300363.SZ"
+    ],
+    "analyst_name": "崔文亮",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "81a4699cc09ccf163f218e338b3085c3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603920.SH"
+    ],
+    "analyst_name": "胡剑",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持优于大市评级，看好AI与汽车电子",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "a74dedf498608410fe732d73a8ac45cd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688072.SH"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-25",
+    "reason": "明确买入评级，目标价高于现价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "074bb46fe0e49d7356ff681a27d8276e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603596.SH"
+    ],
+    "analyst_name": "刘一鸣",
+    "report_publish_date": "2025-12-23",
+    "reason": "研报明确给出增持评级，目标价高于现价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "318ed43b1d33ef14eee9d563a24d0969": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600398.SH"
+    ],
+    "analyst_name": "盛开",
+    "report_publish_date": "2025-12-31",
+    "reason": "研报评级增持，目标价高于现价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "70ad11cf0ec40698a23ea163c7e24d6a": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "605296.SH"
+    ],
+    "analyst_name": "王艳君",
+    "report_publish_date": "2025-12-31",
+    "reason": "维持增持评级，目标价高于现价",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "de353d34b8d6f0b0bd6ae2e5e31ede2d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [],
+    "analyst_name": "马川琪",
+    "report_publish_date": "2025-11-24",
+    "reason": "研报评级为买入，维持评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ba201ccc3b8930f0098dcc40c7950c53": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688012.SH"
+    ],
+    "analyst_name": "姚丹丹",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "8139ebd7b81a6472538ce35014837bee": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002212.SZ"
+    ],
+    "analyst_name": "刘熹",
+    "report_publish_date": "2025-04-24",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "990868146e2e5c11724d254b66678fdf": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [],
+    "analyst_name": "戴畅",
+    "report_publish_date": "2025-11-21",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "af6f89f6a14292ca9d4754c93861f197": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600570.SH"
+    ],
+    "analyst_name": "刘熹",
+    "report_publish_date": "2025-04-03",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "f8163f1bc30d7400a5c77b4fe225ee62": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300049.SZ"
+    ],
+    "analyst_name": "年庆功",
+    "report_publish_date": "2025-04-24",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "fcaba0490a31f0bca5f5eb426d794908": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300308.SZ"
+    ],
+    "analyst_name": "宋嘉吉",
+    "report_publish_date": "2025-11-03",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "57bad09d8552883e6a460990c6c43a9c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "605090.SH"
+    ],
+    "analyst_name": "张津铭",
+    "report_publish_date": "2025-12-29",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "49ca7dd8d28a16fc73b694fe0bfbc3aa": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688100.SH"
+    ],
+    "analyst_name": "宋嘉吉",
+    "report_publish_date": "2025-11-09",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "eab090b80e20054bf5fc2cec313c8322": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688366.SH"
+    ],
+    "analyst_name": "张金洋",
+    "report_publish_date": "2025-02-21",
+    "reason": "维持买入评级，看好海魅月白放量",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "bf08481a5b8f67e8b761d183531c57a3": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600584.SH"
+    ],
+    "analyst_name": "郑震湘",
+    "report_publish_date": "2025-04-21",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "e441160c4ed8c391c28c1593ff17110f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "未知日期",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "2c2a6c2335b7f1d21bfca8bee5e4d05b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "302132.SZ"
+    ],
+    "analyst_name": "杨晨",
+    "report_publish_date": "2025-12-17",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "da028a1a4c73d798aee469a2129adad7": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "605111.SH"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-26",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "93245c11cad940b8e49dbeda4c5606b4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-18",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ad3b38879e2616a4e535c1726d2e9643": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688369.SH"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "47b83a8c9e55c3da3ba5314b82ff114f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "王奕红",
+    "report_publish_date": "2025-11-07",
+    "reason": "维持买入评级，明确看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "5d76741a74c8ac548e0a32866b06ef60": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300442.SZ"
+    ],
+    "analyst_name": "王奕红",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ea32738c85a33160fee5c1cf3cb88005": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601899.SH"
+    ],
+    "analyst_name": "刘奕町",
+    "report_publish_date": "2025-03-29",
+    "reason": "研报给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "381f1ec02a410a148af2f7cc96c9aecd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300433.SZ"
+    ],
+    "analyst_name": "潘建",
+    "report_publish_date": "2025-04-21",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "8d090407f21c8d564daa49fb15222ce1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "601689.SH"
+    ],
+    "analyst_name": "刘虹辰",
+    "report_publish_date": "2025-12-30",
+    "reason": "研报评级为买入，明确看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "40ad5c43556ecd8ac3b1c30ca42979a5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688123.SH"
+    ],
+    "analyst_name": "张世杰",
+    "report_publish_date": "2025-03-28",
+    "reason": "给予买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ec43fccc0191a052718994e214299767": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002138.SZ"
+    ],
+    "analyst_name": "张世杰",
+    "report_publish_date": "2025-04-24",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "d7d67a9259bd423e466193d4556ffdcd": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300482.SZ"
+    ],
+    "analyst_name": "余汝意",
+    "report_publish_date": "2025-04-11",
+    "reason": "研报明确给出买入评级且维持",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "6e1cd8651e1d91fcdeca226b35d78175": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "600487.SH"
+    ],
+    "analyst_name": "蒋颖",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "79202b2814ed57044801f6e375c68671": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "301093.SZ"
+    ],
+    "analyst_name": "余汝意",
+    "report_publish_date": "2025-04-22",
+    "reason": "研报评级为买入（维持）",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "f8b0543c766331cf4935a175f675d24c": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300627.SZ"
+    ],
+    "analyst_name": "赵旭杨",
+    "report_publish_date": "2025-04-22",
+    "reason": "研报明确维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "44bbe2c7609ad8d7a2ab46bb94a4ec4d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688612.SH"
+    ],
+    "analyst_name": "殷晟路",
+    "report_publish_date": "2025-12-23",
+    "reason": "评级为买入（维持），明确看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "b25a1dd03ec83e47901f1e66e094d171": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "603993.SH"
+    ],
+    "analyst_name": "温佳贝",
+    "report_publish_date": "2025-04-11",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "b92aa380606ce1f10591f34fb0559314": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "陈宝健",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "9261cfc2d285ebdca5f9348c46516563": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688568.SH"
+    ],
+    "analyst_name": "陈涵泊",
+    "report_publish_date": "2025-01-19",
+    "reason": "维持买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0777c0a479ffec584fc2e075a6d39a72": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002378.SZ"
+    ],
+    "analyst_name": "刘伟洁",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报维持强烈推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "4f90f21e6f51720300eedb71c12bffb9": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688106.SH"
+    ],
+    "analyst_name": "周铮",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报评级为强烈推荐，维持评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "54deb97e028e1443cae296d9e5ba39db": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300033.SZ"
+    ],
+    "analyst_name": "许旖珊",
+    "report_publish_date": "2025-04-25",
+    "reason": "评级强烈推荐，维持买入观点",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "abdbcc321e6880e07ebbf688075c352e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300298.SZ"
+    ],
+    "analyst_name": "王班",
+    "report_publish_date": "2025-04-21",
+    "reason": "维持推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "0b42156cfdf88622c3c58d3b85693949": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300628.SZ"
+    ],
+    "analyst_name": "马天诣",
+    "report_publish_date": "2025-04-22",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "6f0628fc4d9981638de8c4c8c7945ced": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300548.SZ"
+    ],
+    "analyst_name": "马天诣,马佳伟",
+    "report_publish_date": "2025-03-29",
+    "reason": "研报明确给出推荐评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "a66fd1bd86bf88e7a5335281795b9f6e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "001309.SZ"
+    ],
+    "analyst_name": "方竞",
+    "report_publish_date": "2025-03-02",
+    "reason": "研报维持推荐评级，明确看多",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "abb3deb4a9a30c84edba4bb8c8f5c8a6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300017.SZ"
+    ],
+    "analyst_name": "马天诣",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持推荐评级，看好海外市场",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "bd174f4416eb2f5d9ed5403e3b3350a2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688418.SH"
+    ],
+    "analyst_name": "马天诣",
+    "report_publish_date": "2025-01-01",
+    "reason": "维持推荐评级，看好发展",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "9e3cc170a2627455c54a716f27199a6f": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "00552.HK"
+    ],
+    "analyst_name": "张建民",
+    "report_publish_date": "2025-03-28",
+    "reason": "研报评级为买入",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "37f29c505ac29338ff5ea475128e65c1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300308.SZ"
+    ],
+    "analyst_name": "张建民",
+    "report_publish_date": "2025-04-21",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "ceb116f14127c3b243f923dcb5cfd583": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002472.SZ"
+    ],
+    "analyst_name": "邱世梁",
+    "report_publish_date": "2025-12-08",
+    "reason": "研报明确给出买入评级并维持",
+    "success": true,
+    "from_cache": true,
+    "error": null
+  },
+  "06872c5a9ceb395f57482ae1bed2a9a5": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2022-09-30",
+    "reason": "研报明确给出强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "405cc3a6a0d051cc455b439555a853a6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "黄丽",
+    "report_publish_date": "2023-01-17",
+    "reason": "研报明确给出强烈推荐评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0f0c56054ca95809706f7654ee71f8a4": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-03-04",
+    "reason": "研报评级为买入，维持强烈推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dcee84fc379897af78374025e994e650": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000002.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-07-02",
+    "reason": "研报明确给出增持评级，目标价上调",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "7f2a62a24c704cfc84eb67ee6d1c0704": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2022-08-12",
+    "reason": "研报评级为强烈推荐，目标价上调",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bcb06ff749a47975243536cd1ff4ea8d": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000333.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2024-12-03",
+    "reason": "研报评级为中性",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ba6164ba4571802d7f180fb733899a1b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2022-05-26",
+    "reason": "研报评级为增持且维持强烈推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "785654a3841cbf3f10dcd65d3feaf29e": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-02-28",
+    "reason": "研报评级为持有（中性）",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8f5ce0ada9b0975bdcd0c60d5baab2f1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-06-06",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "e93647aae692a665191bd9a24163566c": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-07-04",
+    "reason": "评级为'持有'，中性观望",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8a3c37a055d63ed28478f2dbae246a08": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-08-03",
+    "reason": "研报明确给出买入评级，首次覆盖",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "648dbbd7047983e83afdc0cd87ada3b6": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-04-01",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0144ffd8275bcdd78947e96b2898233a": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "张明",
+    "report_publish_date": "2024-07-23",
+    "reason": "评级为中性，建议持有观望",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "dac07e23801f03c53b8ca703ff8ee7a4": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-09-03",
+    "reason": "评级为中性，不推荐买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0370a94d2f6253add52314dae4fc7259": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000858.SZ"
+    ],
+    "analyst_name": "刘洋",
+    "report_publish_date": "2024-11-07",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "847c2374c367aea1fd1c674238263a92": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2022-03-18",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ca36664feda96b2a360129a6aaf155f0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "王芳",
+    "report_publish_date": "2023-03-30",
+    "reason": "评级强烈推荐，公司财报亮眼",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "8ec529f1ef431902cde121ffe4dd82b1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2023-05-05",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0a9c17200d06739af7678d5033e86820": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "赵强",
+    "report_publish_date": "2023-10-10",
+    "reason": "评级为增持，明确看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "51c4d1bdf60b2ea47541e2db66dfe1df": {
+    "has_positive_recommend": false,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "李华",
+    "report_publish_date": "2023-10-16",
+    "reason": "研报评级为中性，未看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d163121cd77d6ef0a3dcec6cd2ab0b79": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002415.SZ"
+    ],
+    "analyst_name": "陈静",
+    "report_publish_date": "2024-09-03",
+    "reason": "评级增持，看多推荐",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "a048cba54a11093fac8186cc6d71f249": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002527.SZ"
+    ],
+    "analyst_name": "邱世梁",
+    "report_publish_date": "2025-12-30",
+    "reason": "研报明确给出买入评级，维持买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "cba58c3d6e8983bde6c9c0808b14dc57": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002230.SZ"
+    ],
+    "analyst_name": "刘雯蜀",
+    "report_publish_date": "2025-04-22",
+    "reason": "评级买入(维持)",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "c6f4998da98e2106e4e71c92d0b01d5b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300687.SZ"
+    ],
+    "analyst_name": "刘雯蜀",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "b01d372f7de88ed5f609a07b0fa28652": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688100.SH"
+    ],
+    "analyst_name": "徐柏乔",
+    "report_publish_date": "2025-03-01",
+    "reason": "研报给出优于大市评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "9b414aff4cb277fc73ac401422fe095d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000063.SZ"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-25",
+    "reason": "维持买入评级，看好AI算力业务增长",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "1d1b93e4ba675e8a02b1a1e8127f67af": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002223.SZ"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-02-11",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "42a88f843a7ba08ffcf19204ce3876fb": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688012.SH"
+    ],
+    "analyst_name": "杨海晏",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ad47fd9513aec79c1590f266ac2676ce": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [],
+    "analyst_name": "杨海晏",
+    "report_publish_date": "2025-03-01",
+    "reason": "评级为买入并维持",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "87cce4d042afc18e73f6a9d4b00a01a1": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688188.SH"
+    ],
+    "analyst_name": "王珂",
+    "report_publish_date": "2025-03-02",
+    "reason": "评级为买入，维持买入",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "04c4178e2c7624575b588842bb71c51d": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300666.SZ"
+    ],
+    "analyst_name": "杨海晏",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "95c9a570271e4f2912077a322349cbd2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300687.SZ"
+    ],
+    "analyst_name": "黄忠煌",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报评级为买入（维持）",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "35e02c41d5c7abb8c5fb1f3a1d62659b": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688692.SH"
+    ],
+    "analyst_name": "黄忠煌",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "fe0439fe98ba2ac59a737b65840da416": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688256.SH"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-12-03",
+    "reason": "评级为买入，目标价高于现价",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "75bc1bc3765dcdf337e8634200bc4ed0": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300363.SZ"
+    ],
+    "analyst_name": "李梦园",
+    "report_publish_date": "2025-04-25",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "f413aa070909ffcacdd853992fcf7b3e": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "000933.SZ"
+    ],
+    "analyst_name": "刘博",
+    "report_publish_date": "2025-03-29",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "bc8b95a581dddf59bc10b27d1929d954": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688111.SH"
+    ],
+    "analyst_name": "未知分析师",
+    "report_publish_date": "2025-04-24",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "763eeed9543d09e09293d18af5667d19": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "688041.SH"
+    ],
+    "analyst_name": "杨业",
+    "report_publish_date": "2025-03-02",
+    "reason": "维持买入评级，明确看多",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "0eba9672d2d4f4713decbebd87fc1cb2": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300285.SZ"
+    ],
+    "analyst_name": "肖亚平",
+    "report_publish_date": "2025-04-24",
+    "reason": "研报维持买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "ab2d20704154bf746568024cb95c2dfc": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "300750.SZ"
+    ],
+    "analyst_name": "张磊",
+    "report_publish_date": "2025-11-27",
+    "reason": "首次覆盖给予买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
+  },
+  "d9e71107d0843dd4dff54c4facea5d42": {
+    "has_positive_recommend": true,
+    "target_stock_code_list": [
+      "002202.SZ"
+    ],
+    "analyst_name": "张磊",
+    "report_publish_date": "2025-11-18",
+    "reason": "研报明确给出买入评级",
+    "success": true,
+    "from_cache": false,
+    "error": null
   }
 }

@@ -22,23 +22,27 @@ from core.config import (
 
 logger = logging.getLogger(__name__)
 
-REPORT_ANALYSIS_PROMPT = """你是一位专业的金融研报分析师。任务是从卖方研报文本中提取关键信息。
+REPORT_ANALYSIS_PROMPT = """你是一位专业的券商研报分析专家。从卖方研报文本中提取关键结构化信息。
 
 ## 输出 JSON（严格）
 {
     "has_positive_recommend": true,
-    "target_stock_code_list": ["600519.SH", "000858.SZ"],
+    "target_stock_code_list": ["600519.SH"],
     "analyst_name": "张明",
-    "report_publish_date": "2024-06-15",
-    "reason": "研报明确给出买入评级"
+    "report_publish_date": "2025-12-17",
+    "reason": "研报明确给出买入评级，目标价高于现价"
 }
 
-## 规则
-- has_positive_recommend：是否明确看多推荐（买入/增持/推荐/强烈推荐）
-- target_stock_code_list：推荐标的代码（6位.SH/.SZ），没有则[]
-- analyst_name：分析师姓名，无法识别填"未知分析师"
-- report_publish_date：发布日期 YYYY-MM-DD，无法识别填"未知日期"
-- reason：判断理由，不超过50字
+## 提取规则
+- has_positive_recommend：**是否明确看多推荐**。判断依据：
+  · 研报评级为「买入」「强烈推荐」「增持」「推荐」「优于大市」→ True
+  · 研报评级为「中性」「持有」「减持」「卖出」→ False
+  · 如果文本中提到「首次覆盖给予买入评级」「维持买入评级」等明确看多表述 → True
+  · 如果通篇仅为行业分析或客观描述，未给出明确买入建议 → False
+- target_stock_code_list：研报对应的**推荐标的代码**（格式 6位.SH 或 6位.SZ），无则[]
+- analyst_name：分析师姓名，从署名中提取，无法识别填"未知分析师"
+- report_publish_date：研报发布日期 YYYY-MM-DD，从封面/页眉提取
+- reason：判断理由（20字以内），简述评级判断依据
 """
 
 
@@ -172,25 +176,44 @@ class LLMClient:
                 "reason": f"API失败:{last_err}", "success": False,
                 "from_cache": False, "error": last_err}
 
-    def batch_analyze(self, reports: List[Dict], show_progress: bool = True) -> "pd.DataFrame":
+    def batch_analyze(self, reports: List[Dict], show_progress: bool = True,
+                      progress_callback=None) -> "pd.DataFrame":
         import pandas as pd
+        from llm.text_loader import parse_filename
         results = []
         total = len(reports)
         for i, item in enumerate(reports):
             result = self.analyze_report(item.get("report_text", ""))
+            filename = item.get("filename", "")
+            # 从文件名解析元信息作为 LLM 识别的兜底
+            finfo = parse_filename(filename)
+            analyst = result.get("analyst_name", "未知分析师")
+            pub_date = result.get("report_publish_date", "未知日期")
+            codes = result.get("target_stock_code_list", [])
+            # LLM 未识别出分析师或日期时，用文件名解析结果兜底
+            if analyst in ("未知分析师", "") and finfo["analyst_name"]:
+                analyst = finfo["analyst_name"]
+            if pub_date in ("未知日期", "") and finfo["publish_date"]:
+                pub_date = finfo["publish_date"]
+            if not codes and finfo["stock_code"]:
+                codes = [finfo["stock_code"]]
             results.append({
                 "report_id": item.get("report_id", ""),
-                "filename": item.get("filename", ""),
-                "analyst_name": result.get("analyst_name", "未知分析师"),
-                "publish_date": result.get("report_publish_date", "未知日期"),
-                "stock_code_list": json.dumps(result.get("target_stock_code_list", []), ensure_ascii=False),
+                "filename": filename,
+                "analyst_name": analyst,
+                "publish_date": pub_date,
+                "stock_code_list": json.dumps(codes, ensure_ascii=False),
                 "report_content": item.get("report_text", "")[:500],
                 "has_positive_recommend": result.get("has_positive_recommend", False),
                 "reason": result.get("reason", ""),
                 "llm_success": result.get("success", False),
                 "from_cache": result.get("from_cache", False),
             })
-            if show_progress and (i + 1) % 10 == 0:
+            # 每处理一条后更新进度回调（用于 Streamlit 前端进度条平滑展示）
+            if progress_callback is not None:
+                pct = min(int((i + 1) / total * 100), 100)
+                progress_callback(pct, f"LLM 识别中 ({i+1}/{total})...")
+            elif show_progress and (i + 1) % 5 == 0:
                 logger.info(f"LLM 进度: {i + 1}/{total}")
         return pd.DataFrame(results)
 

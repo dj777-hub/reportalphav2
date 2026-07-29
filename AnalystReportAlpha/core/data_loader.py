@@ -54,6 +54,11 @@ def _is_st_stock(stock_code: str) -> bool:
     return False
 
 
+
+def _normalize_code(code: str) -> str:
+    """统一转为纯数字格式（AKShare 规范），去除 .SH/.SZ/.HK 后缀"""
+    return str(code).strip().upper().replace(".SH", "").replace(".SZ", "").replace(".HK", "").replace(".US", "")
+
 class DataLoader:
     """
     数据加载器：从 CSV 文件加载各数据表，进行清洗与预处理。
@@ -180,10 +185,10 @@ class DataLoader:
 
     def load_daily_bar(self, file_path: Optional[str] = None) -> pd.DataFrame:
         """加载日线行情（优先 Tushare，回退 CSV）"""
-        # 【优先 AKShare 获取真实行情】
+        # 【优先 Tushare Pro 获取真实行情】
         try:
-            from core.data_fetcher import DataFetcher
-            _fetcher = DataFetcher()
+            from core.baostock_fetcher import BaoStockFetcher
+            _fetcher = BaoStockFetcher()
             if _fetcher.is_available:
                 reports = self.llm_report_result
                 codes = set()
@@ -195,7 +200,7 @@ class DataLoader:
                     except: items = []
                     if isinstance(items, str): items = [items]
                     for c in items:
-                        c = str(c).strip()
+                        c = _normalize_code(c)  # 统一转为纯数字
                         if c: codes.add(c)
                 if codes:
                     if isinstance(self.config, dict):
@@ -204,33 +209,36 @@ class DataLoader:
                     else:
                         start = getattr(self.config, "backtest_start_date", "20220101")
                         end = getattr(self.config, "backtest_end_date", "20241231")
-                    start_dt = pd.Timestamp(start) - pd.Timedelta(days=400)
+                    # 动态缓冲：分析师回望窗口 + 信号窗口 + 富余量（交易日转自然日）
+                    _buf_days = max(60, (getattr(self.config, 'analyst_lookback_window', 20) + getattr(self.config, 'signal_lookback_days', 10)) * 2)
+                    start_dt = pd.Timestamp(start) - pd.Timedelta(days=_buf_days)
                     start = start_dt.strftime("%Y%m%d")
                     df = _fetcher.fetch_daily_bar(sorted(codes), start, end)
                     if len(df) > 0:
                         df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
                         df = df.dropna(subset=["trade_date"])
                         df = df.sort_values(["stock_code", "trade_date"]).reset_index(drop=True)
-                        logger.info(f"  🟢 AKShare 日线: {len(df)} 条, {df['stock_code'].nunique()} 只股票")
+                        logger.info(f"  🟢 BaoStock 日线: {len(df)} 条, {df['stock_code'].nunique()} 只股票")
                         df.to_csv(DAILY_BAR_PATH, index=False, encoding="utf-8-sig")
                         return df
                 else:
                     logger.info("  无股票代码可从研报提取")
             else:
-                logger.debug("  AKShare 不可用，回退 CSV")
+                logger.debug("  BaoStock 不可用，回退 CSV")
         except Exception as e:
-            logger.warning(f"  AKShare 获取日线异常: {e}")
+            logger.warning(f"  BaoStock 获取日线异常: {e}")
 
         # 回退：从本地 CSV 加载（AKShare 不可用时）
         path = file_path or DAILY_BAR_PATH
         logger.info(f"  📂 加载日线行情(本地CSV): {os.path.basename(path)}")
+        df = pd.DataFrame(columns=[
+            "stock_code", "trade_date", "close", "open", "high", "low", "amount"
+        ])
         try:
-            df = pd.read_csv(path, encoding="utf-8-sig")
+            df = pd.read_csv(path, encoding="utf-8-sig", dtype={"stock_code": str})
         except FileNotFoundError:
             logger.warning(f"文件不存在: {path}")
-            return pd.DataFrame(columns=[
-                "stock_code", "trade_date", "close", "open", "high", "low", "amount"
-            ])
+            return df
         # Robust parsing: handle both datetime and string dates
         try:
             df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
@@ -243,41 +251,37 @@ class DataLoader:
 
     def load_benchmark_bar(self, file_path: Optional[str] = None) -> pd.DataFrame:
         """加载基准指数行情（优先 Tushare 沪深300，回退 CSV）"""
-        if True:  # AKShare 无需 token
-            try:
-                from core.data_fetcher import DataFetcher
-                _ts = DataFetcher()
-                if _ts.is_available:
-                    start = self.config.backtest_start_date
-                    end = self.config.backtest_end_date
-                    start_dt = pd.Timestamp(start) - pd.Timedelta(days=400)
-                    start = start_dt.strftime("%Y%m%d")
-                    df = _ts.fetch_benchmark_bar(
-                        index_code="000300.SH", start_date=start, end_date=end
-                    )
-                    if len(df) > 0:
-                        df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
-                        df = df.sort_values("trade_date").reset_index(drop=True)
-                        logger.info(f"  🟢 Tushare 沪深300: {len(df)} 条")
-                        return df
-                else:
-                    logger.debug("  Tushare 连通性检测失败，基准使用本地 CSV")
-            except Exception as e:
-                logger.warning(f"  Tushare 获取基准异常: {e}")
+        # 【优先 Tushare Pro 获取沪深300】
+        try:
+            from core.baostock_fetcher import BaoStockFetcher
+            _ts = BaoStockFetcher()
+            if _ts.is_available:
+                start = self.config.backtest_start_date
+                end = self.config.backtest_end_date
+                start_dt = pd.Timestamp(start) - pd.Timedelta(days=400)
+                start = start_dt.strftime("%Y%m%d")
+                df = _ts.fetch_benchmark_bar(
+                    index_code="sh000300", start_date=start, end_date=end
+                )
+                if len(df) > 0:
+                    df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+                    df = df.sort_values("trade_date").reset_index(drop=True)
+                    logger.info(f"  🟢 BaoStock 沪深300: {len(df)} 条")
+                    return df
+            else:
+                logger.debug("  BaoStock 连通性检测失败，基准使用本地 CSV")
+        except Exception as e:
+            logger.warning(f"  BaoStock 获取基准异常: {e}")
 
         path = file_path or BENCHMARK_BAR_PATH
         logger.info(f"  📂 加载基准行情(本地CSV): {os.path.basename(path)}")
-        # 数据真实性校验
-        if len(df) > 0:
-            try:
-                _first_close = float(df['close'].iloc[0])
-                if _first_close > 5000:
-                    logger.warning(f"  ⚠️  数据疑似模拟（2020年初沪深300约4100，当前首条={_first_close:.0f}），请点击侧栏「🔄 刷新数据」拉取真实行情")
-            except: pass
         try:
             df = pd.read_csv(path, encoding="utf-8-sig")
         except FileNotFoundError:
             logger.warning(f"文件不存在: {path}")
+            return pd.DataFrame(columns=["index_code", "trade_date", "close"])
+        except Exception as e:
+            logger.warning(f"读取基准CSV失败: {e}")
             return pd.DataFrame(columns=["index_code", "trade_date", "close"])
         try:
             df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
@@ -286,44 +290,57 @@ class DataLoader:
         df = df.dropna(subset=["trade_date"])
         df = df.sort_values("trade_date").reset_index(drop=True)
         logger.info(f"  共 {len(df)} 条")
+        # 校验指数代码
+        expected_index = "sh000300"
+        if len(df) > 0 and "index_code" in df.columns:
+            actual_codes = df["index_code"].unique()
+            if expected_index not in actual_codes:
+                logger.warning(f"  ⚠️ 基准指数代码不匹配: 期望 {expected_index}, 实际 {list(actual_codes)}")
+                # 强制修正 index_code 列
+                df["index_code"] = expected_index
+                logger.info(f"  ✅ 已强制修正指数代码为 {expected_index}")
+        # 数据真实性校验
+        if len(df) > 0:
+            try:
+                _first_close = float(df['close'].iloc[0])
+                if _first_close > 5500:
+                    logger.warning(f"  ⚠️ 数据疑似模拟（2020年初沪深300约4100，当前首条={_first_close:.0f}），请点击侧栏「🔄 刷新数据」拉取真实行情")
+            except: pass
         return df
 
     def load_stock_industry(self, file_path: Optional[str] = None) -> pd.DataFrame:
-        """加载行业分类（优先 Tushare，回退 CSV）"""
-        if True:  # AKShare 无需 token
-            try:
-                from core.data_fetcher import DataFetcher
-                _ts = DataFetcher()
-                if _ts.is_available:
-                    reports = self.llm_report_result
-                    codes = set()
-                    import json
-                    for _, row in reports.iterrows():
-                        raw = row.get("stock_code_list", "[]")
-                        try:
-                            items = json.loads(raw) if isinstance(raw, str) else raw
-                        except: items = []
-                        if isinstance(items, str): items = [items]
-                        for c in items:
-                            c = str(c).strip()
-                            if c: codes.add(c)
-                    if codes:
-                        df = _ts.fetch_industry(stock_codes=sorted(codes))
-                        if len(df) > 0:
-                            logger.info(f"  🟢 Tushare 行业: {len(df)} 条")
-                            return df
-            except Exception as e:
-                logger.warning(f"  Tushare 获取行业异常: {e}")
-
+        """加载行业分类（仅从本地 CSV 读取，不远程获取）"""
         path = file_path or STOCK_INDUSTRY_PATH
         logger.info(f"  📂 加载行业分类(本地CSV): {os.path.basename(path)}")
         try:
-            df = pd.read_csv(path, encoding="utf-8-sig")
+            df = pd.read_csv(path, encoding="utf-8-sig", dtype={"stock_code": str})
+            if len(df) > 0:
+                logger.info(f"  共 {len(df)} 条")
+                return df
         except FileNotFoundError:
             logger.warning(f"文件不存在: {path}")
-            return pd.DataFrame(columns=["stock_code", "level1_industry"])
-        logger.info(f"  共 {len(df)} 条")
-        return df
+        except Exception as e:
+            logger.warning(f"读取行业CSV失败: {e}")
+        # 无缓存时根据代码前缀生成简易行业分组
+        logger.info("  根据代码前缀生成简易行业分组")
+        reports = self.llm_report_result
+        codes = set()
+        import json
+        for _, row in reports.iterrows():
+            raw = row.get("stock_code_list", "[]")
+            try:
+                items = json.loads(raw) if isinstance(raw, str) else raw
+            except:
+                items = []
+            if isinstance(items, str):
+                items = [items]
+            for c in items:
+                c = _normalize_code(c)
+                if c:
+                    codes.add(c)
+        prefix_map = {"6": "金融/制造", "0": "消费/制造", "3": "科技/成长", "4": "金融", "8": "金融", "9": "金融"}
+        rows = [{"stock_code": c, "level1_industry": prefix_map.get(c[0], "其他")} for c in sorted(codes)]
+        return pd.DataFrame(rows)
 
     # ── 交易日历 ──────────────────────────────
     def _build_trading_calendar(self):
@@ -386,7 +403,7 @@ class DataLoader:
         filtered = []
 
         for code in stock_codes:
-            code_str = str(code).strip()
+            code_str = _normalize_code(code)
 
             # 剔除 ST
             if _is_st_stock(code_str):
@@ -437,7 +454,7 @@ class DataLoader:
 
         passed = []
         for code in stock_codes:
-            cs = str(code).strip()
+            cs = _normalize_code(code)
             amt = avg_amount.get(cs, 0)
             if pd.notna(amt) and amt >= self.config.min_20d_avg_amount:
                 passed.append(cs)
@@ -464,7 +481,11 @@ class DataLoader:
         return dict(zip(industry_df["stock_code"], industry_df["level1_industry"]))
 
     def get_stock_name_map(self) -> Dict[str, str]:
-        """从研报文件名解析 股票代码→股票名称 映射"""
+        """从研报文件名解析 股票代码→股票名称 映射（键为纯数字）
+        
+        文件名格式示例:
+          东北证券 - 精测电子(300567.SZ) - 结构优化兑现盈利拐点... - 2025-12-17_张禹,李玖.pdf
+        """
         report_df = self.llm_report_result
         if '_stock_name' in self.__dict__:
             return self._stock_name
@@ -472,53 +493,27 @@ class DataLoader:
         if 'filename' not in report_df.columns:
             self._stock_name = mapping
             return mapping
+        
+        import re
+        # 正则: 匹配股票名称(股票代码) 如 "精测电子(300567.SZ)"
+        pat = re.compile(r'[-\s]+([一-龥A-Za-z0-9\-]+)\(([a-zA-Z0-9]+\.[A-Z]+)\)')
+        
         for fname in report_df['filename'].unique():
-            parts = str(fname).split('_')
-            if len(parts) >= 2:
-                code = parts[0]
-                name = parts[1]
-                mapping[code] = name
+            fname_str = str(fname)
+            m = pat.search(fname_str)
+            if m:
+                stock_name = m.group(1).strip()
+                stock_code = m.group(2).strip()
+                mapping[_normalize_code(stock_code)] = stock_name
+            else:
+                # fallback: 简单用 _ 分割（针对不含中文名的情况）
+                parts = fname_str.split('_')
+                if len(parts) >= 2:
+                    mapping[_normalize_code(parts[0])] = parts[1]
+        
         self._stock_name = mapping
+        logger.info(f"  股票名称映射: {len(mapping)} 条")
         return mapping
-
-    def get_stock_return(
-        self,
-        stock_code: str,
-        start_date: pd.Timestamp,
-        end_date: pd.Timestamp,
-    ) -> Optional[float]:
-        """个股区间收益率"""
-        bar = self.daily_bar
-        mask = (
-            (bar["stock_code"] == stock_code)
-            & (bar["trade_date"] >= start_date)
-            & (bar["trade_date"] <= end_date)
-        )
-        sub = bar.loc[mask].sort_values("trade_date")
-        if len(sub) < 2:
-            return None
-        start_c = sub.iloc[0]["close"]
-        end_c = sub.iloc[-1]["close"]
-        if pd.isna(start_c) or pd.isna(end_c) or start_c == 0:
-            return None
-        return end_c / start_c - 1
-
-    def get_benchmark_return(
-        self,
-        start_date: pd.Timestamp,
-        end_date: pd.Timestamp,
-    ) -> Optional[float]:
-        bar = self.benchmark_bar
-        mask = (bar["trade_date"] >= start_date) & (bar["trade_date"] <= end_date)
-        sub = bar.loc[mask].sort_values("trade_date")
-        if len(sub) < 2:
-            return None
-        sc = sub.iloc[0]["close"]
-        ec = sub.iloc[-1]["close"]
-        if pd.isna(sc) or pd.isna(ec) or sc == 0:
-            return None
-        return ec / sc - 1
-
 
 def load_all_data(
     config: Optional[StrategyConfig] = None,

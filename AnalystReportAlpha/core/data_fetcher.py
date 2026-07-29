@@ -34,7 +34,8 @@ from core.config import (
 logger = logging.getLogger(__name__)
 
 MAX_RETRIES = 3
-RETRY_DELAY = 2  # 秒
+RETRY_DELAY = 3  # 秒
+REQUEST_DELAY = 1.5  # 每个请求之间的延迟（秒），避免 AKShare 连接被拒绝
 
 
 class DataFetcher:
@@ -101,17 +102,21 @@ class DataFetcher:
 
         import akshare as ak
 
-        # 检查缓存
-        # 缓存仅在 AKShare 不可用时使用（离线模式）
-        if not self.is_available and self.use_cache and not force_refresh and os.path.exists(DAILY_BAR_PATH):
+        # 优先检查本地缓存（避免重复请求 AKShare 触发频次限制）
+        if self.use_cache and not force_refresh and os.path.exists(DAILY_BAR_PATH):
             cached = pd.read_csv(DAILY_BAR_PATH, encoding="utf-8-sig")
-            if len(cached) > 0:
+            if len(cached) > 0 and "stock_code" in cached.columns:
                 need_codes = set(stock_codes)
                 have_codes = set(cached["stock_code"].unique())
                 if need_codes.issubset(have_codes):
                     sub = cached[cached["stock_code"].isin(stock_codes)]
-                    logger.info(f"  💾 [离线缓存] {len(sub)} 条 / {sub['stock_code'].nunique()} 只")
+                    logger.info(f"  💾 [缓存命中] {len(sub)} 条 / {sub['stock_code'].nunique()} 只")
                     return sub.reset_index(drop=True)
+                else:
+                    missing = need_codes - have_codes
+                    logger.info(f"  💾 [缓存部分命中] 缺失 {len(missing)} 只: {list(missing)[:5]}...")
+            else:
+                logger.info("  💾 [缓存为空] 将重新获取")
 
         logger.info(f"  🌐 从 AKShare 获取 {len(stock_codes)} 只股票日线: {start_date}~{end_date}")
         logger.info(f"  📋 股票列表: {stock_codes}")
@@ -119,18 +124,48 @@ class DataFetcher:
         success = 0
         fail = 0
 
+        # 【快速连通性探测】先拉取1只股票，若失败说明AKShare不可达，直接回退缓存
+        if stock_codes:
+            try:
+                _probe = ak.stock_zh_a_hist(
+                    symbol=self._to_akshare_symbol(stock_codes[0]), period="daily",
+                    start_date=start_date, end_date=end_date,
+                    adjust="qfq", timeout=15,
+                )
+                del _probe
+            except Exception as pe:
+                err = str(pe)
+                if 'proxy' in err.lower():
+                    logger.warning(f"  ⛔ 代理/防火墙拦截 AKShare: {self._to_akshare_symbol(stock_codes[0])} - {pe}")
+                else:
+                    logger.warning(f"  ⛔ AKShare 不可达: {self._to_akshare_symbol(stock_codes[0])} - {pe}")
+                logger.warning(f"  💡 将使用本地缓存 CSV 数据")
+                if self.use_cache and os.path.exists(DAILY_BAR_PATH):
+                    cached = pd.read_csv(DAILY_BAR_PATH, encoding="utf-8-sig", dtype={"stock_code": str})
+                    cached["trade_date"] = pd.to_datetime(cached["trade_date"], errors="coerce")
+                    cached = cached.dropna(subset=["trade_date"])
+                    logger.info(f"  💾 回退至本地缓存: {len(cached)} 条, {cached['stock_code'].nunique()} 只")
+                    return cached
+                return pd.DataFrame(columns=["stock_code", "trade_date", "close", "open", "high", "low", "amount"])
+
         for code in stock_codes:
             # AKShare 格式：600519 → sh600519, 000858 → sz000858
             symbol = self._to_akshare_symbol(code)
 
             for attempt in range(1, MAX_RETRIES + 1):
                 try:
+                    # 请求间加入延迟，防止 AKShare 服务端连接拒绝
+                    if attempt == 1:
+                        pass
+                    else:
+                        time.sleep(RETRY_DELAY * attempt)
                     df = ak.stock_zh_a_hist(
                         symbol=symbol,
                         period="daily",
                         start_date=start_date,
                         end_date=end_date,
                         adjust="qfq",  # 前复权
+                        timeout=30,
                     )
                     if df is not None and len(df) > 0:
                         # AKShare 列名：日期, 开盘, 收盘, 最高, 最低, 成交量, 成交额
@@ -143,7 +178,7 @@ class DataFetcher:
                             "成交额": "amount",
                         }
                         df = df.rename(columns=cols)
-                        df["stock_code"] = code
+                        df["stock_code"] = symbol  # 纯数字格式（AKShare 规范）
                         df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
                         df = df[["stock_code", "trade_date", "close", "open", "high", "low", "amount"]].copy()
                         all_dfs.append(df)
@@ -155,6 +190,9 @@ class DataFetcher:
                     else:
                         logger.warning(f"  ❌ {code} ({symbol}): {e}")
                         fail += 1
+
+            # 每个股票请求之间加入延迟（1.5s），防止 AKShare 连接被拒绝
+            time.sleep(REQUEST_DELAY)
 
         if not all_dfs:
             logger.warning(f"  ❌ AKShare 日线全部失败 ({fail}/{len(stock_codes)})")
@@ -177,7 +215,7 @@ class DataFetcher:
 
     def fetch_benchmark_bar(
         self,
-        index_code: str = "000300.SH",
+        index_code: str = "sh000300",
         start_date: str = "20200101",
         end_date: str = "",
         force_refresh: bool = False,
@@ -188,7 +226,7 @@ class DataFetcher:
         Parameters
         ----------
         index_code : str
-            指数代码，默认 000300.SH（沪深300）
+            指数代码，默认 sh000300（沪深300）
         start_date, end_date : str
         force_refresh : bool
 
@@ -328,7 +366,7 @@ class DataFetcher:
         return s
 
     def get_stock_codes_from_reports(self) -> List[str]:
-        """从 LLM 识别结果中提取涉及的所有股票代码"""
+        """从 LLM 识别结果中提取涉及的所有股票代码（纯数字格式，无 .SH/.SZ 后缀）"""
         from core.data_loader import DataLoader
         dl = DataLoader()
         reports = dl.llm_report_result
@@ -345,6 +383,7 @@ class DataFetcher:
             for c in items:
                 c = str(c).strip()
                 if c:
+                    c = self._to_akshare_symbol(c)  # 统一转为纯数字
                     codes.add(c)
         return sorted(codes)
 

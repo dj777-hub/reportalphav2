@@ -27,6 +27,26 @@ from core.config import (
     STOCK_INDUSTRY_PATH,
 )
 
+# 工具函数：统一股票代码格式
+def _normalize_code(code: str) -> str:
+    """去除 .SH/.SZ/.HK 后缀，转为纯数字"""
+    return str(code).strip().upper().replace(".SH", "").replace(".SZ", "").replace(".HK", "")
+
+def _infer_ts_code(code: str) -> str:
+    """纯数字 → Tushare 格式（加 .SH/.SZ），用于 ts_code 参数"""
+    c = str(code).strip().upper().replace(".SH", "").replace(".SZ", "").replace(".HK", "")
+    c = c.zfill(6)
+    if not c.isdigit():
+        return code  # 无法推断，原样返回
+    prefix = c[0]
+    if prefix in ('6', '9'):
+        return c + '.SH'
+    elif prefix in ('0', '3', '2'):
+        return c + '.SZ'
+    elif prefix in ('4', '8'):
+        return c + '.BJ'
+    return c + '.SH'  # 默认上海
+
 logger = logging.getLogger(__name__)
 
 MAX_RETRIES = 3
@@ -63,13 +83,16 @@ class TushareFetcher:
             logger.warning("TUSHARE_TOKEN 为空")
             return False
         try:
-            ts.set_token(self.token)
-            pro = ts.pro_api()
+            # 直接传入 token，避免 ts.set_token 写入 ~/tk.csv 导致的权限问题
+            _pro = ts.pro_api(self.token)
             # 用一个轻量接口测试连通性
-            df = pro.trade_cal(exchange='SSE', start_date='20240101', end_date='20240101')
+            # 使用 stock_basic 做连通性测试（trade_cal 有 5次/天 限制）
+            df = _pro.stock_basic(exchange='SSE', list_status='L', fields='ts_code', limit=1)
             self._avail_cache = df is not None and len(df) > 0
             if not self._avail_cache:
                 logger.warning("Tushare 连通性检测返回空")
+            else:
+                self._pro = _pro  # 缓存 pro 实例
         except Exception as e:
             logger.warning(f"Tushare 连通性检测失败: {e}")
         return self._avail_cache
@@ -78,8 +101,10 @@ class TushareFetcher:
     def pro(self):
         """延迟初始化的 Tushare Pro API 实例"""
         if self._pro is None and self.token:
-            ts.set_token(self.token)
-            self._pro = ts.pro_api()
+            try:
+                self._pro = ts.pro_api(self.token)
+            except Exception as e:
+                logger.warning(f"Tushare Pro 初始化失败: {e}")
         return self._pro
 
     # ── 股票日线行情 ──────────────────────────
@@ -110,16 +135,17 @@ class TushareFetcher:
         if not self.is_available:
             return pd.DataFrame(columns=["stock_code", "trade_date", "close", "open", "high", "low", "amount"])
 
+        # 先将输入统一转为纯数字
+        need_codes = set(_normalize_code(c) for c in stock_codes)
+
         # 检查缓存
         if self.use_cache and not force_refresh and os.path.exists(DAILY_BAR_PATH):
-            cached = pd.read_csv(DAILY_BAR_PATH, encoding="utf-8-sig")
+            cached = pd.read_csv(DAILY_BAR_PATH, encoding="utf-8-sig", dtype={"stock_code": str})
             if len(cached) > 0:
-                need_codes = set(stock_codes)
                 have_codes = set(cached["stock_code"].unique())
-                # 如果缓存已覆盖所有需要的股票，直接返回
                 if need_codes.issubset(have_codes):
-                    sub = cached[cached["stock_code"].isin(stock_codes)]
-                    logger.info(f"  [缓存命中] {len(sub)} 条 / {sub['stock_code'].nunique()} 只")
+                    sub = cached[cached["stock_code"].isin(need_codes)]
+                    logger.info(f"  💾 [缓存命中] {len(sub)} 条 / {sub['stock_code'].nunique()} 只")
                     return sub.reset_index(drop=True)
 
         logger.info(f"  从 Tushare 获取 {len(stock_codes)} 只股票日线: {start_date}~{end_date}")
@@ -249,11 +275,12 @@ class TushareFetcher:
             return pd.DataFrame(columns=["stock_code", "level1_industry"])
 
         if self.use_cache and not force_refresh and os.path.exists(STOCK_INDUSTRY_PATH):
-            cached = pd.read_csv(STOCK_INDUSTRY_PATH, encoding="utf-8-sig")
+            cached = pd.read_csv(STOCK_INDUSTRY_PATH, encoding="utf-8-sig", dtype={"stock_code": str})
             if len(cached) > 0:
                 if stock_codes is None:
                     return cached
-                return cached[cached["stock_code"].isin(stock_codes)].reset_index(drop=True)
+                need = set(_normalize_code(c) for c in stock_codes)
+                return cached[cached["stock_code"].isin(need)].reset_index(drop=True)
 
         for attempt in range(1, MAX_RETRIES + 1):
             try:
@@ -265,11 +292,13 @@ class TushareFetcher:
                 if df is not None and len(df) > 0:
                     result = df[["ts_code", "industry"]].rename(
                         columns={"ts_code": "stock_code", "industry": "level1_industry"})
+                    result["stock_code"] = result["stock_code"].apply(_normalize_code)  # 纯数字
                     result = result.dropna(subset=["level1_industry"])
                     result = result.drop_duplicates(subset=["stock_code"])
 
                     if stock_codes:
-                        result = result[result["stock_code"].isin(stock_codes)]
+                        need = set(_normalize_code(c) for c in stock_codes)
+                        result = result[result["stock_code"].isin(need)]
 
                     if self.use_cache:
                         os.makedirs(DATA_DIR, exist_ok=True)
@@ -288,7 +317,7 @@ class TushareFetcher:
     # ── 从研报提取股票代码 ────────────────────
 
     def get_stock_codes_from_reports(self) -> List[str]:
-        """从 LLM 识别结果中提取涉及的所有股票代码"""
+        """从 LLM 识别结果中提取涉及的所有股票代码（纯数字）"""
         from core.data_loader import DataLoader
         dl = DataLoader()
         reports = dl.llm_report_result
@@ -302,7 +331,7 @@ class TushareFetcher:
             if isinstance(items, str):
                 items = [items]
             for c in items:
-                c = str(c).strip()
+                c = _normalize_code(c)
                 if c:
                     codes.add(c)
         return sorted(codes)
@@ -315,9 +344,8 @@ def _check_tushare_connectivity() -> bool:
     if not TUSHARE_TOKEN:
         return False
     try:
-        ts.set_token(TUSHARE_TOKEN)
-        pro = ts.pro_api()
-        df = pro.trade_cal(exchange='SSE', start_date='20240101', end_date='20240101')
+        pro = ts.pro_api(TUSHARE_TOKEN)
+        df = pro.stock_basic(exchange='SSE', list_status='L', fields='ts_code', limit=1)
         return df is not None and len(df) > 0
     except Exception:
         return False

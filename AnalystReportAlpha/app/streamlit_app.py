@@ -117,6 +117,90 @@ div[data-testid="stDataFrame"] { border: 1px solid #e8ecf1; border-radius: 10px;
     padding: 1.5rem; margin: 1rem 0;
     border-left: 4px solid #4a6cf7;
 }
+
+/* Progress bar enhancements */
+.stProgress {
+    margin: 0.5rem 0 !important;
+}
+.stProgress > div {
+    background: rgba(232,236,241,0.5) !important;
+    border-radius: 12px !important;
+    height: 10px !important;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.06) !important;
+}
+.stProgress > div > div {
+    background: linear-gradient(90deg, #1a2a4a, #3a6ab5, #1a2a4a) !important;
+    background-size: 200% 100% !important;
+    border-radius: 12px !important;
+    height: 10px !important;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 1px 6px rgba(26,42,74,0.3) !important;
+}
+
+/* Progress status text */
+.stProgress + div p {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #1a2a4a !important;
+    margin-top: 0.25rem !important;
+    letter-spacing: 0.01em !important;
+}
+
+/* Backtest container card */
+.bt-progress-card {
+    background: white !important;
+    border: 1px solid #e8ecf1 !important;
+    border-radius: 16px !important;
+    padding: 1.8rem 2rem !important;
+    margin: 1.2rem 0 !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05) !important;
+}
+
+/* Status text in backtest */
+.bt-status-text {
+    font-size: 0.9rem !important;
+    color: #2d4a7a !important;
+    font-weight: 500 !important;
+    margin-top: 0.5rem !important;
+}
+}
+
+/* Toast styling */
+div[data-testid="stToast"] {
+    border-radius: 10px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Reduce overlay gray during loading */
+div[class*="stApp"] > div:has(> div.stProgress) {
+    background: transparent !important;
+}
+
+/* Spinner override - make it less intrusive */
+.stSpinner > div {
+    border-top-color: #2d4a7a !important;
+    border-width: 3px !important;
+}
+
+/* Info box styling */
+div[data-testid="stInfo"] {
+    background: linear-gradient(135deg, #f0f4ff, #e8f0ff) !important;
+    border: 1px solid #ccd9ff !important;
+    border-radius: 10px !important;
+}
+
+/* Success box */
+div[data-testid="stSuccess"] {
+    background: linear-gradient(135deg, #f0fff4, #e8f8ee) !important;
+    border: 1px solid #b8dfc6 !important;
+    border-radius: 10px !important;
+}
+
+/* Make execution status text more prominent */
+div:has(> .stProgress) + div p {
+    font-weight: 500 !important;
+    color: #2d4a7a !important;
+}
 </style>
 """
 
@@ -124,41 +208,99 @@ div[data-testid="stDataFrame"] { border: 1px solid #e8ecf1; border-radius: 10px;
 # 缓存
 # ═══════════════════════════════════════════════
 
-@st.cache_data(show_spinner="📂 加载数据...")
-def load_data_cached(cfg_dict, llm_path):
-    cfg = StrategyConfig(**{k:v for k,v in cfg_dict.items() if k in StrategyConfig.__dataclass_fields__})
-    dl = DataLoader(cfg, llm_result_path=llm_path)
-    for attr in ['llm_report_result','daily_bar','benchmark_bar','stock_industry','trading_calendar','monthly_rebalance_dates']:
-        getattr(dl, attr)
-    # 日志显示数据来源
-    _bar = st.session_state.get("daily_bar", None)
-    if _bar is not None and len(_bar) > 0:
-        _codes = _bar["stock_code"].nunique()
-        if "_log_placeholder" in st.session_state:
-            st.session_state["_log_placeholder"].text(
-                f"📂 数据加载完成 | 股票 {_codes} 只 | 交易日 {len(dl.trading_calendar)} 天\n"
-                f"基准 沪深300 | 研报 {len(dl.llm_report_result)} 条"
-            )
-    return dl
 
-def run_bt_impl(cfg_dict, llm_path):
-    """回测执行函数（可被 streamlit 调用或 CLI 调用）"""
+def run_backtest_full(cfg_dict, llm_path):
+    "全流程回测（含完整进度条：数据加载 → 回测 → 指标计算）"
     cfg = StrategyConfig(**{k:v for k,v in cfg_dict.items() if k in StrategyConfig.__dataclass_fields__})
-    dl = DataLoader(cfg, llm_result_path=llm_path)
-    _ = dl.trading_calendar; _ = dl.monthly_rebalance_dates
-    bar = st.progress(0, text="初始化..."); status = st.empty()
-    def cb(p, m):
-        bar.progress(p/100, text=m)
-        status.text(m)
-    
-    result = run_backtest(config=cfg, data_loader=dl, progress_callback=cb)
-    
-    bar.empty(); status.empty()
-    if len(result.rebalance_records) == 0:
-        st.error("回测失败：无有效调仓记录")
-        return None
-    metrics = calc_all_metrics(result.nav_series, result.benchmark_nav_series, result.daily_returns, result.benchmark_daily_returns)
+
+    _bt_container = st.empty()
+    with _bt_container.container():
+        st.markdown('<div class="bt-progress-card">', unsafe_allow_html=True)
+        bar = st.progress(0, text="🚀 初始化...")
+        status = st.empty()
+        st.markdown("</div>", unsafe_allow_html=True)
+
+    def _up(pct: int, msg: str):
+        if pct >= 100:
+            _bt_container.empty()
+        else:
+            bar.progress(min(pct, 100), text=msg)
+            status.text(msg)
+
+    try:
+        _up(2, "📂 初始化数据加载器...")
+        dl = DataLoader(cfg, llm_result_path=llm_path)
+
+        _up(8, "📄 加载 LLM 研报识别结果...")
+        _ = dl.llm_report_result
+
+        _up(15, "📈 连接 BaoStock 获取个股日线行情...")
+        _ = dl.daily_bar
+
+        _up(45, "📊 获取沪深300基准行情...")
+        _ = dl.benchmark_bar
+
+        _up(55, "🗂️ 加载行业分类...")
+        _ = dl.stock_industry
+
+        _up(60, "📅 构建交易日历...")
+        _ = dl.trading_calendar
+        _ = dl.monthly_rebalance_dates
+
+        if len(dl.monthly_rebalance_dates) < 2:
+            _bt_container.empty()
+            st.error("❌ 调仓日不足，请检查回测区间或行情数据")
+            return None
+
+        _up(65, "📊 执行回测中...")
+
+        def _bt_callback(p: int, m: str):
+            bt_pct = 65 + int(p * 0.30)
+            _up(bt_pct, f"📊 {m}")
+
+        result = run_backtest(config=cfg, data_loader=dl, progress_callback=_bt_callback)
+
+        if len(result.rebalance_records) == 0:
+            _bt_container.empty()
+            st.error("回测失败：无有效调仓记录")
+            return None
+
+        _up(97, "📐 计算绩效指标...")
+        metrics = calc_all_metrics(
+            result.nav_series, result.benchmark_nav_series,
+            result.daily_returns, result.benchmark_daily_returns
+        )
+
+        _up(100, "")
+
+    except Exception as e:
+        _bt_container.empty()
+        raise
+
     return _serialize(result, metrics)
+def _serialize(result, metrics):
+    return {
+        "rebalance_records": [{
+            "rebalance_date": r.rebalance_date, "holding_codes": r.holding_codes,
+            "holding_weights": r.holding_weights, "holding_names": r.holding_names,
+            "portfolio_return": r.portfolio_return, "benchmark_return": r.benchmark_return,
+            "num_analysts": r.num_analysts, "num_stocks": r.num_stocks, "total_reports": r.total_reports,
+        } for r in result.rebalance_records],
+        "nav_data": (lambda nv: {} if nv is None or len(nv)==0 else {
+            "dates": [str(d.date()) for d in nv.index],
+            "strategy_nav": [float(v) for v in nv.values],
+            "benchmark_nav": [float(v) for v in result.benchmark_nav_series.values],
+            "strat_returns": [float(v) for v in result.daily_returns.values],
+            "bench_returns": [float(v) for v in result.benchmark_daily_returns.values],
+        })(result.nav_series),
+        "analyst_records": [{
+            "rebalance_date": a.get("rebalance_date",""), "analyst_name": a.get("analyst_name",""),
+            "score": float(a.get("score",0)), "win_rate": float(a.get("win_rate",0)),
+            "num_recommendations": int(a.get("num_recommendations",0)),
+        } for a in result.analyst_records],
+        "industry_records": [{"rebalance_date": r["rebalance_date"], "distribution": r["distribution"]} for r in result.industry_records],
+        "metrics": metrics, "total_turnover": result.total_turnover,
+    }
 
 def _serialize(result, metrics):
     return {
@@ -193,41 +335,39 @@ def sidebar():
         st.markdown("### 🔬 控制面板")
         cfg = {}
         with st.expander("📐 策略参数", expanded=True):
-            cfg["rebalance_frequency"] = st.selectbox("调仓频率", ["monthly","weekly"], index=0,
+            cfg["rebalance_frequency"] = st.selectbox("调仓频率", ["monthly","weekly"], index=0, key="rebalance_freq",
                 help="月频：每月最后交易日调仓；周频：每周最后交易日调仓")
             cfg["top_analyst_num"] = st.slider("Top 分析师数", 1, 20, 10, 1)
-            cfg["analyst_lookback_window"] = st.slider("分析师评分回溯(交易日)", 60, 360, 120, 30)
-            cfg["signal_lookback_days"] = st.slider("信号回望(交易日)", 5, 60, 20, 5)
+            cfg["analyst_lookback_window"] = st.slider("分析师评分回溯(交易日)", 10, 120, 20, 5)
+            cfg["signal_lookback_days"] = st.slider("信号回望(交易日)", 5, 60, 10, 5)
             cfg["holding_period_days"] = st.slider("持有期(交易日)", 5, 60, 20, 5)
             cfg["min_20d_avg_amount"] = st.number_input("流动性门槛(万元)", 1000, 500000, 5000, 1000) * 10000
             cfg["transaction_cost_rate"] = st.slider("交易成本率", 0.0001, 0.005, 0.0015, 0.0001, format="%.4f")
             cfg["weight_by_consensus"] = st.checkbox("一致预期加权（按推荐人数）", value=False)
-        # ── 数据源标识 ──
-        try:
-            from core.data_fetcher import DataFetcher
-            _ak_ok = DataFetcher().is_available
-        except Exception:
-            _ak_ok = False
-        if _ak_ok:
-            st.caption("🟢 数据源: AKShare 实时行情")
-        else:
-            st.caption("🟡 数据源: 本地缓存 CSV")
+        # ── 数据源标识（仅显示配置状态，不触发网络连接） ──
+        # ── 数据源标识（仅显示配置状态，不触发网络连接） ──
+        st.caption("🟢 数据源: **BaoStock** (免费) | 实时行情 | 沪深300基准")
+        st.caption("💡 首次回测将自动从 BaoStock 拉取并缓存行情数据")
 
         with st.expander("📅 回测区间", expanded=True):
-            c1, c2 = st.columns(2)
-            cfg["backtest_start_date"] = c1.text_input("开始", "20220101")
-            cfg["backtest_end_date"] = c2.text_input("结束", "20241231")
+            from datetime import date
+            cfg["backtest_start_date"] = st.date_input("起始日", date(2025,10,1),
+                min_value=date(2020,1,1), max_value=date(2027,12,31),
+                format="YYYY-MM-DD").strftime("%Y%m%d")
+            cfg["backtest_end_date"] = st.date_input("截止日", date(2025,12,31),
+                min_value=date(2020,1,1), max_value=date(2027,12,31),
+                format="YYYY-MM-DD").strftime("%Y%m%d")
         txt_dir = st.text_input("📁 研报目录", TEXT_REPORT_DIR)
         bt = st.button("🚀 启动回测", type="primary", width='stretch')
         col1, col2 = st.columns(2)
         refresh = col1.button("🔄 刷新数据", width='stretch',
-            help="从 AKShare 重新拉取行情数据并更新缓存")
+            help="从 BaoStock 重新拉取行情数据并更新缓存")
         clear = col2.button("🗑️ 清空缓存", width='stretch')
         # 强制刷新数据
         if refresh:
             from core.data_loader import DataLoader
             import os, glob
-            # 删除缓存的 CSV，下次自动从 AKShare 拉取
+            # 删除缓存的 CSV，下次自动从 BaoStock 拉取
             for f in ['daily_bar.csv', 'benchmark_bar.csv', 'stock_industry.csv']:
                 p = os.path.join(DATA_DIR, f)
                 if os.path.exists(p):
@@ -235,10 +375,11 @@ def sidebar():
                     logger.info(f'已删除缓存: {f}')
             st.cache_data.clear()
             st.session_state.result_data = None
-            with st.spinner('从 AKShare 获取数据...'):
-                dl = DataLoader(StrategyConfig())
-                _ = dl.daily_bar; _ = dl.benchmark_bar; _ = dl.stock_industry
-            st.success('✅ 数据已从 AKShare 刷新')
+            _status = st.info('🔄 正在从 BaoStock 获取数据...')
+            dl = DataLoader(StrategyConfig())
+            _ = dl.daily_bar; _ = dl.benchmark_bar; _ = dl.stock_industry
+            _status.empty()
+            st.toast('✅ 数据已从 BaoStock 刷新', icon='✅')
             st.rerun()
         return cfg, {"bt":bt, "refresh":refresh, "clear":clear}, txt_dir
 
@@ -290,17 +431,37 @@ def tab_reports(txt_dir):
                 if not client.is_available: st.error("LLM 不可用")
                 else:
                     texts = [{"report_id":f.name,"filename":f.name,"report_text":f.read().decode("utf-8")} for f in uploaded_files]
-                    bar = st.progress(0, text="识别中...")
-                    df = client.batch_analyze(texts); bar.empty()
+                    bar = st.progress(0, text="准备中...")
+                    status_text = st.empty()
+                    def _up(pct, msg):
+                        bar.progress(pct / 100, text=msg)
+                        status_text.text(msg)
+                    df = client.batch_analyze(texts, progress_callback=_up)
+                    bar.empty(); status_text.empty()
                     pos = int(df["has_positive_recommend"].sum())
                     st.success(f"完成! {len(df)}条, 看多{pos}条")
                     st.dataframe(df[["filename","analyst_name","has_positive_recommend","stock_code_list","reason"]], width='stretch', hide_index=True)
                     st.download_button("💾 下载CSV", df.to_csv(index=False,encoding="utf-8-sig"), "llm_results.csv")
         else:
-            txt = st.text_area("或粘贴单条研报", height=120, placeholder="粘贴研报全文...")
-            if st.button("🔍 单条识别") and txt.strip():
-                with st.spinner("分析中..."):
-                    res = create_llm_client(provider=dp, model=dm).debug_analyze(txt)
+            uploaded = st.file_uploader("上传 PDF 调试", type=["pdf"], label_visibility="collapsed")
+            txt_source = None
+            if uploaded is not None:
+                # 保存临时文件并提取文本
+                import tempfile
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+                    tmp.write(uploaded.getvalue())
+                    tmp_path = tmp.name
+                text_preview = loader.preview_pdf(tmp_path, max_chars=1500)
+                os.unlink(tmp_path)
+                txt_source = text_preview
+                st.text_area("PDF 提取文本预览", text_preview[:800], height=150, disabled=True)
+            else:
+                txt_source = st.text_area("或粘贴研报全文", height=120, placeholder="粘贴研报全文...")
+                txt_source = txt_source if txt_source.strip() else None
+            if st.button("🔍 单条识别", type="primary") and txt_source:
+                st.toast('⏳ LLM 分析中...', icon='🤖')
+                res = create_llm_client(provider=dp, model=dm).debug_analyze(txt_source[:6000])
+                st.toast('✅ 分析完成', icon='✅')
                 c1,c2,c3 = st.columns(3)
                 if res.get("has_positive_recommend"): c1.success(f"看多: {res.get('target_stock_code_list',[])}")
                 else: c1.info("未检测到看多")
@@ -309,19 +470,26 @@ def tab_reports(txt_dir):
                 with st.expander("JSON"): st.json(res)
 
 def _run_llm_batch(loader, files, provider, model):
-    st.info(f"读取 {len(files)} 个文件...")
+    st.toast(f"📄 读取 {len(files)} 个文件...", icon='📂')
+    logger.info(f"[LLM批量] 开始读取 {len(files)} 个文件")
     reports = loader.batch_load(files)
     ok = [r for r in reports if r.load_success]
     if not ok: st.error("无有效文件"); return
-    st.info(f"LLM识别 {len(ok)} 篇...")
-    bar = st.progress(0, text="识别中...")
+    logger.info(f"[LLM批量] 有效文件 {len(ok)} 篇, 开始调用 {provider}/{model}")
+    bar = st.progress(0, text="准备中...")
+    status_text = st.empty()
     client = create_llm_client(provider=provider, model=model)
     if not client.is_available: st.error("LLM不可用"); return
     texts = [{"report_id":str(i+1),"filename":r.filename,"report_text":r.content} for i,r in enumerate(ok)]
-    df = client.batch_analyze(texts); bar.empty()
+    def _update_bar(pct, msg):
+        bar.progress(pct / 100, text=msg)
+        status_text.text(msg)
+    df = client.batch_analyze(texts, progress_callback=_update_bar)
+    bar.empty(); status_text.empty()
     os.makedirs(DATA_DIR, exist_ok=True)
     df.to_csv(LLM_REPORT_RESULT_PATH, index=False, encoding="utf-8-sig")
     pos = int(df["has_positive_recommend"].sum())
+    logger.info(f"[LLM批量] 完成! {len(df)}条, 看多{pos}条")
     st.success(f"✅ 完成! {len(df)}条, 看多{pos}条")
     st.cache_data.clear(); st.rerun()
 
@@ -372,7 +540,7 @@ def tab_signals(data):
     dates = [r["rebalance_date"] for r in recs]
     col_filter, col_meta = st.columns([3, 2])
     with col_filter:
-        sel = st.selectbox("选择调仓期", dates, index=min(len(dates)-1, 5))
+        sel = st.selectbox("选择调仓期", dates, index=min(len(dates)-1, 5), key="pick_date")
     with col_meta:
         freq_label = _cfg.get("rebalance_frequency", "monthly")
         st.caption(f"📅 调仓频率: {'📅 月频' if freq_label=='monthly' else '📆 周频'}")
@@ -478,64 +646,67 @@ def _render_ai_report_agent(sel_date, record, _cfg):
             else ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"],
             index=0, key="agent_model")
 
-    generate_btn = st.button("📝 生成本月精选研报", type="primary", width='stretch')
+    generate_btn = st.button("📝 生成精选研报", type="primary", width='stretch')
 
     if generate_btn:
-        with st.spinner("🤖 正在读取研报原文并分析..."):
-            try:
-                report_df = pd.read_csv(LLM_REPORT_RESULT_PATH)
-                target_codes = list(code_names.keys())
+        _gen_status = st.info('🤖 正在读取研报原文并分析...')
+        try:
+            report_df = pd.read_csv(LLM_REPORT_RESULT_PATH)
+            target_codes = list(code_names.keys())
+            # 代码归一化（纯数字匹配，兼容 .SH/.SZ 后缀）
+            target_codes_norm = {c.upper().replace(".SH","").replace(".SZ","").replace(".HK","").replace(".XSHG","").replace(".XSHE",""): c for c in target_codes}
 
-                # 按股票分组收集相关研报
-                stock_reports = {code: [] for code in target_codes}
-                for _, row in report_df.iterrows():
-                    codes_json = row.get("stock_code_list", "[]")
-                    try:
-                        codes = json.loads(codes_json) if isinstance(codes_json, str) else codes_json
-                    except:
-                        codes = []
-                    if isinstance(codes, str):
-                        codes = [codes]
-                    for c in codes:
-                        c = str(c).strip()
-                        if c in target_codes and row.get("has_positive_recommend") == True:
-                            stock_reports[c].append(row)
-                            break
+            # 按股票分组收集相关研报
+            stock_reports = {code: [] for code in target_codes}
+            for _, row in report_df.iterrows():
+                codes_json = row.get("stock_code_list", "[]")
+                try:
+                    codes = json.loads(codes_json) if isinstance(codes_json, str) else codes_json
+                except:
+                    codes = []
+                if isinstance(codes, str):
+                    codes = [codes]
+                for _c in codes:
+                    _c = str(_c).strip().upper().replace(".SH","").replace(".SZ","").replace(".HK","").replace(".XSHG","").replace(".XSHE","")
+                    if _c in target_codes_norm and row.get("has_positive_recommend") == True:
+                        stock_reports[_c].append(row)
+                        break
+                        break
 
-                total_related = sum(len(v) for v in stock_reports.values())
-                if total_related == 0:
-                    st.warning("未找到持仓股票的相关研报数据")
-                    st.markdown("</div>", unsafe_allow_html=True)
-                    return
+            total_related = sum(len(v) for v in stock_reports.values())
+            if total_related == 0:
+                st.warning("未找到持仓股票的相关研报数据")
+                st.markdown("</div>", unsafe_allow_html=True)
+                return
 
-                # 为每只股票构建研报上下文（取最新3条，含正文摘录）
-                context_parts = []
-                for code in target_codes:
-                    reports = sorted(stock_reports.get(code, []),
-                        key=lambda r: str(r.get("publish_date", "")), reverse=True)[:3]
-                    if not reports:
-                        continue
-                    name = code_names[code]["name"]
-                    context_parts.append(f"\n## {code} {name}\n")
-                    for i, rp in enumerate(reports):
-                        body = str(rp.get("report_content", ""))[:600]
-                        context_parts.append(
-                            f"> 分析师: {rp.get('analyst_name','未知')} | "
-                            f"日期: {rp.get('publish_date','未知')} | "
-                            f"判断: {rp.get('reason','')}\n"
-                            f"> {body.replace(chr(10), chr(10)+'> ')}"
-                        )
-                context = "\n".join(context_parts)
+            # 为每只股票构建研报上下文（取最新3条，含正文摘录）
+            context_parts = []
+            for code in target_codes:
+                reports = sorted(stock_reports.get(code, []),
+                    key=lambda r: str(r.get("publish_date", "")), reverse=True)[:3]
+                if not reports:
+                    continue
+                name = code_names[code]["name"]
+                context_parts.append(f"\n## {code} {name}\n")
+                for i, rp in enumerate(reports):
+                    body = str(rp.get("report_content", ""))[:600]
+                    context_parts.append(
+                        f"> 分析师: {rp.get('analyst_name','未知')} | "
+                        f"日期: {rp.get('publish_date','未知')} | "
+                        f"判断: {rp.get('reason','')}\n"
+                        f"> {body.replace(chr(10), chr(10)+'> ')}"
+                    )
+            context = "\n".join(context_parts)
 
-                client = create_llm_client(provider=agent_provider, model=agent_model)
-                if not client.is_available:
-                    st.error("LLM 不可用")
-                    st.markdown("</div>", unsafe_allow_html=True)
-                    return
+            client = create_llm_client(provider=agent_provider, model=agent_model)
+            if not client.is_available:
+                st.error("LLM 不可用")
+                st.markdown("</div>", unsafe_allow_html=True)
+                return
 
-                table_rows = "\n".join([f"| {code} | {info['name']} | {info['weight']*100:.1f}% |" for code, info in code_names.items()])
+            table_rows = "\n".join([f"| {code} | {info['name']} | {info['weight']*100:.1f}% |" for code, info in code_names.items()])
 
-                prompt = f"""你是一位券商研究所的首席策略分析师。请根据本期精选股票池及优秀分析师的最新研报原文，撰写一份**专业、可读性强的月度选股研究报告**，Markdown格式。
+            prompt = f"""你是一位券商研究所的首席策略分析师。请根据本期精选股票池及优秀分析师的最新研报原文，撰写一份**专业、可读性强的选股研究报告**，Markdown格式。
 
 ---
 ## 📊 本期精选股票池
@@ -568,26 +739,27 @@ def _render_ai_report_agent(sel_date, record, _cfg):
 ---
 > 📎 **声明**：本报告基于公开研报数据生成，仅供参考学习，不构成投资建议。"""
 
-                report_text = client.generate_text(prompt,
-                    system_prompt="你是一位专业严谨的券商首席策略分析师，输出专业Markdown研究报告。",
-                    temperature=0.7)
-                if not report_text or report_text.startswith("生成失败") or report_text.startswith("LLM 不可用"):
-                    st.error(f"报告生成失败: {report_text}")
-                    st.markdown("</div>", unsafe_allow_html=True)
-                    return
+            report_text = client.generate_text(prompt,
+                system_prompt="你是一位专业严谨的券商首席策略分析师，输出专业Markdown研究报告。",
+                temperature=0.7)
+            _gen_status.empty()
+            if not report_text or report_text.startswith("生成失败") or report_text.startswith("LLM 不可用"):
+                st.error(f"报告生成失败: {report_text}")
+                st.markdown("</div>", unsafe_allow_html=True)
+                return
 
-                st.success("✅ AI 研报已生成")
-                st.markdown(f"""
+            st.success("✅ AI 研报已生成")
+            st.markdown(f"""
 <div style="background:white;border-radius:14px;padding:2rem;border:1px solid #e0e4ea;box-shadow:0 2px 12px rgba(0,0,0,0.05);margin-top:0.5rem;">
     <div style="font-size:0.9rem;line-height:1.8;color:#1a1a2e;">{report_text}</div>
 </div>
 """, unsafe_allow_html=True)
 
-                st.download_button("💾 下载研报 (.md)", report_text, f"analyst_report_{sel_date}.md", "text/markdown")
+            st.download_button("💾 下载研报 (.md)", report_text, f"analyst_report_{sel_date}.md", "text/markdown")
 
-            except Exception as e:
-                st.error(f"生成失败: {e}")
-                logger.exception("AI 报告生成异常")
+        except Exception as e:
+            st.error(f"生成失败: {e}")
+            logger.exception("AI 报告生成异常")
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -604,7 +776,7 @@ def tab_analysts(data):
     df["综合得分"] = df["score"].apply(lambda x: f"{x:.4f}")
     df["胜率"] = df["win_rate"].apply(lambda x: f"{x:.2%}")
     dates = sorted(df["rebalance_date"].unique())
-    sel = st.selectbox("调仓期", dates, label_visibility="collapsed")
+    sel = st.selectbox("调仓期", dates, label_visibility="collapsed", key="ind_date")
     sub = df[df["rebalance_date"]==sel].sort_values("score", ascending=False)
     st.dataframe(sub[["analyst_name","综合得分","胜率","num_recommendations"]].rename(
         columns={"analyst_name":"分析师","num_recommendations":"荐股数"}), width='stretch', hide_index=True)
@@ -644,7 +816,7 @@ def tab_rebalance(data):
     st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
     fig = plot_period_returns(recs)
     st.plotly_chart(fig, width="stretch")
-    sel = st.selectbox("查看单期持仓", [r["rebalance_date"] for r in recs], label_visibility="collapsed")
+    sel = st.selectbox("查看单期持仓", [r["rebalance_date"] for r in recs], label_visibility="collapsed", key="rebal_sel")
     for r in recs:
         if r["rebalance_date"] == sel:
             names = r.get("holding_names", [])
@@ -658,7 +830,7 @@ def tab_industry(data):
     if not recs: st.info("暂无数据"); return
     st.markdown("### 🏭 行业分布")
     dates = [r["rebalance_date"] for r in recs]
-    sel = st.selectbox("调仓期", dates, label_visibility="collapsed")
+    sel = st.selectbox("调仓期", dates, label_visibility="collapsed", key="ind_date_2")
     for r in recs:
         if r["rebalance_date"] == sel:
             if r["distribution"]: st.plotly_chart(plot_industry_pie(r["distribution"]), width="stretch")
@@ -717,23 +889,20 @@ def main():
 
     if btns.get("bt", False):
         try:
-            with st.spinner("加载数据..."):
-                dl = load_data_cached(cfg, LLM_REPORT_RESULT_PATH)
-            if len(dl.monthly_rebalance_dates) >= 2:
-                result = run_bt_impl(cfg, LLM_REPORT_RESULT_PATH)
-                if result is not None:
-                    st.session_state.result_data = result
-                    st.success("✅ 回测完成!")
-            else:
-                st.error(f"调仓日不足 ({len(dl.monthly_rebalance_dates)} 个)")
+            logger.info('[回测] 开始执行回测')
+            result = run_backtest_full(cfg, LLM_REPORT_RESULT_PATH)
+            if result is not None:
+                st.session_state.result_data = result
+                st.success("✅ 回测完成!")
+
         except Exception as e:
             st.error(f"❌ 回测失败: {e}")
             import traceback
             logger.exception("回测异常")
 
 
-    data = st.session_state.result_data
 
+    data = st.session_state.result_data
     tabs = st.tabs(["📄 研报导入", "📌 精选股票池", "🏆 分析师排名", "📈 回测总览", "📋 调仓明细", "🏭 行业分布"])
     with tabs[0]: tab_reports(txt_dir)
     with tabs[1]:
