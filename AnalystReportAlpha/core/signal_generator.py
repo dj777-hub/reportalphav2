@@ -112,7 +112,8 @@ class SignalGenerator:
         【防范未来函数提醒】
         信号区间 = [rebalance_date - signal_lookback_days, rebalance_date - 1]
         """
-        signal_start = rebalance_date - pd.Timedelta(days=self.config.signal_lookback_days)
+        # 使用交易日偏移（日历日近似，确保信号窗口合理）
+        signal_start = rebalance_date - pd.Timedelta(days=int(self.config.signal_lookback_days * 1.4))
         signal_end = rebalance_date - pd.Timedelta(days=1)
 
         report_df = self.dl.llm_report_result
@@ -190,11 +191,13 @@ class SignalGenerator:
                     code_analyst_names[code] = set()
                 code_analyst_names[code].add(s["analyst_name"])
 
+        # 股票名称映射
+        name_map = self.dl.get_stock_name_map()
         result = []
         for code, cnt in code_analyst_count.items():
             result.append({
                 "stock_code": code,
-                "stock_name": "",
+                "stock_name": name_map.get(code, ""),
                 "analyst_count": cnt,
                 "analyst_names": list(code_analyst_names.get(code, set())),
                 "signal_source": "llm",

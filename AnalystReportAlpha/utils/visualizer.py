@@ -49,20 +49,22 @@ def _safe_get(obj, attr: str, default=None):
 def plot_nav_comparison(
     nav_series: pd.Series,
     benchmark_nav: pd.Series,
-    title: str = "策略净值 vs 基准净值",
+    title: str = "策略净值 vs 沪深300基准",
 ) -> "go.Figure":
     _check_plotly()
     fig = go.Figure()
-    fig.add_trace(go.Scatter(
-        x=nav_series.index, y=nav_series.values, name="策略净值",
-        line=dict(color=COLORS["strategy"], width=2),
-        hovertemplate="日期: %{x|%Y-%m-%d}<br>净值: %{y:.4f}<extra>策略</extra>",
-    ))
-    fig.add_trace(go.Scatter(
-        x=benchmark_nav.index, y=benchmark_nav.values, name="基准净值",
-        line=dict(color=COLORS["benchmark"], width=2, dash="dash"),
-        hovertemplate="日期: %{x|%Y-%m-%d}<br>净值: %{y:.4f}<extra>基准</extra>",
-    ))
+    if len(nav_series) > 0:
+        fig.add_trace(go.Scatter(
+            x=nav_series.index, y=nav_series.values, name="策略净值",
+            line=dict(color=COLORS["strategy"], width=2),
+            hovertemplate="日期: %{x|%Y-%m-%d}<br>净值: %{y:.4f}<extra>策略</extra>",
+        ))
+    if len(benchmark_nav) > 0:
+        fig.add_trace(go.Scatter(
+            x=benchmark_nav.index, y=benchmark_nav.values, name="沪深300基准",
+            line=dict(color=COLORS["benchmark"], width=2, dash="dash"),
+            hovertemplate="日期: %{x|%Y-%m-%d}<br>净值: %{y:.4f}<extra>沪深300</extra>",
+        ))
     fig.update_layout(
         title=dict(text=title, x=0.5, font=dict(size=18)),
         xaxis_title="日期", yaxis_title="净值",
@@ -128,7 +130,7 @@ def plot_industry_pie(
 # ── 每期收益柱状图（兼容 dict）────────────────
 def plot_period_returns(
     rebalance_records: List,
-    title: str = "每期组合收益 vs 基准收益",
+    title: str = "每期组合收益 vs 沪深300",
 ) -> "go.Figure":
     _check_plotly()
     dates = [_safe_get(r, "rebalance_date") for r in rebalance_records]
@@ -139,7 +141,7 @@ def plot_period_returns(
     fig.add_trace(go.Bar(x=dates, y=port_rets, name="组合收益",
                          marker_color=COLORS["strategy"],
                          hovertemplate="调仓日: %{x}<br>组合: %{y:.2%}<extra></extra>"))
-    fig.add_trace(go.Bar(x=dates, y=bench_rets, name="基准收益",
+    fig.add_trace(go.Bar(x=dates, y=bench_rets, name="沪深300收益",
                          marker_color=COLORS["benchmark"],
                          hovertemplate="调仓日: %{x}<br>基准: %{y:.2%}<extra></extra>"))
     fig.update_layout(

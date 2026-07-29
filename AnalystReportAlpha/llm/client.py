@@ -205,6 +205,30 @@ class LLMClient:
         }
         return r
 
+    def generate_text(self, prompt: str, system_prompt: str = "", temperature: float = 0.7) -> str:
+        """生成文本（不强制 JSON 格式），用于报告生成等自由文本场景"""
+        if not self.is_available:
+            return "LLM 不可用"
+        messages = []
+        if system_prompt:
+            messages.append({"role": "system", "content": system_prompt})
+        messages.append({"role": "user", "content": prompt})
+
+        last_err = None
+        for attempt in range(1, LLM_MAX_RETRIES + 1):
+            try:
+                # 不使用 response_format，允许自由文本输出
+                resp = self._client.chat.completions.create(
+                    model=self.model, messages=messages,
+                    temperature=temperature, max_tokens=4096,
+                )
+                return resp.choices[0].message.content.strip()
+            except Exception as e:
+                last_err = str(e)
+                logger.warning(f"LLM 文本生成失败(第{attempt}次): {last_err}")
+                time.sleep(2 ** attempt)
+        return f"生成失败: {last_err}"
+
     def clear_cache(self):
         if self._cache: self._cache.clear()
 

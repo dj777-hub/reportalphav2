@@ -26,8 +26,11 @@ import pandas as pd
 from core.config import (
     DATA_DIR, LLM_REPORT_RESULT_PATH, DAILY_BAR_PATH,
     BENCHMARK_BAR_PATH, STOCK_INDUSTRY_PATH,
-    StrategyConfig,
+    StrategyConfig, TUSHARE_TOKEN,
 )
+
+# 数据获取（AKShare 免费开源，无需 Token）
+_akshare_imported = True  # AKShare 无需 token
 
 logger = logging.getLogger(__name__)
 warnings.filterwarnings("ignore")
@@ -176,9 +179,51 @@ class DataLoader:
         return df
 
     def load_daily_bar(self, file_path: Optional[str] = None) -> pd.DataFrame:
-        """加载日线行情"""
+        """加载日线行情（优先 Tushare，回退 CSV）"""
+        # 【优先 AKShare 获取真实行情】
+        try:
+            from core.data_fetcher import DataFetcher
+            _fetcher = DataFetcher()
+            if _fetcher.is_available:
+                reports = self.llm_report_result
+                codes = set()
+                import json
+                for _, row in reports.iterrows():
+                    raw = row.get("stock_code_list", "[]")
+                    try:
+                        items = json.loads(raw) if isinstance(raw, str) else raw
+                    except: items = []
+                    if isinstance(items, str): items = [items]
+                    for c in items:
+                        c = str(c).strip()
+                        if c: codes.add(c)
+                if codes:
+                    if isinstance(self.config, dict):
+                        start = self.config.get("backtest_start_date", "20220101")
+                        end = self.config.get("backtest_end_date", "20241231")
+                    else:
+                        start = getattr(self.config, "backtest_start_date", "20220101")
+                        end = getattr(self.config, "backtest_end_date", "20241231")
+                    start_dt = pd.Timestamp(start) - pd.Timedelta(days=400)
+                    start = start_dt.strftime("%Y%m%d")
+                    df = _fetcher.fetch_daily_bar(sorted(codes), start, end)
+                    if len(df) > 0:
+                        df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+                        df = df.dropna(subset=["trade_date"])
+                        df = df.sort_values(["stock_code", "trade_date"]).reset_index(drop=True)
+                        logger.info(f"  🟢 AKShare 日线: {len(df)} 条, {df['stock_code'].nunique()} 只股票")
+                        df.to_csv(DAILY_BAR_PATH, index=False, encoding="utf-8-sig")
+                        return df
+                else:
+                    logger.info("  无股票代码可从研报提取")
+            else:
+                logger.debug("  AKShare 不可用，回退 CSV")
+        except Exception as e:
+            logger.warning(f"  AKShare 获取日线异常: {e}")
+
+        # 回退：从本地 CSV 加载（AKShare 不可用时）
         path = file_path or DAILY_BAR_PATH
-        logger.info(f"加载日线行情: {path}")
+        logger.info(f"  📂 加载日线行情(本地CSV): {os.path.basename(path)}")
         try:
             df = pd.read_csv(path, encoding="utf-8-sig")
         except FileNotFoundError:
@@ -186,29 +231,92 @@ class DataLoader:
             return pd.DataFrame(columns=[
                 "stock_code", "trade_date", "close", "open", "high", "low", "amount"
             ])
-        df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+        # Robust parsing: handle both datetime and string dates
+        try:
+            df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+        except:
+            df["trade_date"] = pd.to_datetime(df["trade_date"].astype(str), errors="coerce")
         df = df.dropna(subset=["trade_date"])
         df = df.sort_values(["stock_code", "trade_date"]).reset_index(drop=True)
         logger.info(f"  共 {len(df)} 条, {df['stock_code'].nunique()} 只股票")
         return df
 
     def load_benchmark_bar(self, file_path: Optional[str] = None) -> pd.DataFrame:
+        """加载基准指数行情（优先 Tushare 沪深300，回退 CSV）"""
+        if True:  # AKShare 无需 token
+            try:
+                from core.data_fetcher import DataFetcher
+                _ts = DataFetcher()
+                if _ts.is_available:
+                    start = self.config.backtest_start_date
+                    end = self.config.backtest_end_date
+                    start_dt = pd.Timestamp(start) - pd.Timedelta(days=400)
+                    start = start_dt.strftime("%Y%m%d")
+                    df = _ts.fetch_benchmark_bar(
+                        index_code="000300.SH", start_date=start, end_date=end
+                    )
+                    if len(df) > 0:
+                        df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+                        df = df.sort_values("trade_date").reset_index(drop=True)
+                        logger.info(f"  🟢 Tushare 沪深300: {len(df)} 条")
+                        return df
+                else:
+                    logger.debug("  Tushare 连通性检测失败，基准使用本地 CSV")
+            except Exception as e:
+                logger.warning(f"  Tushare 获取基准异常: {e}")
+
         path = file_path or BENCHMARK_BAR_PATH
-        logger.info(f"加载基准行情: {path}")
+        logger.info(f"  📂 加载基准行情(本地CSV): {os.path.basename(path)}")
+        # 数据真实性校验
+        if len(df) > 0:
+            try:
+                _first_close = float(df['close'].iloc[0])
+                if _first_close > 5000:
+                    logger.warning(f"  ⚠️  数据疑似模拟（2020年初沪深300约4100，当前首条={_first_close:.0f}），请点击侧栏「🔄 刷新数据」拉取真实行情")
+            except: pass
         try:
             df = pd.read_csv(path, encoding="utf-8-sig")
         except FileNotFoundError:
             logger.warning(f"文件不存在: {path}")
             return pd.DataFrame(columns=["index_code", "trade_date", "close"])
-        df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+        try:
+            df["trade_date"] = pd.to_datetime(df["trade_date"], errors="coerce")
+        except:
+            df["trade_date"] = pd.to_datetime(df["trade_date"].astype(str), errors="coerce")
         df = df.dropna(subset=["trade_date"])
         df = df.sort_values("trade_date").reset_index(drop=True)
         logger.info(f"  共 {len(df)} 条")
         return df
 
     def load_stock_industry(self, file_path: Optional[str] = None) -> pd.DataFrame:
+        """加载行业分类（优先 Tushare，回退 CSV）"""
+        if True:  # AKShare 无需 token
+            try:
+                from core.data_fetcher import DataFetcher
+                _ts = DataFetcher()
+                if _ts.is_available:
+                    reports = self.llm_report_result
+                    codes = set()
+                    import json
+                    for _, row in reports.iterrows():
+                        raw = row.get("stock_code_list", "[]")
+                        try:
+                            items = json.loads(raw) if isinstance(raw, str) else raw
+                        except: items = []
+                        if isinstance(items, str): items = [items]
+                        for c in items:
+                            c = str(c).strip()
+                            if c: codes.add(c)
+                    if codes:
+                        df = _ts.fetch_industry(stock_codes=sorted(codes))
+                        if len(df) > 0:
+                            logger.info(f"  🟢 Tushare 行业: {len(df)} 条")
+                            return df
+            except Exception as e:
+                logger.warning(f"  Tushare 获取行业异常: {e}")
+
         path = file_path or STOCK_INDUSTRY_PATH
-        logger.info(f"加载行业分类: {path}")
+        logger.info(f"  📂 加载行业分类(本地CSV): {os.path.basename(path)}")
         try:
             df = pd.read_csv(path, encoding="utf-8-sig")
         except FileNotFoundError:
@@ -229,7 +337,11 @@ class DataLoader:
             self._monthly_rebalance_dates = []
             return
 
-        freq = getattr(self.config, "rebalance_frequency", "monthly")
+        # 兼容 dict / dataclass 两种 config
+        if isinstance(self.config, dict):
+            freq = self.config.get("rebalance_frequency", "monthly")
+        else:
+            freq = getattr(self.config, "rebalance_frequency", "monthly")
         df = pd.DataFrame({"trade_date": calendar})
 
         if freq == "weekly":
@@ -242,8 +354,12 @@ class DataLoader:
             last_days = df.groupby(["year", "month"], as_index=False).last()
 
         dates = last_days.sort_values("trade_date")["trade_date"].tolist()
-        start = pd.Timestamp(self.config.backtest_start_date)
-        end = pd.Timestamp(self.config.backtest_end_date)
+        if isinstance(self.config, dict):
+            start = pd.Timestamp(self.config.get("backtest_start_date", "20220101"))
+            end = pd.Timestamp(self.config.get("backtest_end_date", "20241231"))
+        else:
+            start = pd.Timestamp(getattr(self.config, "backtest_start_date", "20220101"))
+            end = pd.Timestamp(getattr(self.config, "backtest_end_date", "20241231"))
         dates = [d for d in dates if start <= d <= end]
 
         self._monthly_rebalance_dates = dates
@@ -346,6 +462,24 @@ class DataLoader:
         if len(industry_df) == 0:
             return {}
         return dict(zip(industry_df["stock_code"], industry_df["level1_industry"]))
+
+    def get_stock_name_map(self) -> Dict[str, str]:
+        """从研报文件名解析 股票代码→股票名称 映射"""
+        report_df = self.llm_report_result
+        if '_stock_name' in self.__dict__:
+            return self._stock_name
+        mapping = {}
+        if 'filename' not in report_df.columns:
+            self._stock_name = mapping
+            return mapping
+        for fname in report_df['filename'].unique():
+            parts = str(fname).split('_')
+            if len(parts) >= 2:
+                code = parts[0]
+                name = parts[1]
+                mapping[code] = name
+        self._stock_name = mapping
+        return mapping
 
     def get_stock_return(
         self,

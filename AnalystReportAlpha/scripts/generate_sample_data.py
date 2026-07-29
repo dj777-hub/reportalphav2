@@ -14,9 +14,11 @@ import csv, json, os, random
 from datetime import datetime, timedelta
 
 random.seed(42)
+# 修正：指向项目根目录下的 data/ 和 text_reports/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(SCRIPT_DIR, "data")
-TEXT_DIR = os.path.join(SCRIPT_DIR, "text_reports")
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)  # AnalystReportAlpha/
+DATA_DIR = os.path.join(PROJECT_ROOT, "data")
+TEXT_DIR = os.path.join(PROJECT_ROOT, "text_reports")
 os.makedirs(DATA_DIR, exist_ok=True)
 os.makedirs(TEXT_DIR, exist_ok=True)
 

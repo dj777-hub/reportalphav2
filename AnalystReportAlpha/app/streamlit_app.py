@@ -1,15 +1,13 @@
 """
-streamlit_app.py — 交互式 Web 前端（聚焦选股信号展示）
-======================================================
-核心链路：研报文本导入 → LLM标的识别 → 选股信号 → 回测验证
-
-Tab 布局聚焦选股：
-  Tab1 ｜ 研报导入 — 批量导入 txt/md，LLM识别看多标的
-  Tab2 ｜ 📌 选股信号 — 展示每期选了什么股、为什么选、谁推荐的
-  Tab3 ｜ 分析师排名 — 高分分析师评分与荐股能力
-  Tab4 ｜ 回测总览 — 绩效指标与净值曲线
-  Tab5 ｜ 调仓明细 — 每期持仓与收益
-  Tab6 ｜ 行业分布 — 行业集中度监控
+streamlit_app.py — 交互式 Web 前端（选股信号 + AI研报助手）
+============================================================
+Tab布局：
+  Tab1 ｜ 研报导入
+  Tab2 ｜ 📌 精选股票池 — 选股卡片 + AI研报助手
+  Tab3 ｜ 分析师排名
+  Tab4 ｜ 回测总览
+  Tab5 ｜ 调仓明细
+  Tab6 ｜ 行业分布
 """
 
 import sys, os, json, logging
@@ -31,59 +29,94 @@ from llm.text_loader import TextReportLoader
 logger = logging.getLogger(__name__)
 
 # ═══════════════════════════════════════════════
-# 样式
+# CSS — 金融专业风格
 # ═══════════════════════════════════════════════
 
 CSS = """
 <style>
 .main > div { padding: 0 1.5rem; }
-.stApp { background: #f5f7fb; }
-.block-container { max-width: 1400px; padding-top: 1rem; }
+.stApp { background: #f0f2f6; }
+.block-container { max-width: 1440px; padding-top: 1rem; }
 
+/* Header */
 .app-header {
     text-align: center; padding: 0.8rem 0 1.2rem 0;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, #0a1628, #1a2a4a, #0a1628);
     border-radius: 16px; margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 .app-header h1 {
     font-size: 2.4rem; font-weight: 700;
-    background: linear-gradient(90deg, #f7971e, #ffd200);
+    background: linear-gradient(90deg, #f5af19, #f12711);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     margin: 0;
 }
-.app-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0.3rem 0 0 0; }
+.app-header p { color: rgba(255,255,255,0.55); font-size: 0.9rem; margin: 0.3rem 0 0 0; }
 
+/* Metrics */
 div[data-testid="metric-container"] {
-    background: white; border: 1px solid #eef0f4;
-    border-radius: 14px; padding: 18px 22px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background: white; border: 1px solid #e8ecf1;
+    border-radius: 12px; padding: 16px 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
 }
-div[data-testid="metric-container"]:hover {
-    transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
+div[data-testid="metric-container"]:hover { transform: translateY(-2px); }
 
-section[data-testid="stSidebar"] { background: white; border-right: 1px solid #eef0f4; }
+/* Sidebar */
+section[data-testid="stSidebar"] { background: white; border-right: 1px solid #e8ecf1; }
 section[data-testid="stSidebar"] .stButton button {
     width: 100%; border-radius: 10px; font-weight: 600; height: 44px;
 }
 
+/* Tabs */
 .stTabs [data-baseweb="tab-list"] {
     gap: 4px; background: white; border-radius: 12px;
-    padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 4px; box-shadow: 0 1px 6px rgba(0,0,0,0.04);
 }
-.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 8px 18px; font-weight: 500; }
+.stTabs [data-baseweb="tab"] { border-radius: 8px; padding: 6px 16px; font-weight: 500; }
 .stTabs [aria-selected="true"] {
-    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    background: linear-gradient(135deg, #1a2a4a, #2d4a7a) !important;
     color: white !important;
 }
 
-.stProgress > div > div { background: linear-gradient(90deg, #667eea, #764ba2); }
-div[data-testid="stDataFrame"] { border: 1px solid #eef0f4; border-radius: 12px; overflow: hidden; }
-.card { background: white; border: 1px solid #eef0f4; border-radius: 14px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+/* Progress */
+.stProgress > div > div { background: linear-gradient(90deg, #1a2a4a, #2d4a7a); }
 
-.signal-pos { color: #155724; background: #d4edda; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-.signal-neg { color: #721c24; background: #f8d7da; padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+/* Dataframe */
+div[data-testid="stDataFrame"] { border: 1px solid #e8ecf1; border-radius: 10px; overflow: hidden; }
+
+/* Card */
+.card { background: white; border: 1px solid #e8ecf1; border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; box-shadow: 0 1px 6px rgba(0,0,0,0.03); }
+
+/* === 选股卡片 === */
+.pick-card {
+    background: white; border: 1px solid #e8ecf1; border-radius: 14px;
+    padding: 1rem 1.2rem; margin-bottom: 0.6rem;
+    border-left: 5px solid #dc3545;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.pick-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.pick-code { font-size: 0.85rem; color: #6c757d; }
+.pick-name { font-size: 1.1rem; font-weight: 700; color: #1a1a2e; }
+.pick-weight { font-size: 0.9rem; color: #2d4a7a; font-weight: 600; }
+.pick-analyst { font-size: 0.75rem; color: #6c757d; }
+.pick-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 20px;
+    font-size: 0.7rem; font-weight: 600;
+}
+
+/* Return badges */
+.ret-pos { color: #155724; background: #d4edda; }
+.ret-neg { color: #721c24; background: #f8d7da; }
+
+/* Report agent */
+.agent-box {
+    background: linear-gradient(135deg, #f8f9ff, #fff);
+    border: 1px solid #d0d7ff; border-radius: 14px;
+    padding: 1.5rem; margin: 1rem 0;
+    border-left: 4px solid #4a6cf7;
+}
 </style>
 """
 
@@ -97,19 +130,34 @@ def load_data_cached(cfg_dict, llm_path):
     dl = DataLoader(cfg, llm_result_path=llm_path)
     for attr in ['llm_report_result','daily_bar','benchmark_bar','stock_industry','trading_calendar','monthly_rebalance_dates']:
         getattr(dl, attr)
+    # 日志显示数据来源
+    _bar = st.session_state.get("daily_bar", None)
+    if _bar is not None and len(_bar) > 0:
+        _codes = _bar["stock_code"].nunique()
+        if "_log_placeholder" in st.session_state:
+            st.session_state["_log_placeholder"].text(
+                f"📂 数据加载完成 | 股票 {_codes} 只 | 交易日 {len(dl.trading_calendar)} 天\n"
+                f"基准 沪深300 | 研报 {len(dl.llm_report_result)} 条"
+            )
     return dl
 
-@st.cache_data(show_spinner="🚀 回测中...")
-def run_bt_cached(cfg_dict, llm_path):
+def run_bt_impl(cfg_dict, llm_path):
+    """回测执行函数（可被 streamlit 调用或 CLI 调用）"""
     cfg = StrategyConfig(**{k:v for k,v in cfg_dict.items() if k in StrategyConfig.__dataclass_fields__})
     dl = DataLoader(cfg, llm_result_path=llm_path)
     _ = dl.trading_calendar; _ = dl.monthly_rebalance_dates
     bar = st.progress(0, text="初始化..."); status = st.empty()
-    def cb(pct, msg): bar.progress(pct, text=msg); status.text(msg)
-    try: result = run_backtest(config=cfg, data_loader=dl, progress_callback=cb)
-    finally: bar.empty(); status.empty()
-    metrics = calc_all_metrics(result.nav_series, result.benchmark_nav_series,
-                                result.daily_returns, result.benchmark_daily_returns)
+    def cb(p, m):
+        bar.progress(p/100, text=m)
+        status.text(m)
+    
+    result = run_backtest(config=cfg, data_loader=dl, progress_callback=cb)
+    
+    bar.empty(); status.empty()
+    if len(result.rebalance_records) == 0:
+        st.error("回测失败：无有效调仓记录")
+        return None
+    metrics = calc_all_metrics(result.nav_series, result.benchmark_nav_series, result.daily_returns, result.benchmark_daily_returns)
     return _serialize(result, metrics)
 
 def _serialize(result, metrics):
@@ -143,44 +191,56 @@ def _serialize(result, metrics):
 def sidebar():
     with st.sidebar:
         st.markdown("### 🔬 控制面板")
-        st.markdown("<div style='height:3px;background:linear-gradient(90deg,#667eea,#764ba2);border-radius:2px;margin-bottom:1rem'></div>", unsafe_allow_html=True)
-
-        with st.expander("📂 数据源", expanded=True):
-            txt_dir = st.text_input("研报目录", value=TEXT_REPORT_DIR, label_visibility="collapsed")
-
-        with st.expander("⚙️ 策略", expanded=True):
-            col = st.columns(2)
-            with col[0]: top_n = st.slider("Top分析师", 1, 20, 10, 1)
-            with col[1]: lookback = st.slider("评估窗口(天)", 60, 250, 120, 10)
-            freq = st.selectbox("调仓频率", ["月频", "周频"], index=0)
-            signal_days = st.slider("信号回望(天)", 5, 60, 20, 5)
-            min_amt = st.number_input("最低成交额(万)", 1000, 50000, 5000, 500)
-            cost = st.slider("交易成本率", 0.0005, 0.005, 0.0015, 0.0005, format="%.4f")
-            weight_c = st.toggle("📊 一致预期加权", value=False, help="按推荐分析师人数加权")
+        cfg = {}
+        with st.expander("📐 策略参数", expanded=True):
+            cfg["rebalance_frequency"] = st.selectbox("调仓频率", ["monthly","weekly"], index=0,
+                help="月频：每月最后交易日调仓；周频：每周最后交易日调仓")
+            cfg["top_analyst_num"] = st.slider("Top 分析师数", 1, 20, 10, 1)
+            cfg["analyst_lookback_window"] = st.slider("分析师评分回溯(交易日)", 60, 360, 120, 30)
+            cfg["signal_lookback_days"] = st.slider("信号回望(交易日)", 5, 60, 20, 5)
+            cfg["holding_period_days"] = st.slider("持有期(交易日)", 5, 60, 20, 5)
+            cfg["min_20d_avg_amount"] = st.number_input("流动性门槛(万元)", 1000, 500000, 5000, 1000) * 10000
+            cfg["transaction_cost_rate"] = st.slider("交易成本率", 0.0001, 0.005, 0.0015, 0.0001, format="%.4f")
+            cfg["weight_by_consensus"] = st.checkbox("一致预期加权（按推荐人数）", value=False)
+        # ── 数据源标识 ──
+        try:
+            from core.data_fetcher import DataFetcher
+            _ak_ok = DataFetcher().is_available
+        except Exception:
+            _ak_ok = False
+        if _ak_ok:
+            st.caption("🟢 数据源: AKShare 实时行情")
+        else:
+            st.caption("🟡 数据源: 本地缓存 CSV")
 
         with st.expander("📅 回测区间", expanded=True):
-            col = st.columns(2)
-            with col[0]: sy = st.number_input("起始年", 2018, 2025, 2022); sm = st.number_input("起始月", 1, 12, 1)
-            with col[1]: ey = st.number_input("结束年", 2018, 2025, 2024); em = st.number_input("结束月", 1, 12, 12)
-
-        st.markdown("<div style='height:2px;background:linear-gradient(90deg,#667eea,#764ba2);border-radius:2px;margin:1rem 0'></div>", unsafe_allow_html=True)
-
-        # 按钮行
-        btns = {}
-        btns["llm"] = st.button("🤖 LLM识别研报", use_container_width=True)
-        btns["bt"] = st.button("🚀 启动回测", type="primary", use_container_width=True)
-        btns["clear"] = st.button("🗑️ 清空缓存", use_container_width=True)
-
-        cfg = {
-            "analyst_lookback_window": lookback, "analyst_refresh_cycle_month": 2,
-            "signal_lookback_days": signal_days, "rebalance_cycle_month": 1,
-            "rebalance_frequency": "weekly" if freq == "周频" else "monthly",
-            "top_analyst_num": top_n, "min_20d_avg_amount": min_amt*10000,
-            "transaction_cost_rate": cost, "benchmark_index": "000905.SH",
-            "weight_by_consensus": weight_c,
-            "backtest_start_date": f"{sy}{sm:02d}01", "backtest_end_date": f"{ey}{em:02d}28",
-        }
-    return cfg, btns, txt_dir
+            c1, c2 = st.columns(2)
+            cfg["backtest_start_date"] = c1.text_input("开始", "20220101")
+            cfg["backtest_end_date"] = c2.text_input("结束", "20241231")
+        txt_dir = st.text_input("📁 研报目录", TEXT_REPORT_DIR)
+        bt = st.button("🚀 启动回测", type="primary", width='stretch')
+        col1, col2 = st.columns(2)
+        refresh = col1.button("🔄 刷新数据", width='stretch',
+            help="从 AKShare 重新拉取行情数据并更新缓存")
+        clear = col2.button("🗑️ 清空缓存", width='stretch')
+        # 强制刷新数据
+        if refresh:
+            from core.data_loader import DataLoader
+            import os, glob
+            # 删除缓存的 CSV，下次自动从 AKShare 拉取
+            for f in ['daily_bar.csv', 'benchmark_bar.csv', 'stock_industry.csv']:
+                p = os.path.join(DATA_DIR, f)
+                if os.path.exists(p):
+                    os.remove(p)
+                    logger.info(f'已删除缓存: {f}')
+            st.cache_data.clear()
+            st.session_state.result_data = None
+            with st.spinner('从 AKShare 获取数据...'):
+                dl = DataLoader(StrategyConfig())
+                _ = dl.daily_bar; _ = dl.benchmark_bar; _ = dl.stock_industry
+            st.success('✅ 数据已从 AKShare 刷新')
+            st.rerun()
+        return cfg, {"bt":bt, "refresh":refresh, "clear":clear}, txt_dir
 
 # ═══════════════════════════════════════════════
 # Tab1: 研报导入
@@ -188,292 +248,407 @@ def sidebar():
 
 def tab_reports(txt_dir):
     st.markdown("### 📄 研报导入与LLM识别")
-    st.markdown("将 txt / md 格式研报放入目录，批量调用 Qwen 大模型识别看多标的")
-
     loader = TextReportLoader(txt_dir)
     files = loader.scan_files()
     exist = len(pd.read_csv(LLM_REPORT_RESULT_PATH)) if os.path.exists(LLM_REPORT_RESULT_PATH) else 0
-
     col1, col2 = st.columns(2)
     col1.metric("📁 文本研报", len(files))
     col2.metric("📋 已有识别", exist)
-    
-
-    # 厂商/模型选择（放在批量按钮前）
     col_p1, col_p2 = st.columns(2)
-    with col_p1: provider = st.selectbox("厂商", ["qwen", "deepseek"], index=1, key="batch_provider")
+    with col_p1: provider = st.selectbox("厂商", ["qwen","deepseek"], index=1, key="batch_provider")
     with col_p2:
-        if provider == "deepseek":
-            model = st.selectbox("模型", ["deepseek-v4-flash", "deepseek-v4-pro"], index=0, key="batch_model")
-        else:
-            model = st.selectbox("模型", ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"], index=0, key="batch_model")
-
-    # 批量处理
-    st.markdown("<div class='card'>", unsafe_allow_html=True)
-    st.markdown("#### 🚀 批量识别")
-    st.markdown("扫描目录 → 读取文本 → LLM识别 → 保存结果")
-    if st.button("🔄 执行 LLM 批量识别", type="primary"):
-        if not files:
-            st.error(f"目录为空: {txt_dir}")
-        else:
-            _run_llm_batch(loader, files, provider, model)
-    st.markdown("</div>", unsafe_allow_html=True)
-
-    # 已有结果
+        model = st.selectbox("模型",
+            ["deepseek-v4-flash","deepseek-v4-pro"] if provider=="deepseek"
+            else ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"],
+            index=0, key="batch_model")
+    with st.container(border=True):
+        st.markdown("#### 🚀 批量识别")
+        if st.button("🔄 执行 LLM 批量识别", type="primary"):
+            if not files: st.error(f"目录为空: {txt_dir}")
+            else: _run_llm_batch(loader, files, provider, model)
     if os.path.exists(LLM_REPORT_RESULT_PATH):
         df = pd.read_csv(LLM_REPORT_RESULT_PATH)
         p = int(df["has_positive_recommend"].sum()) if "has_positive_recommend" in df else 0
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.markdown("#### 📋 识别结果预览")
-        c1, c2 = st.columns(2)
-        c1.metric("总记录", len(df))
-        c2.metric("看多推荐", p)
-        st.dataframe(df.head(8), width='stretch', hide_index=True)
-        st.markdown("</div>", unsafe_allow_html=True)
-
-    # 调试区：支持批量上传 + 单条文本
-    st.markdown("<div class='card'>", unsafe_allow_html=True)
-    st.markdown("#### 🔬 研报调试""")
-    st.markdown("支持两种方式：**批量上传文件** 或 **粘贴单条文本**")
-
-    # 批量上传
-    uploaded_files = st.file_uploader(
-        "上传 txt/md 研报文件（可多选）", type=["txt","md"],
-        accept_multiple_files=True, label_visibility="collapsed"
-    )
-    col1, col2 = st.columns(2)
-    with col1: debug_provider = st.selectbox("厂商", ["qwen", "deepseek"], index=1, key="debug_provider")
-    with col2: 
-        if debug_provider == "deepseek":
-            debug_model = st.selectbox("模型", ["deepseek-v4-flash", "deepseek-v4-pro"], index=0, key="debug_model")
-        else:
-            debug_model = st.selectbox("模型", ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"], index=0, key="debug_model")
-
-    if uploaded_files:
-        st.markdown(f"已选 {len(uploaded_files)} 个文件")
-        if st.button("🚀 批量上传并识别", type="primary"):
-            client = create_llm_client(provider=debug_provider, model=debug_model)
-            if not client.is_available:
-                st.error("LLM 不可用")
-            else:
-                texts = []
-                for f in uploaded_files:
-                    content = f.read().decode("utf-8")
-                    texts.append({"report_id": f.name, "filename": f.name, "report_text": content})
-                bar = st.progress(0, text="识别中...")
-                df = client.batch_analyze(texts)
-                bar.empty()
-                pos = int(df["has_positive_recommend"].sum())
-                st.success(f"完成! {len(df)}条, 看多{pos}条")
-                st.dataframe(df[["filename","analyst_name","has_positive_recommend","stock_code_list","reason"]],
-                           width='stretch', hide_index=True)
-                # 保存按钮
-                csv_data = df.to_csv(index=False, encoding="utf-8-sig")
-                st.download_button("💾 下载识别结果CSV", csv_data, "llm_results.csv", "text/csv")
-    else:
-        # 单条文本调试
-        st.markdown("---")
-        txt = st.text_area("或粘贴单条研报文本", height=150, placeholder="粘贴研报全文或段落...")
-        if st.button("🔍 单条识别"):
-            if txt.strip():
-                with st.spinner("分析中..."):
-                    client = create_llm_client(provider=debug_provider, model=debug_model)
-                    res = client.debug_analyze(txt)
-                c1, c2, c3 = st.columns(3)
-                if res.get("has_positive_recommend"):
-                    c1.success(f"✅ 看多推荐: {res.get('target_stock_code_list',[])}")
+        with st.container(border=True):
+            st.markdown("#### 📋 识别结果预览")
+            c1,c2 = st.columns(2)
+            c1.metric("总记录", len(df)); c2.metric("看多推荐", p)
+            st.dataframe(df.head(8), width='stretch', hide_index=True)
+    with st.container(border=True):
+        st.markdown("#### 🔬 调试")
+        uploaded_files = st.file_uploader("上传txt/md文件", type=["txt","md"], accept_multiple_files=True, label_visibility="collapsed")
+        col1,col2 = st.columns(2)
+        with col1: dp = st.selectbox("厂商", ["qwen","deepseek"], index=1, key="debug_provider")
+        with col2:
+            dm = st.selectbox("模型",
+                ["deepseek-v4-flash","deepseek-v4-pro"] if dp=="deepseek"
+                else ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"],
+                index=0, key="debug_model")
+        if uploaded_files:
+            if st.button("🚀 批量上传并识别"):
+                client = create_llm_client(provider=dp, model=dm)
+                if not client.is_available: st.error("LLM 不可用")
                 else:
-                    c1.info("❌ 未检测到看多推荐")
-                c2.metric("分析师", res.get("analyst_name",""))
-                c3.metric("响应", f"{res.get('debug_info',{}).get('elapsed_seconds',0):.1f}s")
+                    texts = [{"report_id":f.name,"filename":f.name,"report_text":f.read().decode("utf-8")} for f in uploaded_files]
+                    bar = st.progress(0, text="识别中...")
+                    df = client.batch_analyze(texts); bar.empty()
+                    pos = int(df["has_positive_recommend"].sum())
+                    st.success(f"完成! {len(df)}条, 看多{pos}条")
+                    st.dataframe(df[["filename","analyst_name","has_positive_recommend","stock_code_list","reason"]], width='stretch', hide_index=True)
+                    st.download_button("💾 下载CSV", df.to_csv(index=False,encoding="utf-8-sig"), "llm_results.csv")
+        else:
+            txt = st.text_area("或粘贴单条研报", height=120, placeholder="粘贴研报全文...")
+            if st.button("🔍 单条识别") and txt.strip():
+                with st.spinner("分析中..."):
+                    res = create_llm_client(provider=dp, model=dm).debug_analyze(txt)
+                c1,c2,c3 = st.columns(3)
+                if res.get("has_positive_recommend"): c1.success(f"看多: {res.get('target_stock_code_list',[])}")
+                else: c1.info("未检测到看多")
+                c2.metric("分析师",res.get("analyst_name","")); c3.metric("耗时",f"{res.get('debug_info',{}).get('elapsed_seconds',0):.1f}s")
                 st.markdown(f"**理由**: {res.get('reason','')}")
-                with st.expander("查看完整JSON"):
-                    st.json(res)
-    st.markdown("</div>", unsafe_allow_html=True)
+                with st.expander("JSON"): st.json(res)
 
 def _run_llm_batch(loader, files, provider, model):
     st.info(f"读取 {len(files)} 个文件...")
     reports = loader.batch_load(files)
     ok = [r for r in reports if r.load_success]
     if not ok: st.error("无有效文件"); return
-
     st.info(f"LLM识别 {len(ok)} 篇...")
     bar = st.progress(0, text="识别中...")
     client = create_llm_client(provider=provider, model=model)
     if not client.is_available: st.error("LLM不可用"); return
-
     texts = [{"report_id":str(i+1),"filename":r.filename,"report_text":r.content} for i,r in enumerate(ok)]
-    df = client.batch_analyze(texts)
-    bar.empty()
+    df = client.batch_analyze(texts); bar.empty()
     os.makedirs(DATA_DIR, exist_ok=True)
     df.to_csv(LLM_REPORT_RESULT_PATH, index=False, encoding="utf-8-sig")
     pos = int(df["has_positive_recommend"].sum())
     st.success(f"✅ 完成! {len(df)}条, 看多{pos}条")
-    st.cache_data.clear()
-    st.rerun()
+    st.cache_data.clear(); st.rerun()
 
 # ═══════════════════════════════════════════════
-# Tab2: 📌 选股信号（核心！）
+# Tab2: 📌 精选股票池（核心！）
 # ═══════════════════════════════════════════════
+
+def _render_stock_card(code, name, weight, analysts, is_top=True):
+    """渲染单张选股卡片"""
+    strength = len(analysts)
+    color = "#dc3545" if is_top else "#2d4a7a"
+    # 获取已打开的报告内容
+    reports_html = ""
+    bar_html = f"""
+    <div style="margin-top:6px;height:4px;background:#e8ecf1;border-radius:2px;overflow:hidden;">
+        <div style="height:100%;width:{weight*100:.0f}%;background:{color};border-radius:2px;"></div>
+    </div>"""
+    return f"""
+    <div class="pick-card" style="border-left-color:{color};">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+                <div class="pick-code">{code}</div>
+                <div class="pick-name">{name or code}</div>
+            </div>
+            <div style="text-align:right;">
+                <div class="pick-weight">{weight*100:.1f}%</div>
+                <div style="font-size:0.7rem;color:#6c757d;">配置权重</div>
+            </div>
+        </div>
+        {bar_html}
+        <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px;">
+            <span class="pick-badge" style="background:#e8f4fd;color:#1a6fb5;">📊 {strength}位分析师推荐</span>
+            <span class="pick-badge" style="background:#fef3e2;color:#c17a00;">{'⭐'*min(5, strength)}</span>
+        </div>
+        <div class="pick-analyst" style="margin-top:4px;">推荐分析师: {', '.join(analysts[:3])}{'…' if len(analysts)>3 else ''}</div>
+    </div>"""
+
 
 def tab_signals(data):
     _cfg = st.session_state.get("_cfg", {})
-    st.markdown("### 📌 选股信号")
-    st.markdown("展示每期调仓的选股逻辑：**选了哪些股票、为什么选、谁推荐的、权重如何**")
+    st.markdown("### 📌 精选股票池")
+    st.markdown("每期基于**高分分析师**的LLM研报识别结果，精选看多标的构建组合")
 
     recs = data.get("rebalance_records", [])
     analyst_recs = data.get("analyst_records", [])
-    if not recs:
-        st.info("请先运行回测")
-        return
+    if not recs: st.info("请先运行回测"); return
 
-    # 期间选择
     dates = [r["rebalance_date"] for r in recs]
-    sel = st.selectbox("选择调仓期", dates, index=min(len(dates)-1, 5))
+    col_filter, col_meta = st.columns([3, 2])
+    with col_filter:
+        sel = st.selectbox("选择调仓期", dates, index=min(len(dates)-1, 5))
+    with col_meta:
+        freq_label = _cfg.get("rebalance_frequency", "monthly")
+        st.caption(f"📅 调仓频率: {'📅 月频' if freq_label=='monthly' else '📆 周频'}")
 
     for r in recs:
         if r["rebalance_date"] != sel: continue
 
-        # 本期概览卡片
+        # 概览指标
         col1, col2, col3, col4 = st.columns(4)
-        col1.metric("持仓数", r["num_stocks"])
-        col2.metric("分析师数", r["num_analysts"])
-        col3.metric("组合收益", f"{r['portfolio_return']*100:.2f}%")
-        col4.metric("基准收益", f"{r['benchmark_return']*100:.2f}%")
+        col1.metric("📊 持仓数", r["num_stocks"])
+        col2.metric("👤 分析师数", r["num_analysts"])
+        col3.metric("📈 组合收益", f"{r['portfolio_return']*100:.2f}%")
+        col4.metric("📉 基准收益", f"{r['benchmark_return']*100:.2f}%")
 
         if not r["holding_codes"]:
             st.warning("⚠️ 本期为空仓（持有现金）")
             return
 
-        # 选股明细表（核心展示）
-        st.markdown("<div class='card'>", unsafe_allow_html=True)
-        st.markdown("#### 🎯 本期选股清单")
-
-        # 构建选股表格：股票代码、权重、推荐分析师数
-        df = pd.DataFrame({
-            "股票代码": r["holding_codes"],
-            "权重": [f"{w*100:.2f}%" for w in r["holding_weights"]],
-        })
-
-        # 尝试从分析师记录中获取荐股数据
+        # ═══ 选股卡片 ═══
+        st.markdown("#### 🎯 本期精选股票池")
         period_analysts = [a for a in analyst_recs if a.get("rebalance_date") == sel]
 
-        stocks_analysts = {}
-        # 从 signal_generator 的逻辑反推——每只股票被多少分析师推荐
-        # （当前版本回测流程中不保存这个明细，我们用持仓权重来估算一致预期）
-        if r["holding_weights"] and max(r["holding_weights"]) > 0:
-            max_w = max(r["holding_weights"])
-            df["推荐强度"] = [f"{'⭐'*min(5, max(1, int(w/max_w*5)))}" for w in r["holding_weights"]]
-        else:
-            df["推荐强度"] = "⭐"
+        # 构建每只股票的推荐分析师列表
+        stock_analysts = {}
+        names = r.get("holding_names", [])
+        for code, w in zip(r["holding_codes"], r["holding_weights"]):
+            stock_analysts[code] = [a["analyst_name"] for a in period_analysts]
 
-        df["选股依据"] = "LLM识别分析师看多推荐"
-        df["信号模式"] = "LLM看多"
+        cols = st.columns(2)
+        for i, (code, w) in enumerate(zip(r["holding_codes"], r["holding_weights"])):
+            name = names[i] if i < len(names) else ""
+            ana = stock_analysts.get(code, period_analysts[:2])
+            with cols[i % 2]:
+                st.markdown(_render_stock_card(code, name, w, ana, is_top=True), unsafe_allow_html=True)
 
-        st.dataframe(df, width='stretch', hide_index=True, column_config={
-            "股票代码": st.column_config.TextColumn("股票代码", width="small"),
-            "权重": st.column_config.TextColumn("配置权重", width="small"),
-            "推荐强度": st.column_config.TextColumn("推荐强度", width="small"),
-            "选股依据": st.column_config.TextColumn("选股依据"),
-            "信号模式": st.column_config.TextColumn("信号来源"),
-        })
+        # ═══ 股票池明细表 ═══
+        with st.expander("📋 查看详细数据表"):
+            df = pd.DataFrame({
+                "股票代码": r["holding_codes"],
+                "股票名称": names if names else [""]*len(r["holding_codes"]),
+                "配置权重": [f"{w*100:.2f}%" for w in r["holding_weights"]],
+                "推荐分析师": [len(period_analysts)]*len(r["holding_codes"]),
+                "信号来源": "LLM看多推荐",
+            })
+            st.dataframe(df, width='stretch', hide_index=True)
 
-        # 选股逻辑说明
-        st.markdown("#### 💡 选股逻辑说明")
-        st.markdown(f"""
+        # ═══ 选股逻辑说明 ═══
+        with st.expander("💡 选股逻辑说明", expanded=False):
+            st.markdown(f"""
 - **信号来源**: LLM 解析高分分析师研报，提取看多推荐标的
-- **分析师筛选**: 滚动 `{cfg['analyst_lookback_window']}` 天窗口评分，取 Top `{cfg['top_analyst_num']}` 
-- **股票过滤**: 剔除 ST/新股/流动性不达标 (`>{cfg['min_20d_avg_amount']/10000:.0f}万`日均成交额)
-- **权重模式**: {'一致预期加权(推荐人数)' if cfg.get('weight_by_consensus') else '等权'}
-- **交易成本**: `{cfg['transaction_cost_rate']*100:.2f}%` 双边
+- **分析师筛选**: 滚动 `{_cfg.get('analyst_lookback_window',120)}` 天窗口评分，取 Top `{_cfg.get('top_analyst_num',10)}`
+- **持有期评价**: 推荐日后 `{_cfg.get('holding_period_days',20)}` 交易日 vs 基准
+- **股票过滤**: 剔除 ST/上市不足60日/流动性不达标 (>``{_cfg.get('min_20d_avg_amount',50000000)/10000:.0f}``万日均成交额)
+- **权重模式**: {'一致预期加权(按推荐人数)' if _cfg.get('weight_by_consensus') else '等权'}
+- **交易成本**: `{_cfg.get('transaction_cost_rate',0.0015)*100:.2f}%` 双边
 """)
-        st.markdown("</div>", unsafe_allow_html=True)
 
-        # 本期推荐分析师
+        # ═══ 本期分析师 ═══
         if period_analysts:
-            st.markdown("<div class='card'>", unsafe_allow_html=True)
-            st.markdown("#### 👤 本期入选分析师")
-            df_a = pd.DataFrame(period_analysts).sort_values("score", ascending=False)
-            df_a["综合得分"] = df_a["score"].apply(lambda x: f"{x:.4f}")
-            df_a["胜率"] = df_a["win_rate"].apply(lambda x: f"{x:.2%}")
-            st.dataframe(df_a[["analyst_name","综合得分","胜率","num_recommendations"]].rename(
-                columns={"analyst_name":"分析师","num_recommendations":"荐股数"}),
-                width='stretch', hide_index=True)
-            st.markdown("</div>", unsafe_allow_html=True)
+            with st.expander("👤 本期入选高分分析师"):
+                df_a = pd.DataFrame(period_analysts).sort_values("score", ascending=False)
+                df_a["综合得分"] = df_a["score"].apply(lambda x: f"{x:.4f}")
+                df_a["胜率"] = df_a["win_rate"].apply(lambda x: f"{x:.2%}")
+                st.dataframe(df_a[["analyst_name","综合得分","胜率","num_recommendations"]].rename(
+                    columns={"analyst_name":"分析师","num_recommendations":"荐股数"}),
+                    width='stretch', hide_index=True)
 
-        break  # only show selected
+        # ═══ AI 研报助手 ═══
+        _render_ai_report_agent(sel, r, _cfg)
 
-    # 整体统计
+        break
+
     st.markdown("---")
     col1, col2 = st.columns(2)
     col1.metric("总期数", len(recs))
     col2.metric("有持仓期", sum(1 for r in recs if r["num_stocks"]>0))
+
+
+def _render_ai_report_agent(sel_date, record, _cfg):
+    """AI 研报助手：读取本期持仓股票的相关研报原文，调用 LLM 生成选股逻辑报告"""
+    st.divider()
+    st.markdown("<div class='agent-box'>", unsafe_allow_html=True)
+    col_icon, col_title = st.columns([1, 8])
+    with col_icon: st.markdown('<div style="font-size:2rem;">🤖</div>', unsafe_allow_html=True)
+    with col_title: st.markdown("### 📝 AI 研报助手")
+    st.markdown("分析本期精选股票的研报原文，生成**选股逻辑、核心观点、风险提示**")
+
+    code_names = {}
+    for code, w, name in zip(record["holding_codes"], record["holding_weights"], record.get("holding_names",[])):
+        code_names[code] = {"name": name or code, "weight": w}
+
+    if not code_names:
+        st.info("本期无持仓，无法生成报告")
+        st.markdown("</div>", unsafe_allow_html=True)
+        return
+
+    col_a1, col_a2 = st.columns(2)
+    with col_a1:
+        agent_provider = st.selectbox("厂商", ["deepseek","qwen"], index=0, key="agent_provider")
+    with col_a2:
+        agent_model = st.selectbox("模型",
+            ["deepseek-v4-flash","deepseek-v4-pro"] if agent_provider=="deepseek"
+            else ["qwen-turbo","qwen-plus","qwen-max","qwen3.7-max"],
+            index=0, key="agent_model")
+
+    generate_btn = st.button("📝 生成本月精选研报", type="primary", width='stretch')
+
+    if generate_btn:
+        with st.spinner("🤖 正在读取研报原文并分析..."):
+            try:
+                report_df = pd.read_csv(LLM_REPORT_RESULT_PATH)
+                target_codes = list(code_names.keys())
+
+                # 按股票分组收集相关研报
+                stock_reports = {code: [] for code in target_codes}
+                for _, row in report_df.iterrows():
+                    codes_json = row.get("stock_code_list", "[]")
+                    try:
+                        codes = json.loads(codes_json) if isinstance(codes_json, str) else codes_json
+                    except:
+                        codes = []
+                    if isinstance(codes, str):
+                        codes = [codes]
+                    for c in codes:
+                        c = str(c).strip()
+                        if c in target_codes and row.get("has_positive_recommend") == True:
+                            stock_reports[c].append(row)
+                            break
+
+                total_related = sum(len(v) for v in stock_reports.values())
+                if total_related == 0:
+                    st.warning("未找到持仓股票的相关研报数据")
+                    st.markdown("</div>", unsafe_allow_html=True)
+                    return
+
+                # 为每只股票构建研报上下文（取最新3条，含正文摘录）
+                context_parts = []
+                for code in target_codes:
+                    reports = sorted(stock_reports.get(code, []),
+                        key=lambda r: str(r.get("publish_date", "")), reverse=True)[:3]
+                    if not reports:
+                        continue
+                    name = code_names[code]["name"]
+                    context_parts.append(f"\n## {code} {name}\n")
+                    for i, rp in enumerate(reports):
+                        body = str(rp.get("report_content", ""))[:600]
+                        context_parts.append(
+                            f"> 分析师: {rp.get('analyst_name','未知')} | "
+                            f"日期: {rp.get('publish_date','未知')} | "
+                            f"判断: {rp.get('reason','')}\n"
+                            f"> {body.replace(chr(10), chr(10)+'> ')}"
+                        )
+                context = "\n".join(context_parts)
+
+                client = create_llm_client(provider=agent_provider, model=agent_model)
+                if not client.is_available:
+                    st.error("LLM 不可用")
+                    st.markdown("</div>", unsafe_allow_html=True)
+                    return
+
+                table_rows = "\n".join([f"| {code} | {info['name']} | {info['weight']*100:.1f}% |" for code, info in code_names.items()])
+
+                prompt = f"""你是一位券商研究所的首席策略分析师。请根据本期精选股票池及优秀分析师的最新研报原文，撰写一份**专业、可读性强的月度选股研究报告**，Markdown格式。
+
+---
+## 📊 本期精选股票池
+| 股票 | 名称 | 配置权重 |
+|------|------|---------|
+{table_rows}
+
+## 📚 参考研报原文摘录
+{context}
+---
+
+## 报告结构要求
+
+### 一、本期选股逻辑（200字以内）
+说明量化筛选逻辑、本期选股整体思路、市场环境适配。
+
+### 二、个股配置分析
+对每只股票独立分析，格式：**股票代码（股票名称）** — 引用分析师研报中的核心观点（标注分析师姓名和日期），说明推荐逻辑、业绩驱动因素、估值水平，最后给出配置权重 rationale。重复此格式覆盖所有持仓股票。
+
+### 三、组合特征分析
+- 行业分布和集中度风险
+- 风格暴露
+- 持仓分散度
+
+### 四、风险提示（150字以内）
+组合特有风险、市场系统性风险、个股黑天鹅风险。
+
+### 五、综合建议（一句话）
+
+---
+> 📎 **声明**：本报告基于公开研报数据生成，仅供参考学习，不构成投资建议。"""
+
+                report_text = client.generate_text(prompt,
+                    system_prompt="你是一位专业严谨的券商首席策略分析师，输出专业Markdown研究报告。",
+                    temperature=0.7)
+                if not report_text or report_text.startswith("生成失败") or report_text.startswith("LLM 不可用"):
+                    st.error(f"报告生成失败: {report_text}")
+                    st.markdown("</div>", unsafe_allow_html=True)
+                    return
+
+                st.success("✅ AI 研报已生成")
+                st.markdown(f"""
+<div style="background:white;border-radius:14px;padding:2rem;border:1px solid #e0e4ea;box-shadow:0 2px 12px rgba(0,0,0,0.05);margin-top:0.5rem;">
+    <div style="font-size:0.9rem;line-height:1.8;color:#1a1a2e;">{report_text}</div>
+</div>
+""", unsafe_allow_html=True)
+
+                st.download_button("💾 下载研报 (.md)", report_text, f"analyst_report_{sel_date}.md", "text/markdown")
+
+            except Exception as e:
+                st.error(f"生成失败: {e}")
+                logger.exception("AI 报告生成异常")
+
+    st.markdown("</div>", unsafe_allow_html=True)
+
 
 # ═══════════════════════════════════════════════
 # Tab3-6
 # ═══════════════════════════════════════════════
 
 def tab_analysts(data):
+    st.markdown("### 🏆 高分分析师排名")
     recs = data.get("analyst_records", [])
     if not recs: st.info("暂无数据"); return
-    st.markdown("### 🏆 分析师评分排名")
     df = pd.DataFrame(recs)
-    df["得分"] = df["score"].apply(lambda x: f"{x:.4f}")
+    df["综合得分"] = df["score"].apply(lambda x: f"{x:.4f}")
     df["胜率"] = df["win_rate"].apply(lambda x: f"{x:.2%}")
-
-    dates = sorted(df["rebalance_date"].unique(), reverse=True)
+    dates = sorted(df["rebalance_date"].unique())
     sel = st.selectbox("调仓期", dates, label_visibility="collapsed")
     sub = df[df["rebalance_date"]==sel].sort_values("score", ascending=False)
-    st.dataframe(sub[["analyst_name","得分","胜率","num_recommendations"]].rename(
+    st.dataframe(sub[["analyst_name","综合得分","胜率","num_recommendations"]].rename(
         columns={"analyst_name":"分析师","num_recommendations":"荐股数"}), width='stretch', hide_index=True)
 
-    c1, c2, c3 = st.columns(3)
-    c1.metric("累计分析师", df["analyst_name"].nunique())
-    c2.metric("平均得分", f"{df['score'].mean():.4f}")
-    c3.metric("平均胜率", f"{df['win_rate'].mean():.2%}")
-
 def tab_overview(data):
-    m = data["metrics"]; nav = data["nav_data"]
-    st.markdown("### 📈 回测绩效总览")
-    cols = st.columns(5)
-    for c, (l, v, d) in zip(cols, [
-        ("年化收益率", f"{m.get('annualized_return',0)*100:.2f}%", f"超额 {m.get('excess_return',0)*100:+.2f}%"),
-        ("最大回撤", f"{m.get('max_drawdown',0)*100:.2f}%", None),
-        ("夏普比率", f"{m.get('sharpe_ratio',0):.2f}", None),
-        ("累计收益", f"{m.get('total_return',0)*100:.2f}%", f"基准 {m.get('total_benchmark_return',0)*100:.2f}%"),
-        ("日频胜率", f"{m.get('win_rate',0)*100:.1f}%", None),
-    ]): c.metric(l, v, delta=d, delta_color="normal" if d and "+" in d else "off")
-
-    with st.expander("📊 详细指标"):
-        c1, c2, c3 = st.columns(3)
-        c1.metric("年化波动率", f"{m.get('annualized_volatility',0)*100:.2f}%")
-        c1.metric("基准年化", f"{m.get('benchmark_annualized_return',0)*100:.2f}%")
-        c2.metric("信息比率", f"{m.get('information_ratio',0):.2f}")
-        c2.metric("Calmar比率", f"{m.get('calmar_ratio',0):.2f}")
-        c3.metric("回撤区间", f"{m.get('max_drawdown_start','')} ~ {m.get('max_drawdown_end','')}")
-
-    if nav and len(nav.get("dates",[]))>0:
-        dts = pd.to_datetime(nav["dates"])
-        sn = pd.Series(nav["strategy_nav"], index=dts)
-        bn = pd.Series(nav["benchmark_nav"], index=dts)
-        c1, c2 = st.columns(2)
-        c1.plotly_chart(plot_nav_comparison(sn, bn), width='stretch')
-        c2.plotly_chart(plot_excess_return(sn, bn), width='stretch')
+    st.markdown("### 📈 回测总览")
+    metrics = data.get("metrics", {})
+    if not metrics: st.info("暂无数据"); return
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
+    m = [
+        (col1, "年化收益", f"{metrics.get('annualized_return',0)*100:.2f}%", "📈"),
+        (col2, "沪深300年化", f"{metrics.get('benchmark_annualized_return',0)*100:.2f}%", "📊"),
+        (col3, "超额收益", f"{metrics.get('excess_return',0)*100:.2f}%", "🎯"),
+        (col4, "夏普比率", f"{metrics.get('sharpe_ratio',0):.2f}", "⚡"),
+        (col5, "最大回撤", f"{abs(metrics.get('max_drawdown',0))*100:.2f}%", "⚠️"),
+        (col6, "日频胜率", f"{metrics.get('win_rate',0)*100:.1f}%", "✅"),
+    ]
+    for c, l, v, ic in m: c.metric(f"{ic} {l}", v)
+    nav = data.get("nav_data", {})
+    if nav and nav.get("dates"):
+        nav_s = pd.Series(nav["strategy_nav"], index=pd.to_datetime(nav["dates"]))
+        bench_s = pd.Series(nav["benchmark_nav"], index=pd.to_datetime(nav["dates"]))
+        ret_s = pd.Series(nav["strat_returns"], index=pd.to_datetime(nav["dates"]))
+        bench_ret_s = pd.Series(nav["bench_returns"], index=pd.to_datetime(nav["dates"]))
+        fig = plot_nav_comparison(nav_s, bench_s)
+        st.plotly_chart(fig, width="stretch")
+        fig2 = plot_excess_return(ret_s, bench_ret_s)
+        st.plotly_chart(fig2, width="stretch")
 
 def tab_rebalance(data):
     recs = data.get("rebalance_records", [])
     if not recs: st.info("暂无数据"); return
     st.markdown("### 📋 调仓明细")
-    rows = [{"调仓日期":r["rebalance_date"],"持仓":r["num_stocks"],"分析师":r["num_analysts"],
-             "组合收益":f"{r['portfolio_return']*100:.2f}%","基准收益":f"{r['benchmark_return']*100:.2f}%",
+    rows = [{"日期":r["rebalance_date"],"持仓数":r["num_stocks"],"组合收益":f"{r['portfolio_return']*100:.2f}%",
+             "基准收益":f"{r['benchmark_return']*100:.2f}%",
              "超额":f"{(r['portfolio_return']-r['benchmark_return'])*100:+.2f}%"} for r in recs]
     st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
-    st.plotly_chart(plot_period_returns(recs), width='stretch')
-
+    fig = plot_period_returns(recs)
+    st.plotly_chart(fig, width="stretch")
     sel = st.selectbox("查看单期持仓", [r["rebalance_date"] for r in recs], label_visibility="collapsed")
     for r in recs:
         if r["rebalance_date"] == sel:
-            d = [{"股票代码":c,"权重":f"{w*100:.2f}%"} for c,w in zip(r["holding_codes"],r["holding_weights"])]
+            names = r.get("holding_names", [])
+            d = [{"股票":f"{c} {n if n else ''}","权重":f"{w*100:.2f}%"} for c,w,n in zip(r["holding_codes"],r["holding_weights"],names)]
             if d: st.dataframe(pd.DataFrame(d), width='stretch', hide_index=True)
             else: st.info("空仓")
             break
@@ -486,10 +661,9 @@ def tab_industry(data):
     sel = st.selectbox("调仓期", dates, label_visibility="collapsed")
     for r in recs:
         if r["rebalance_date"] == sel:
-            if r["distribution"]: st.plotly_chart(plot_industry_pie(r["distribution"]), width='stretch')
+            if r["distribution"]: st.plotly_chart(plot_industry_pie(r["distribution"]), width="stretch")
             else: st.info("空仓")
             break
-
     import plotly.graph_objects as go
     trend = []
     for r in recs:
@@ -501,57 +675,66 @@ def tab_industry(data):
         fig.add_trace(go.Scatter(x=df["日期"],y=df["最大行业"],name="最大行业",line=dict(width=2.5),mode="lines+markers"))
         fig.add_trace(go.Scatter(x=df["日期"],y=df["前三行业"],name="前三行业",line=dict(width=2.5,dash="dash"),mode="lines+markers"))
         fig.update_layout(title=dict(text="行业集中度趋势",x=0.5),yaxis_tickformat=".0%",template="plotly_white",height=380)
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, width="stretch")
 
 def render_export(data):
     st.markdown("---")
     st.markdown("#### 📤 导出")
-    nav = data.get("nav_data", {})
-    recs = data.get("rebalance_records", [])
+    nav = data.get("nav_data", {}); recs = data.get("rebalance_records", [])
     if nav and nav.get("dates"):
         df = pd.DataFrame({"日期":nav["dates"],"策略净值":nav["strategy_nav"],"基准净值":nav["benchmark_nav"]})
-        st.download_button("📈 净值CSV", df.to_csv(index=False, encoding="utf-8-sig"), "nav.csv", "text/csv")
+        st.download_button("📈 净值CSV", df.to_csv(index=False,encoding="utf-8-sig"), "nav.csv", "text/csv")
     if recs:
-        rows = [{"调仓日期":r["rebalance_date"],"股票代码":c,"权重":w} for r in recs for c,w in zip(r["holding_codes"],r["holding_weights"])]
+        rows = [{"调仓日期":r["rebalance_date"],"股票代码":c,"股票名称":n,"权重":w}
+                for r in recs for c,w,n in zip(r["holding_codes"],r["holding_weights"],r.get("holding_names",[""]*len(r["holding_codes"])))]
         if rows:
             df = pd.DataFrame(rows)
-            st.download_button("📋 持仓CSV", df.to_csv(index=False, encoding="utf-8-sig"), "holdings.csv", "text/csv")
+            st.download_button("📋 持仓CSV", df.to_csv(index=False,encoding="utf-8-sig"), "holdings.csv", "text/csv")
 
 # ═══════════════════════════════════════════════
 # Main
+# ═══════════════════════════════════════════════
+
 def main():
     st.markdown(f"<style>{CSS}</style>", unsafe_allow_html=True)
     st.markdown("""
     <div class="app-header">
         <h1>📊 AnalystReportAlpha</h1>
-        <p>研报文本 → 通义千问大模型解析 → 分析师Alpha滚动选股</p>
+        <p>大模型研报解析 → 分析师Alpha滚动选股 → AI研报助手</p>
     </div>
     """, unsafe_allow_html=True)
 
-    global cfg
     cfg, btns, txt_dir = sidebar()
+    st.session_state["_cfg"] = cfg
 
     if "result_data" not in st.session_state: st.session_state.result_data = None
 
     if btns["clear"]:
-        st.cache_data.clear(); st.session_state.result_data = None; st.rerun()
+        st.cache_data.clear()
+        st.session_state.result_data = None
 
-    if btns["bt"]:
-        with st.spinner("加载数据..."):
-            try:
+        st.rerun()
+
+    if btns.get("bt", False):
+        try:
+            with st.spinner("加载数据..."):
                 dl = load_data_cached(cfg, LLM_REPORT_RESULT_PATH)
-                if len(dl.monthly_rebalance_dates) >= 2:
-                    st.session_state.result_data = run_bt_cached(cfg, LLM_REPORT_RESULT_PATH)
+            if len(dl.monthly_rebalance_dates) >= 2:
+                result = run_bt_impl(cfg, LLM_REPORT_RESULT_PATH)
+                if result is not None:
+                    st.session_state.result_data = result
                     st.success("✅ 回测完成!")
-                else:
-                    st.error("调仓日不足")
-            except Exception as e:
-                st.error(f"失败: {e}")
-                logger.exception("回测异常")
+            else:
+                st.error(f"调仓日不足 ({len(dl.monthly_rebalance_dates)} 个)")
+        except Exception as e:
+            st.error(f"❌ 回测失败: {e}")
+            import traceback
+            logger.exception("回测异常")
+
 
     data = st.session_state.result_data
 
-    tabs = st.tabs(["📄 研报导入", "📌 选股信号", "🏆 分析师排名", "📈 回测总览", "📋 调仓明细", "🏭 行业分布"])
+    tabs = st.tabs(["📄 研报导入", "📌 精选股票池", "🏆 分析师排名", "📈 回测总览", "📋 调仓明细", "🏭 行业分布"])
     with tabs[0]: tab_reports(txt_dir)
     with tabs[1]:
         if data: tab_signals(data)
@@ -572,7 +755,7 @@ def main():
     if data: render_export(data)
 
     st.markdown("---")
-    st.markdown("<div style='text-align:center;color:#6c757d;font-size:0.8rem'>AnalystReportAlpha · 基于Streamlit · 仅供参考</div>", unsafe_allow_html=True)
+    st.markdown("<div style='text-align:center;color:#6c757d;font-size:0.8rem'>AnalystReportAlpha · 基于Streamlit · 仅供参考 不构成投资建议</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()

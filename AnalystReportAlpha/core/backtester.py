@@ -248,6 +248,7 @@ class Backtester:
         })
 
     def _build_nav_series(self, result: BacktestResult):
+        """构建日频净值序列（区间内等速平滑）"""
         if not result.rebalance_records:
             return
 
@@ -255,46 +256,48 @@ class Backtester:
         if len(calendar) == 0:
             return
 
-        dates = []
-        strat_nav = [1.0]
-        bench_nav = [1.0]
-        strat_rets = []
-        bench_rets = []
         records = result.rebalance_records
-        rec_idx = 0
+        dates_all = []
+        strat_vals = [1.0]
+        bench_vals = [1.0]
+        daily_srets = []
+        daily_brets = []
 
-        for i in range(len(calendar)):
-            cur = calendar.iloc[i]
-            if rec_idx >= len(records):
-                break
-            rec = records[rec_idx]
-            if cur >= pd.Timestamp(rec.rebalance_date):
-                # 开始新一期
-                rec_idx += 1
-                if rec_idx >= len(records):
-                    break
-                rec = records[rec_idx]
-                # 该日收益率按月度化日收益近似
-                dr = (1 + rec.portfolio_return) ** (1 / 21) - 1 if rec.num_stocks > 0 else 0.0
-                bdr = (1 + rec.benchmark_return) ** (1 / 21) - 1
+        for i, rec in enumerate(records):
+            # 该期区间 [rebalance_date, next_rebalance_date)
+            reb_dt = pd.Timestamp(rec.rebalance_date)
+            if i + 1 < len(records):
+                next_dt = pd.Timestamp(records[i+1].rebalance_date)
             else:
-                if rec_idx == 0:
-                    continue
-                prev_rec = records[rec_idx - 1]
-                dr = (1 + prev_rec.portfolio_return) ** (1 / 21) - 1 if prev_rec.num_stocks > 0 else 0.0
-                bdr = (1 + prev_rec.benchmark_return) ** (1 / 21) - 1
+                next_dt = calendar.iloc[-1]
+            
+            # 区间内的交易日
+            mask = (calendar >= reb_dt) & (calendar < next_dt)
+            period_days = calendar[mask]
+            if len(period_days) == 0:
+                continue
+            
+            # 将区间总收益均匀分布到每个交易日
+            num_td = len(period_days)
+            if rec.num_stocks > 0 and num_td > 0:
+                dr = (1 + rec.portfolio_return) ** (1.0 / num_td) - 1
+                bdr = (1 + rec.benchmark_return) ** (1.0 / num_td) - 1
+            else:
+                dr = 0.0
+                bdr = (1 + rec.benchmark_return) ** (1.0 / max(num_td, 1)) - 1 if rec.benchmark_return != 0 else 0.0
 
-            dates.append(cur)
-            strat_nav.append(strat_nav[-1] * (1 + dr))
-            bench_nav.append(bench_nav[-1] * (1 + bdr))
-            strat_rets.append(dr)
-            bench_rets.append(bdr)
+            for d in period_days:
+                dates_all.append(d)
+                strat_vals.append(strat_vals[-1] * (1 + dr))
+                bench_vals.append(bench_vals[-1] * (1 + bdr))
+                daily_srets.append(dr)
+                daily_brets.append(bdr)
 
-        if dates:
-            result.nav_series = pd.Series(strat_nav[1:], index=dates)
-            result.benchmark_nav_series = pd.Series(bench_nav[1:], index=dates)
-            result.daily_returns = pd.Series(strat_rets, index=dates)
-            result.benchmark_daily_returns = pd.Series(bench_rets, index=dates)
+        if dates_all:
+            result.nav_series = pd.Series(strat_vals[1:], index=dates_all)
+            result.benchmark_nav_series = pd.Series(bench_vals[1:], index=dates_all)
+            result.daily_returns = pd.Series(daily_srets, index=dates_all)
+            result.benchmark_daily_returns = pd.Series(daily_brets, index=dates_all)
 
 
 def run_backtest(

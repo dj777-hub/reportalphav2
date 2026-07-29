@@ -29,6 +29,14 @@ DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash")
 LLM_TIMEOUT = 60
 LLM_MAX_RETRIES = 3
 
+# ──────────────────────────────────────────────
+# 行情数据源：AKShare（免费开源，无需 Token）
+# ──────────────────────────────────────────────
+# 如需安装: pip install akshare
+# 文档: https://akshare.akfamily.xyz/
+# 无需 API Token，免费使用
+TUSHARE_TOKEN = os.getenv("TUSHARE_TOKEN", "")  # 保留兼容
+
 # ── 研报文本目录 ──
 TEXT_REPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "text_reports")
 
@@ -43,7 +51,7 @@ class StrategyConfig:
     top_analyst_num: int = 30
     min_20d_avg_amount: float = 50_000_000
     transaction_cost_rate: float = 0.0015
-    benchmark_index: str = "000905.SH"
+    benchmark_index: str = "000300.SH"
     weight_by_consensus: bool = False
     top_analyst_score_weight_excess: float = 0.6
     top_analyst_score_weight_winrate: float = 0.4
@@ -60,6 +68,7 @@ LLM_REPORT_RESULT_PATH = os.path.join(DATA_DIR, "llm_report_result.csv")
 DAILY_BAR_PATH = os.path.join(DATA_DIR, "daily_bar.csv")
 BENCHMARK_BAR_PATH = os.path.join(DATA_DIR, "benchmark_bar.csv")
 STOCK_INDUSTRY_PATH = os.path.join(DATA_DIR, "stock_industry.csv")
+STOCK_LIST_PATH = os.path.join(DATA_DIR, "stock_basic.csv")
 LLM_CACHE_PATH = os.path.join(DATA_DIR, "llm_cache.json")
 
 LOG_FORMAT = "%(asctime)s | %(levelname)-7s | %(message)s"

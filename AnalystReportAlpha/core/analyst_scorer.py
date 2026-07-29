@@ -180,7 +180,7 @@ class AnalystScorer:
                     if stock_ret is None:
                         continue
 
-                    # 同期基准收益（中证500）
+                    # 同期基准收益（沪深300）
                     bench_ret = self.dl.get_benchmark_return(hold_start, hold_end)
                     if bench_ret is None:
                         continue
