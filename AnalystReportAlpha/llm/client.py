@@ -94,6 +94,14 @@ class LLMClient:
         self.provider = provider or LLM_PROVIDER
         if model:
             self.model = model
+        # 检查 API Key 是否配置
+        if self.provider == "deepseek" and not DEEPSEEK_API_KEY:
+            logger.error("DeepSeek API Key 未配置，请设置 DEEPSEEK_API_KEY 环境变量或在 .env 文件中配置")
+            return
+        if self.provider != "deepseek" and not QWEN_API_KEY:
+            logger.error("通义千问 API Key 未配置，请设置 QWEN_API_KEY 环境变量或在 .env 文件中配置")
+            return
+
         elif self.provider == "deepseek":
             self.model = DEEPSEEK_MODEL
         else:

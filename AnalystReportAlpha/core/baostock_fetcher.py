@@ -50,9 +50,10 @@ def _bs_login():
 
 def _bs_logout():
     """BaoStock 登出（静默模式）"""
+    import baostock as bs
     with contextlib.redirect_stdout(io.StringIO()):
         with contextlib.redirect_stderr(io.StringIO()):
-            return _bs_logout()
+            return bs.logout()
 
 MAX_RETRIES = 2
 RETRY_DELAY = 1
@@ -116,6 +117,7 @@ class BaoStockFetcher:
             lg = _bs_login()
             if lg.error_code == '0':
                 # 用轻量接口测试
+                import baostock as bs  # for subsequent bs.xxx() calls
                 rs = bs.query_stock_basic(code="sh.600519")
                 if rs.error_code == '0':
                     self._avail_cache = True
@@ -190,6 +192,7 @@ class BaoStockFetcher:
             bs_code = _to_bs_code(code)
             for attempt in range(1, MAX_RETRIES + 1):
                 try:
+                    import baostock as bs  # for subsequent bs.xxx() calls
                     rs = bs.query_history_k_data_plus(
                         code=bs_code,
                         fields="date,open,high,low,close,volume,amount",
@@ -278,6 +281,7 @@ class BaoStockFetcher:
         logger.info(f"  🌐 从 BaoStock 获取沪深300: {sd}~{ed}")
         for attempt in range(1, MAX_RETRIES + 1):
             try:
+                import baostock as bs  # for subsequent bs.xxx() calls
                 rs = bs.query_history_k_data_plus(
                     code="sh.000300",
                     fields="date,close",
@@ -350,6 +354,7 @@ class BaoStockFetcher:
             return pd.DataFrame(columns=["stock_code", "level1_industry"])
 
         try:
+            import baostock as bs  # for subsequent bs.xxx() calls
             rs = bs.query_stock_industry()
             if rs.error_code != '0':
                 _bs_logout()
