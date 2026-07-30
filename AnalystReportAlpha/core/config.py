@@ -50,12 +50,12 @@ TEXT_REPORT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(_
 # ── 策略参数 ──
 @dataclass
 class StrategyConfig:
-    analyst_lookback_window: int = 20
+    analyst_lookback_window: int = 60
     analyst_refresh_cycle_month: int = 2
-    signal_lookback_days: int = 10
+    signal_lookback_days: int = 30
     rebalance_frequency: str = "monthly"  # "monthly" / "weekly"
     rebalance_cycle_month: int = 1
-    top_analyst_num: int = 30
+    top_analyst_num: int = 10
     min_20d_avg_amount: float = 50_000_000
     transaction_cost_rate: float = 0.0015
     benchmark_index: str = "000300.SH"
@@ -63,7 +63,7 @@ class StrategyConfig:
     top_analyst_score_weight_excess: float = 0.6
     top_analyst_score_weight_winrate: float = 0.4
     holding_period_days: int = 20              # 推荐后持有期（交易日）
-    backtest_start_date: str = "20251001"
+    backtest_start_date: str = "20250901"
     backtest_end_date: str = "20251231"
 
 DEFAULT_CONFIG = StrategyConfig()

@@ -1,0 +1,3 @@
+﻿stock_code,stock_name,analyst_count,portfolio_weight,total_analysts,avg_analyst_score,signal_source
+002378,章源钨业,1,0.5,5,0.4725,llm
+688106,金宏气体,1,0.5,5,0.4725,llm

@@ -18,7 +18,7 @@ import pandas as pd
 st.set_page_config(page_title="AnalystReportAlpha — 研报选股系统", page_icon="📊",
                    layout="wide", initial_sidebar_state="expanded")
 
-from core.config import StrategyConfig, TEXT_REPORT_DIR, DATA_DIR, LLM_REPORT_RESULT_PATH
+from core.config import StrategyConfig, TEXT_REPORT_DIR, DATA_DIR, LLM_REPORT_RESULT_PATH, DAILY_BAR_PATH, BENCHMARK_BAR_PATH
 from core.data_loader import DataLoader
 from core.backtester import run_backtest, BacktestResult
 from utils.metrics import calc_all_metrics
@@ -148,23 +148,69 @@ div[data-testid="stDataFrame"] { border: 1px solid #e8ecf1; border-radius: 10px;
 
 /* Backtest container card */
 .bt-progress-card {
-    background: white !important;
-    border: 1px solid #e8ecf1 !important;
-    border-radius: 16px !important;
-    padding: 1.8rem 2rem !important;
+    background: linear-gradient(135deg, #ffffff, #f8faff) !important;
+    border: 1px solid #dce3ef !important;
+    border-radius: 20px !important;
+    padding: 2rem 2.2rem !important;
     margin: 1.2rem 0 !important;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 8px 32px rgba(26,42,74,0.08) !important;
+    transition: all 0.3s ease !important;
 }
-
-/* Status text in backtest */
-.bt-status-text {
-    font-size: 0.9rem !important;
-    color: #2d4a7a !important;
+.bt-progress-card.done {
+    border-color: #b8dfc6 !important;
+    box-shadow: 0 8px 32px rgba(21,87,36,0.08) !important;
+}
+.bt-progress-card .bt-title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #1a2a4a !important;
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+.bt-progress-card .bt-done-icon {
+    font-size: 2.5rem !important;
+    text-align: center !important;
+    padding: 0.3rem 0 !important;
+}
+.bt-progress-card .bt-done-text {
+    text-align: center !important;
+    font-size: 1.1rem !important;
+    color: #155724 !important;
+    font-weight: 700 !important;
+    margin: 0.3rem 0 !important;
+}
+.bt-progress-card .bt-summary {
+    font-size: 0.8rem !important;
+    color: #6c757d !important;
+    text-align: center !important;
+    margin-top: 0.3rem !important;
+}
+@keyframes shimmer {
+    0% { background-position: 400% 0; }
+    100% { background-position: -400% 0; }
+}
+.stProgress > div > div {
+    background: linear-gradient(90deg, #1a2a4a, #4a7ab5, #6a9ad5, #4a7ab5, #1a2a4a) !important;
+    background-size: 400% 100% !important;
+    animation: shimmer 2.5s ease-in-out infinite !important;
+    border-radius: 12px !important;
+    height: 10px !important;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 1px 6px rgba(26,42,74,0.3) !important;
+}
+.bt-progress-card .bt-status {
+    font-size: 0.85rem !important;
+    color: #4a6a8a !important;
     font-weight: 500 !important;
-    margin-top: 0.5rem !important;
+    margin-top: 0.6rem !important;
 }
+.bt-progress-card .bt-step {
+    font-size: 0.75rem !important;
+    color: #8a9ab0 !important;
+    margin-top: 0.2rem !important;
 }
-
 /* Toast styling */
 div[data-testid="stToast"] {
     border-radius: 10px !important;
@@ -209,100 +255,132 @@ div:has(> .stProgress) + div p {
 # ═══════════════════════════════════════════════
 
 
+
+
 def run_backtest_full(cfg_dict, llm_path):
-    "全流程回测（含完整进度条：数据加载 → 回测 → 指标计算）"
+    """全流程回测（前端简洁进度卡片）"""
     cfg = StrategyConfig(**{k:v for k,v in cfg_dict.items() if k in StrategyConfig.__dataclass_fields__})
 
     _bt_container = st.empty()
     with _bt_container.container():
         st.markdown('<div class="bt-progress-card">', unsafe_allow_html=True)
-        bar = st.progress(0, text="🚀 初始化...")
-        status = st.empty()
-        st.markdown("</div>", unsafe_allow_html=True)
+        bar = st.progress(0)
+        lbl = st.empty()
+        st.markdown('</div>', unsafe_allow_html=True)
 
-    def _up(pct: int, msg: str):
+    done_icon = "✅"
+    def _up(pct, msg):
         if pct >= 100:
+            bar.progress(100)
             _bt_container.empty()
+            with _bt_container.container():
+                st.markdown(
+                    '<div class="bt-progress-card done">'
+                    '<div class="bt-done-icon">' + done_icon + '</div>'
+                    '<div class="bt-done-text">' + str(msg) + '</div>'
+                    '</div>', unsafe_allow_html=True)
         else:
-            bar.progress(min(pct, 100), text=msg)
-            status.text(msg)
+            bar.progress(min(pct, 100))
+            lbl.markdown('<div class="bt-status" style="text-align:center;">' + str(msg) + '</div>', unsafe_allow_html=True)
 
     try:
-        _up(2, "📂 初始化数据加载器...")
+        logger.info("===== 启动回测: " + cfg.backtest_start_date + "~" + cfg.backtest_end_date + " | " + cfg.rebalance_frequency + " =====")
+
+        _up(2, "加载数据中…")
         dl = DataLoader(cfg, llm_result_path=llm_path)
-
-        _up(8, "📄 加载 LLM 研报识别结果...")
         _ = dl.llm_report_result
+        logger.info("  LLM研报 " + str(len(dl.llm_report_result)) + " 条")
 
-        _up(15, "📈 连接 BaoStock 获取个股日线行情...")
+        _up(15, "获取日线行情…")
         _ = dl.daily_bar
+        n_stocks = dl.daily_bar['stock_code'].nunique() if len(dl.daily_bar) > 0 else 0
+        n_rows = len(dl.daily_bar)
+        logger.info("  日线 " + str(n_rows) + " 条 / " + str(n_stocks) + " 只")
+        _up(30, "日线就绪 " + str(n_stocks) + " 只")
 
-        _up(45, "📊 获取沪深300基准行情...")
+        _up(35, "获取沪深300基准…")
         _ = dl.benchmark_bar
+        logger.info("  沪深300 " + str(len(dl.benchmark_bar)) + " 条")
+        _up(40, "基准就绪")
 
-        _up(55, "🗂️ 加载行业分类...")
+        _up(43, "行业分类…")
         _ = dl.stock_industry
-
-        _up(60, "📅 构建交易日历...")
+        _up(45, "交易日历…")
         _ = dl.trading_calendar
         _ = dl.monthly_rebalance_dates
+        n_dates = len(dl.monthly_rebalance_dates)
+        logger.info("  交易日 " + str(len(dl.trading_calendar)) + " 天 / 调仓日 " + str(n_dates) + " 个")
 
-        if len(dl.monthly_rebalance_dates) < 2:
+        freq = getattr(cfg, 'rebalance_frequency', 'monthly')
+        if freq != 'rolling' and n_dates < 2:
             _bt_container.empty()
-            st.error("❌ 调仓日不足，请检查回测区间或行情数据")
+            st.error("❌ 调仓日不足")
             return None
 
-        _up(65, "📊 执行回测中...")
+        _up(50, "执行回测…")
 
-        def _bt_callback(p: int, m: str):
-            bt_pct = 65 + int(p * 0.30)
-            _up(bt_pct, f"📊 {m}")
+        def _bt_callback(p, m):
+            _up(50 + int(p * 0.48), "回测中 " + str(p) + "%")
 
         result = run_backtest(config=cfg, data_loader=dl, progress_callback=_bt_callback)
 
         if len(result.rebalance_records) == 0:
             _bt_container.empty()
-            st.error("回测失败：无有效调仓记录")
+            st.error("❌ 无有效调仓记录")
             return None
 
-        _up(97, "📐 计算绩效指标...")
+        # 计算绩效指标
         metrics = calc_all_metrics(
             result.nav_series, result.benchmark_nav_series,
             result.daily_returns, result.benchmark_daily_returns
         )
-
-        _up(100, "")
+        n_pos = sum(1 for r in result.rebalance_records if r.num_stocks > 0)
+        nav_final = result.nav_series.iloc[-1] if len(result.nav_series) > 0 else 1.0
+        logger.info("  完成: " + str(len(result.rebalance_records)) + " 期, 净值 " + str(round(nav_final, 4)))
+        done_icon = "🎯"
+        _up(100, "回测完成 · " + str(n_pos) + " 期持仓 · 净值 " + str(round(nav_final, 4)))
 
     except Exception as e:
         _bt_container.empty()
         raise
 
     return _serialize(result, metrics)
-def _serialize(result, metrics):
-    return {
-        "rebalance_records": [{
-            "rebalance_date": r.rebalance_date, "holding_codes": r.holding_codes,
-            "holding_weights": r.holding_weights, "holding_names": r.holding_names,
-            "portfolio_return": r.portfolio_return, "benchmark_return": r.benchmark_return,
-            "num_analysts": r.num_analysts, "num_stocks": r.num_stocks, "total_reports": r.total_reports,
-        } for r in result.rebalance_records],
-        "nav_data": (lambda nv: {} if nv is None or len(nv)==0 else {
-            "dates": [str(d.date()) for d in nv.index],
-            "strategy_nav": [float(v) for v in nv.values],
-            "benchmark_nav": [float(v) for v in result.benchmark_nav_series.values],
-            "strat_returns": [float(v) for v in result.daily_returns.values],
-            "bench_returns": [float(v) for v in result.benchmark_daily_returns.values],
-        })(result.nav_series),
-        "analyst_records": [{
-            "rebalance_date": a.get("rebalance_date",""), "analyst_name": a.get("analyst_name",""),
-            "score": float(a.get("score",0)), "win_rate": float(a.get("win_rate",0)),
-            "num_recommendations": int(a.get("num_recommendations",0)),
-        } for a in result.analyst_records],
-        "industry_records": [{"rebalance_date": r["rebalance_date"], "distribution": r["distribution"]} for r in result.industry_records],
-        "metrics": metrics, "total_turnover": result.total_turnover,
-    }
+
 
 def _serialize(result, metrics):
+    nav_series = result.nav_series if hasattr(result, 'nav_series') and len(result.nav_series) > 0 else None
+    daily_rets = result.daily_returns if hasattr(result, 'daily_returns') else None
+    bench_rets = result.benchmark_daily_returns if hasattr(result, 'benchmark_daily_returns') else None
+    bench_nav = result.benchmark_nav_series if hasattr(result, 'benchmark_nav_series') else None
+
+    nav_data = {}
+    if nav_series is not None:
+        # Use the same date axis for everything (align to nav_series dates)
+        dates_full = [str(d.date()) for d in nav_series.index]
+        nav_data = {
+            "dates": dates_full,
+            "strategy_nav": [float(v) for v in nav_series.values],
+            "benchmark_nav": [float(v) for v in bench_nav.values] if bench_nav is not None else [],
+        }
+
+        # Align daily returns: pad front with 0 if shorter than dates
+        if daily_rets is not None and len(daily_rets) > 0:
+            ret_vals = [float(v) for v in daily_rets.values]
+            # If rolling mode, day0 has no return → prepend 0
+            if len(ret_vals) < len(dates_full):
+                ret_vals = [0.0] * (len(dates_full) - len(ret_vals)) + ret_vals
+            nav_data["strat_returns"] = ret_vals
+        else:
+            nav_data["strat_returns"] = [0.0] * len(dates_full)
+
+        if bench_rets is not None and len(bench_rets) > 0:
+            bv = [float(v) for v in bench_rets.values]
+            if len(bv) < len(dates_full):
+                bv = [0.0] * (len(dates_full) - len(bv)) + bv
+            nav_data["bench_returns"] = bv
+        else:
+            nav_data["bench_returns"] = [0.0] * len(dates_full)
+
     return {
         "rebalance_records": [{
             "rebalance_date": r.rebalance_date, "holding_codes": r.holding_codes,
@@ -310,13 +388,7 @@ def _serialize(result, metrics):
             "portfolio_return": r.portfolio_return, "benchmark_return": r.benchmark_return,
             "num_analysts": r.num_analysts, "num_stocks": r.num_stocks, "total_reports": r.total_reports,
         } for r in result.rebalance_records],
-        "nav_data": (lambda nv: {} if nv is None or len(nv)==0 else {
-            "dates": [str(d.date()) for d in nv.index],
-            "strategy_nav": [float(v) for v in nv.values],
-            "benchmark_nav": [float(v) for v in result.benchmark_nav_series.values],
-            "strat_returns": [float(v) for v in result.daily_returns.values],
-            "bench_returns": [float(v) for v in result.benchmark_daily_returns.values],
-        })(result.nav_series),
+        "nav_data": nav_data,
         "analyst_records": [{
             "rebalance_date": a.get("rebalance_date",""), "analyst_name": a.get("analyst_name",""),
             "score": float(a.get("score",0)), "win_rate": float(a.get("win_rate",0)),
@@ -335,7 +407,7 @@ def sidebar():
         st.markdown("### 🔬 控制面板")
         cfg = {}
         with st.expander("📐 策略参数", expanded=True):
-            cfg["rebalance_frequency"] = st.selectbox("调仓频率", ["monthly","weekly"], index=0, key="rebalance_freq",
+            cfg["rebalance_frequency"] = st.selectbox("调仓频率", ["monthly","weekly","rolling"], index=0, key="rebalance_freq",
                 help="月频：每月最后交易日调仓；周频：每周最后交易日调仓")
             cfg["top_analyst_num"] = st.slider("Top 分析师数", 1, 20, 10, 1)
             cfg["analyst_lookback_window"] = st.slider("分析师评分回溯(交易日)", 10, 120, 20, 5)
@@ -346,8 +418,8 @@ def sidebar():
             cfg["weight_by_consensus"] = st.checkbox("一致预期加权（按推荐人数）", value=False)
         # ── 数据源标识（仅显示配置状态，不触发网络连接） ──
         # ── 数据源标识（仅显示配置状态，不触发网络连接） ──
-        st.caption("🟢 数据源: **BaoStock** (免费) | 实时行情 | 沪深300基准")
-        st.caption("💡 首次回测将自动从 BaoStock 拉取并缓存行情数据")
+        st.caption("🟢 数据源: **本地缓存 CSV** + BaoStock(备用)")
+        st.caption("💡 已缓存18615条日线/473条基准行情 2025-01~2025-12")
 
         with st.expander("📅 回测区间", expanded=True):
             from datetime import date
@@ -375,11 +447,11 @@ def sidebar():
                     logger.info(f'已删除缓存: {f}')
             st.cache_data.clear()
             st.session_state.result_data = None
-            _status = st.info('🔄 正在从 BaoStock 获取数据...')
+            _status = st.info('🔄 正在加载行情数据...')
             dl = DataLoader(StrategyConfig())
             _ = dl.daily_bar; _ = dl.benchmark_bar; _ = dl.stock_industry
             _status.empty()
-            st.toast('✅ 数据已从 BaoStock 刷新', icon='✅')
+            st.toast('✅ 数据缓存已刷新', icon='✅')
             st.rerun()
         return cfg, {"bt":bt, "refresh":refresh, "clear":clear}, txt_dir
 

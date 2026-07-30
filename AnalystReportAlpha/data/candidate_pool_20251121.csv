@@ -1,0 +1,4 @@
+﻿stock_code,stock_name,analyst_count,portfolio_weight,total_analysts,avg_analyst_score,signal_source
+000063,中兴通讯,1,0.333333,3,0.3665,llm
+688100,威胜信息,1,0.333333,3,0.3665,llm
+002202,金风科技,1,0.333333,3,0.3665,llm

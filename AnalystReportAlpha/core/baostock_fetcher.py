@@ -185,10 +185,16 @@ class BaoStockFetcher:
         success = 0
         fail = 0
         total = len(need_codes)
+        try:
+            from tqdm import tqdm
+            _has_tqdm = True
+        except ImportError:
+            _has_tqdm = False
+        pbar = tqdm(sorted(need_codes), desc="  ⏳ 下载日线", unit="只", leave=False) if _has_tqdm else sorted(need_codes)
 
-        for idx, code in enumerate(sorted(need_codes)):
+        for idx, code in enumerate(pbar if 'pbar' in dir() else sorted(need_codes)):
             if (idx + 1) % 10 == 0 or idx == 0:
-                logger.info(f"  ⏳ 下载进度: {idx+1}/{total} ({code}...)")
+                pass
             bs_code = _to_bs_code(code)
             for attempt in range(1, MAX_RETRIES + 1):
                 try:

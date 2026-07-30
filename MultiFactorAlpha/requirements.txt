@@ -1,0 +1,8 @@
+pandas>=1.5
+numpy>=1.24
+streamlit>=1.28
+plotly>=5.15
+scipy>=1.10
+python-dotenv>=1.0
+tqdm>=4.60
+baostock>=1.0

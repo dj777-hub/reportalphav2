@@ -1,0 +1,38 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+.venv/
+venv/
+env/
+
+# Environment
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (cached CSVs)
+data/daily_bar.csv
+data/benchmark_bar.csv
+data/stock_industry.csv
+data/stock_basic.csv
+data/llm_cache.json
+
+# LLM results (regeneratable)
+data/llm_report_result.csv
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

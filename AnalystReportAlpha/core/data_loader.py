@@ -228,9 +228,13 @@ class DataLoader:
         except Exception as e:
             logger.warning(f"  BaoStock 获取日线异常: {e}")
 
-        # 回退：从本地 CSV 加载（AKShare 不可用时）
+        # 回退：从本地 CSV 加载（BaoStock 不可用时）
         path = file_path or DAILY_BAR_PATH
-        logger.info(f"  📂 加载日线行情(本地CSV): {os.path.basename(path)}")
+        sz = os.path.getsize(path) if os.path.exists(path) else 0
+        if os.path.exists(path):
+            logger.info(f"  🟢 日线缓存命中 ({sz//1024}KB): {os.path.basename(path)}")
+        else:
+            logger.info(f"  🔴 日线缓存不存在: {os.path.basename(path)}")
         df = pd.DataFrame(columns=[
             "stock_code", "trade_date", "close", "open", "high", "low", "amount"
         ])
@@ -274,7 +278,11 @@ class DataLoader:
             logger.warning(f"  BaoStock 获取基准异常: {e}")
 
         path = file_path or BENCHMARK_BAR_PATH
-        logger.info(f"  📂 加载基准行情(本地CSV): {os.path.basename(path)}")
+        sz = os.path.getsize(path) if os.path.exists(path) else 0
+        if os.path.exists(path):
+            logger.info(f"  🟢 基准缓存命中 ({sz//1024}KB): {os.path.basename(path)}")
+        else:
+            logger.info(f"  🔴 基准缓存不存在: {os.path.basename(path)}")
         try:
             df = pd.read_csv(path, encoding="utf-8-sig")
         except FileNotFoundError:

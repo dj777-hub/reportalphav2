@@ -1,0 +1,4 @@
+﻿ stock_code,stock_name,analyst_count,portfolio_weight,total_analysts,avg_analyst_score,signal_source
+300308,中际旭创,1,0.333333,2,0.3136,llm
+000063,中兴通讯,1,0.333333,2,0.3136,llm
+688100,威胜信息,1,0.333333,2,0.3136,llm
