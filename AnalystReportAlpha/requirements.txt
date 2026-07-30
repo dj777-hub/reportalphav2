@@ -1,13 +1,23 @@
+# ── 核心数据处理 ──
 pandas>=1.5.0
 numpy>=1.23.0
+scipy>=1.10.0
+
+# ── Web 前端 & 可视化 ──
 streamlit>=1.28.0
 plotly>=5.15.0
-scipy>=1.10.0
+
+# ── LLM 大模型 API 调用 ──
+openai>=1.0.0           # 兼容 DeepSeek / 通义千问 DashScope SDK
+
+# ── 行情数据源 ──
+baostock>=0.9.0          # 主数据源（免费，无需 Token）
+akshare>=1.14.0          # AKShare 备选
+tushare>=1.2.10          # Tushare Pro 备选（需 Token）
+
+# ── PDF 研报解析 ──
+PyMuPDF>=1.23.0          # fitz, PDF 文本提取
+
+# ── 工具 ──
 python-dotenv>=1.0.0
-dashscope>=1.14.0
 tqdm>=4.65.0
-openai>=1.0.0
->=1.12.0
-akshare>=1.14.0
-tushare>=1.2.10
-baostock>=0.9.0
